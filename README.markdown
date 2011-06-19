@@ -105,7 +105,7 @@ Les pages peuvent contenir d'autres pages.
 
 Tout le javascript va ici. Je pense inclure par défaut prototype et scriptaculous.
 
-Pour inclure un script dans la balise <head></head> d'une page particulière on
+Pour inclure un script dans la balise `<head></head>` d'une page particulière on
 écrit dans cette page (n'importe où mais c'est plus lisible au début) :
 
     <genit class="script" file="foo.js" />
@@ -115,7 +115,7 @@ Pour inclure un script dans la balise <head></head> d'une page particulière on
 
 Tout ce qui est en rapport avec le design du site va ici.
 
-Pour inclure un css dans la balise <head></head> d'une page particulière on
+Pour inclure un css dans la balise `<head></head>` d'une page particulière on
 écrit dans cette page (n'importe où mais c'est plus lisible au début) :
 
     <genit class="css" file="foo.css" />
