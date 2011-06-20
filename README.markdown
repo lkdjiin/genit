@@ -1,63 +1,64 @@
 Genit
 ================
 
-Genit génère un site web statique, c'est à dire sans langage de programmation ni BDD coté serveur.
-Le site est uniquement composé de code xhtml (+ css et médias) et eventuellement de javascript.
+Genit builds a *static web site*, that is a web site without server side programing language
+and database.
 
-Le projet est en phase d'analyse, il n'y a pas de code à voir pour l'instant.
+The site consists only of xhtml code (+ css and medias) and eventually of javascript.
+
+The project is in analysis phase, there is no code to play with for now.
 
 Description
 -----------
 
-C'est un framework en ligne de commande, essentiellement basé sur des conventions.
+It is a command line framework, essentially based on conventions.
 
-Genit doit être avant tout :
+Genit must above all be :
 
-  + simple
-  + lisible
-  + minimaliste
+  + *simple*
+  + *readable*
+  + *minimalist*
 
-Genit produit des sites xhtml uniquement.
+_We don't have to learn new languages ​​or new tag for managing templates._
+We must be able to do this with a language we already all know: *xml*.
 
-Il ne faut pas avoir à apprendre de nouveaux langages, ou de nouveaux tag pour les templates,
-on doit réussir à s'en sortir avec un langage qu'on connait déja tous : le xml.
-Par exemple, pour génerer le code html comprenant les 4 dernières news :
+For example, to generate the xhtml including the 4 latest news:
 
     <generate class="news" number="4" />
 
-Et plus simplement, pour générer le footer :
+And more simply, to generate the footer:
 
     <generate class="footer" />
 
-Objectifs de base
+Basic objectives
 ----------------
 
-Au minimum, Genit doit permettre de :
+At a minimum, Genit should allow to do this :
 
-  + inclure les sections typiques tel que :
+  + include typical sections:
     - header
     - footer
     - sitemap
-    - menu (avec code css pour :hover)
-  + générer le flux RSS (comprenant toutes les news, ou seulement un certains nombre)
-  + générer une section de news (toutes ou un certain nombre)
-  + inclure des fichiers css différents par fichier html
-  + inclure des scripts différents par fichier html
-  + générer des <meta> différents par fichier html (title, keywords, etc.)
+    - menu
+  + generate the RSS feed (with all news, or only a certain number)
+  + generate news section (with all news, or only a certain number)
+  + include different css files per page
+  + include different script files per page
+  + generate different <meta> per page (title, keywords, etc.)
 
-Mise en oeuvre
+Implementation
 --------------
 
-### Créer le projet
+### Create a project
 
-On utilse la commande suivante :
+We use the following command line :
 
-    genit create mon-site
-    cd mon-site
+    genit create mmy-site
+    cd my-site
 
-#### Structure du projet
+#### Project structure
 
-    mon-site/
+    my-site/
       news/
         2011-06-19.markdown
       pages/
@@ -77,22 +78,22 @@ On utilse la commande suivante :
         index.html
       www/
 
-#### Le dossier news
+#### News folder
 
-Pour inclure les X dernières news :
+To include the X latest news:
 
     <genit class"news" number="5" />
 
-Sans l'attribut number, on inclut toutes les news.
+Without number attribute, we include all news.
 
-Les news sont repérées par le nom du fichier, qui est la date. Je sais que cela
-ne permet qu'une seule news par jour, mais pour un site web statique, je ne vois
-pas le problème.
+The news are marked with the file name, which is the date. 
+I know it allows only one daily news, but for a static web site, I see
+no problem.
 
-#### Le dossier pages
+#### Pages folder
 
-Toutes les pages du site sont dans ce dossier pages. Écrits en .html ou en .markdown.
-Les pages peuvent contenir d'autres pages.
+All site pages are in this folder. Written in .html or .markdown.
+Pages could include subpages.
 
     <reflexion>
     Pour inclure une page dans une page, on pourrait avoir un dossier "subpages" et
@@ -101,59 +102,59 @@ Les pages peuvent contenir d'autres pages.
 
 
 
-#### Le dossier scripts
+#### Scripts folder
 
-Tout le javascript va ici. Je pense inclure par défaut prototype et scriptaculous.
+I think to include prototype and scriptaculous by default.
 
-Pour inclure un script dans la balise `<head></head>` d'une page particulière on
-écrit dans cette page (n'importe où mais c'est plus lisible au début) :
+To include a script in the `<head></head>` tag of a particular page,
+we can write (anywhere in the page but it's more readable at the beginning):
 
     <genit class="script" file="foo.js" />
 
 
-#### Le dossier styles
+#### Styles folder
 
-Tout ce qui est en rapport avec le design du site va ici.
+Everything that is related to the design of the site goes here.
 
-Pour inclure un css dans la balise `<head></head>` d'une page particulière on
-écrit dans cette page (n'importe où mais c'est plus lisible au début) :
+To include a particular css file in the `<head></head>` tag of a particular page,
+we can write (anywhere in the page but it's more readable at the beginning):
 
     <genit class="css" file="foo.css" />
 
-#### Le dossier templates
+#### Templates folder
 
-Les templates généraux vont dans le dossier templates. Écrits seulement en .html.
-Pour l'instant il n'y a qu'un seul template.
+Only written in .html.
+For now, there is only one template.
 
-Pour préciser le point d'inclusion des pages dans le template :
+To include a page in the template:
 
     <genit class="pages" />
 
-Certaines sections se retrouvent sur l'immense majorité des sites : header, footer,
-menu principal (qui peut-être en haut, à droite, à gauche), reprise du menu en bas,
-coté gauche, coté droit et sitemap. Pour inclure ces sections on utilisera :
+Some sections are found on the vast majority of web sites : header, footer,
+main menu, bottom menu, left side, right side and sitemap. To include those
+sections we'll write
 
     <genit class="header" />
     <genit class="footer" />
     etc.
 
-#### Le dossier www
+#### www folder
 
-C'est ici que le projet "compilé" atterrira.
+The "compiled" project will go here.
 
-TODO il serait peut-être bien d'voir une option pour changer ce nom de dossier ?
+TODO il serait peut-être bien d'avoir une option pour changer ce nom de dossier ?
 
-### Compiler le projet
+### Compiling the project
 
-La commande suivante va générer le site web dans le dossier www :
+The following command will generate the web site in the www folder:
 
     genit compile
 
-La commande suivante est une abréviation :
+A shortcut:
 
     genit cc
 
-L'option --minimze permet de diminuer la taille des fichiers :
+The --minimize option minimize the size of the file, good for production phase:
 
     genit compile --minimize
 
