@@ -1,7 +1,7 @@
 Genit
 ================
 
-Genit builds a *static web site*, that is a web site without server side programing language
+Genit builds a **static web site**, that is a web site without server side programing language
 and database.
 
 The site consists only of xhtml code (+ css and medias) and eventually of javascript.
@@ -15,12 +15,12 @@ It is a command line framework, essentially based on conventions.
 
 Genit must above all be :
 
-  + *simple*
-  + *readable*
-  + *minimalist*
+  + **simple**
+  + **readable**
+  + **minimalist**
 
 _We don't have to learn new languages ​​or new tag for managing templates._
-We must be able to do this with a language we already all know: *xml*.
+We must be able to do this with a language we already all know: **xml**.
 
 For example, to generate the xhtml including the 4 latest news:
 
