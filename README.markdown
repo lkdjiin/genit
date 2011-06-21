@@ -158,8 +158,26 @@ The --minimize option minimize the size of the file, good for production phase:
 
     genit compile --minimize
 
+Install
+-------------------------
+
+Usage
+--------------------------
+
+Dependencies
+--------------------------
+
+  * ruby >= 1.9.2
+
+### Contributors dependencies
+
+  * use rspec for tests
+  * code coverage must be 90% minimum
+  * use [tomdoc](http://tomdoc.org/) to document your code 
+
+
 License
--------
+--------------------------
 
 Expat License (also known as MIT)
 

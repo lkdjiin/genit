@@ -26,3 +26,25 @@ $LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
 $GENIT_PATH = File.expand_path(File.dirname(__FILE__)) + '/..'
 
 require 'genit'
+include Genit
+
+def usage
+  puts %q{usage: genit command
+
+where command is:
+  create project-name
+  ...}
+end
+
+case ARGV[0]
+  when "create"
+    case ARGV[1]
+      when /\w/
+        project = ProjectCreator.new ARGV[1]
+        project.create
+      else
+        usage
+    end
+  else
+    usage
+end
