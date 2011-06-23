@@ -8,7 +8,7 @@ task :default => :spec
 
 desc 'Test genit with rspec'
 RSpec::Core::RakeTask.new(:spec) do |t|
-  t.rspec_opts = ['--color']
+  t.rspec_opts = ['--color --format documentation']
 end
 
 desc 'Check for code smells'

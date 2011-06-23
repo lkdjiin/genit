@@ -75,7 +75,7 @@ We use the following command line :
         screen.css
         images/
       templates/
-        index.html
+        main.html
       www/
 
 #### News folder
@@ -173,7 +173,7 @@ Dependencies
 
   * use rspec for tests
   * code coverage must be 90% minimum
-  * use [tomdoc](http://tomdoc.org/) to document your code 
+  * use [tomdoc](http://tomdoc.org/) to document your code
 
 
 License

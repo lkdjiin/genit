@@ -23,6 +23,7 @@ module Genit
 				FileUtils.makedirs @name
         create_dirs ['news', 'pages', 'scripts', 'styles', 'templates', 'www']
         create_dirs ['styles/css', 'styles/css/alsa', 'styles/css/yui', 'styles/images']
+        copy_files ['templates/main.html', 'pages/index.html']
 			rescue SystemCallError
 				puts "Cannot create project..."
 			end
@@ -43,6 +44,23 @@ module Genit
     # Returns nothing.
     def create_dirs a_array
       a_array.each {|dir| FileUtils.makedirs File.join(@name, dir) }
+    end
+    
+    # Copy files to project.
+    #
+    # a_array - An Array of String "subfolder/file" names
+    #
+    # Example
+    #
+    #   copy_files ['templates/main.html', 'pages/index.html']
+    #
+    # Returns nothing.
+    def copy_files a_array
+      a_array.each do |file|
+        src = File.join $GENIT_PATH, 'data', file
+        dest =  File.join @name, file
+        FileUtils.cp src, dest
+      end
     end
     
   end
