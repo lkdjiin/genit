@@ -5,10 +5,14 @@ module Genit
   # Build the web site.
   class Compiler
   
+    # Public: Constructor.
+    #
+    # working_dir - The String working directory, where live the project.
     def initialize working_dir
       @working_dir = working_dir
     end
   
+    # Public: Build the web site.
     def compile
       load_files
       build_files
@@ -23,8 +27,8 @@ module Genit
     end
     
     def build_files
-      tag = @template.at_css("body genit")
-      tag.replace @page_content
+      builder = Builder.new(@template)
+      @template = builder.replace('genit.pages', @page_content)
     end
     
     def write_files

@@ -4,6 +4,7 @@ require 'nokogiri'
 
 module Genit
 
+  # Open an html file in various format.
   class HtmlDocument
   
     def self.open file
