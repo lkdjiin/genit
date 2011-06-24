@@ -33,7 +33,7 @@ def usage
 
 where command is:
   create project-name
-  ...}
+  compile}
 end
 
 case ARGV[0]
@@ -45,6 +45,9 @@ case ARGV[0]
       else
         usage
     end
+  when "compile"
+    compiler = Compiler.new Dir.getwd
+    compiler.compile
   else
     usage
 end

@@ -168,6 +168,8 @@ Dependencies
 --------------------------
 
   * ruby >= 1.9.2
+  * coco (code coverage)
+  * nokogiri (xml parser)
 
 ### Contributors dependencies
 
