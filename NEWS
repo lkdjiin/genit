@@ -1,3 +1,7 @@
 v0.1  yyyy-mm-dd
 
-  * What it does
+  * Create a project
+  
+  * Compile a project (one template, multiple pages)
+  
+  * A page can be in html or in markdown format

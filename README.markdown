@@ -170,6 +170,7 @@ Dependencies
   * ruby >= 1.9.2
   * coco (code coverage)
   * nokogiri (xml parser)
+  * bluecloth (markdown parser)
 
 ### Contributors dependencies
 
