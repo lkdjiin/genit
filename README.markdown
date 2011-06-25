@@ -4,7 +4,8 @@ Genit
 Genit builds a **static web site**, that is a web site without server side programing language
 and database. A site consists only of xhtml code (+ css and medias) and eventually of javascript.
 
-The project is in early development stage, see [project guidelines]().
+The project is in early development stage, see
+[project guidelines](https://github.com/lkdjiin/genit/blob/master/project_guidelines.markdown).
 
 Description
 -----------
@@ -45,7 +46,8 @@ Usage
 (*edit some pages*)
     genit compile
 
-Take a look at the [tutorial]() for more information.
+Take a look at the [tutorial](https://github.com/lkdjiin/genit/blob/master/documentation/tutorial.markdown) 
+for more information.
 
 
 Dependencies
