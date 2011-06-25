@@ -44,6 +44,7 @@ Usage
     genit create my-site
     cd my-site
 (*edit some pages*)
+
     genit compile
 
 Take a look at the [tutorial](https://github.com/lkdjiin/genit/blob/master/documentation/tutorial.markdown) 
