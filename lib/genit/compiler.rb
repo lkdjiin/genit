@@ -39,6 +39,7 @@ module Genit
     end
     
     def write_file file
+      file.gsub! /\.markdown$/, '.html'
       File.open(File.join(@working_dir, 'www', file), "w") do |out| 
         out.puts @template.to_html
       end

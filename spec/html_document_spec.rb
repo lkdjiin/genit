@@ -9,10 +9,15 @@ describe HtmlDocument do
     doc.css("body genit").size.should >= 1
   end
   
-  it "should load as a string" do
+  it "should load html as a string" do
     content = HtmlDocument.open_as_string("data/pages/index.html")
     content.class.should == String
     content.size.should > 0
+  end
+  
+  it "should load markdown as a string" do
+    content = HtmlDocument.open_as_string("spec/test-files/test.markdown")
+    content.should == '<h1>title</h1>'
   end
   
 end
