@@ -26,8 +26,3 @@ task :install do
 	f = FileList['genit*gem'].to_a
 	sh "gem install #{f.first} --no-rdoc --no-ri"
 end
-
-desc 'Generate yard documentation for developpers'
-task :doc do 
-	exec 'yardoc --title "genit Documentation" - NEWS VERSION'
-end
