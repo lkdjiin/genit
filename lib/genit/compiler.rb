@@ -14,27 +14,33 @@ module Genit
   
     # Public: Build the web site.
     def compile
-      load_files
-      build_files
-      write_files
+      Dir.foreach(File.join(@working_dir, 'pages')) do |file|
+        next if (file == ".") or (file == "..")
+        process file
+      end
     end
     
     private
     
-    def load_files
-      @template = HtmlDocument.open(File.join(@working_dir, 'templates/main.html'))
-      @page_content = HtmlDocument.open_as_string(File.join(@working_dir, 'pages/index.html'))
+    def process file
+      load_files file
+      build_file
+      write_file file
     end
     
-    def build_files
+    def load_files file
+      @template = HtmlDocument.open(File.join(@working_dir, 'templates/main.html'))
+      @page_content = HtmlDocument.open_as_string(File.join(@working_dir, 'pages', file))
+    end
+    
+    def build_file
       builder = Builder.new(@template)
       @template = builder.replace('genit.pages', @page_content)
     end
     
-    def write_files
-      fileout = @template.to_html
-      File.open(File.join(@working_dir, 'www/index.html'), "w") do |file| 
-        file.puts fileout
+    def write_file file
+      File.open(File.join(@working_dir, 'www', file), "w") do |out| 
+        out.puts @template.to_html
       end
     end
     

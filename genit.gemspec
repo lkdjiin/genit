@@ -12,6 +12,8 @@ Gem::Specification.new do |s|
   s.description = %q{Genit builds a **static web site**, that is a web site without server side 
 programing language and database. The site consists only of xhtml code (+ css and medias) and 
 eventually of javascript. It is a command line framework, essentially based on conventions.
+Genit is based on the idea that we don't have to learn any new languages to manage templates
+because xml can do it well.
 Genit is design to be simple, reable and minimalist.}
 	
 	readmes = FileList.new('*') do |list|
