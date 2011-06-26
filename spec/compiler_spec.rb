@@ -32,4 +32,8 @@ describe Compiler do
     File.exist?('spec/project-name/www/doc.html').should == true
   end
   
+  it "should copy the styles/ into www/" do
+    File.exist?('spec/project-name/www/styles/screen.css').should be_true
+  end
+  
 end

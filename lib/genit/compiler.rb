@@ -1,5 +1,7 @@
 # -*- encoding: utf-8 -*-
 
+require 'fileutils'
+
 module Genit
 
   # Build the web site.
@@ -14,13 +16,18 @@ module Genit
   
     # Public: Build the web site.
     def compile
+      process_pages
+      FileUtils.cp_r File.join(@working_dir, 'styles'), File.join(@working_dir, 'www')
+    end
+    
+    private
+    
+    def process_pages
       Dir.foreach(File.join(@working_dir, 'pages')) do |file|
         next if (file == ".") or (file == "..")
         process file
       end
     end
-    
-    private
     
     def process file
       load_files file

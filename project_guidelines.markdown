@@ -36,11 +36,10 @@ We use the following command line :
         index.markdown
       scripts/
       styles/
-        css/
-          alsa/
-            all.css
-          yui/
-            reset.css
+        alsa/
+          all.css
+        yui/
+          all.css
         handheld.css
         print.css
         screen.css
