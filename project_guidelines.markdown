@@ -46,13 +46,14 @@ We use the following command line :
         images/
       templates/
         main.html
+        menu.html
       www/
 
 #### News folder
 
 To include the X latest news:
 
-    <genit class"news" number="5" />
+    <genit class="news" number="5" />
 
 Without number attribute, we include all news.
 

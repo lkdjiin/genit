@@ -9,7 +9,7 @@ module Genit
   
     # Public: Constructor.
     #
-    # document - A Nokogiri::HTML document
+    # document - A Nokogiri::HTML | Nokogiri::XML document
     def initialize document
       @document = document
     end
@@ -24,10 +24,21 @@ module Genit
     #
     #   doc = builder.replace('genit.pages', "<working />")
     #
-    # Return the changed Nokogiri::HTML document.
+    # Return the changed document.
     def replace css_rule, replacement
       tag = @document.at_css(css_rule)
       tag.replace replacement
+      @document
+    end
+    
+    def select_menu page
+      tags = @document.css("ul#menu a")
+      tags.each {|tag|
+        if tag['href'] == page
+          tag['id'] = 'selected'
+          break
+        end
+      }
       @document
     end
     

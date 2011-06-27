@@ -12,15 +12,18 @@ describe "Nokogiri library" do
   end
 
   it "should retrieve all genit tag" do
-    @doc.css("body genit").size.should == 1
-  end
-  
-  it "should retrieve a tag" do
-    @doc.at_css("body genit").to_s.should == '<genit class="pages"></genit>'
+    @doc.css("body genit").size.should == 2
   end
   
   it "should retrieve class of tag" do
-    @doc.at_css("body genit")['class'].should == "pages"
+    tags = @doc.css("body genit")
+    tags[0]['class'].should == "menu"
+    tags[1]['class'].should == "pages"
+  end
+  
+  it "should add an attribute" do
+    @doc.at_css("body")['class'] = "main"
+    @doc.at_css("body")['class'].should == 'main'
   end
   
 end

@@ -14,4 +14,12 @@ describe Builder do
     doc.css("body working").size.should == 1
   end
   
+  it "should set the menu" do
+    menu = Nokogiri::XML(File.open("data/templates/menu.html"))
+    builder = Builder.new(menu)
+    menu = builder.select_menu('index.html')
+    menu.css("ul#menu a#selected").size.should == 1
+    menu.css("ul#menu a#selected").first['href'].should == 'index.html'
+  end
+  
 end
