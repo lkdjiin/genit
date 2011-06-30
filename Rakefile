@@ -3,6 +3,11 @@
 require 'rake'
 require 'rspec/core/rake_task'
 
+def ruby_files_for_shell
+  files = Dir.glob 'lib/**/*.rb'
+  files.join(' ')
+end
+
 desc 'Test genit'
 task :default => :spec
 
@@ -14,10 +19,13 @@ end
 desc 'Check for code smells'
 task :reek do
   puts 'Checking for code smells...'
-  files = Dir.glob 'lib/**/*.rb'
-  # files.delete FILE_TO_EXCLUDE
-  args = files.join(' ')
-  sh "reek --quiet #{args} | ./reek.sed"
+  sh "reek --quiet #{ruby_files_for_shell} | ./reek.sed"
+end
+
+desc 'Check for duplicate code'
+task :flay do
+  puts 'Check for duplicate code...'
+  exec "flay #{ruby_files_for_shell}"
 end
 
 desc 'Build genit & install it'
