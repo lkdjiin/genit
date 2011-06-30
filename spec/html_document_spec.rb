@@ -20,4 +20,10 @@ describe HtmlDocument do
     content.should == '<h1>title</h1>'
   end
   
+  it "should extract the list of genit tags" do
+    doc = HtmlDocument.open("data/templates/main.html")
+    tags = HtmlDocument.genit_tags_from doc
+    tags.size.should == 2
+  end
+  
 end

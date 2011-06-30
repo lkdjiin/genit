@@ -36,4 +36,10 @@ describe Compiler do
     File.exist?('spec/project-name/www/styles/screen.css').should be_true
   end
   
+  it "should set the menu in index page" do
+    @compiler.compile
+    doc = Nokogiri::HTML(File.open("spec/project-name/www/index.html"))
+    doc.at_css("ul#menu a#selected")['href'].should == 'index.html'
+  end
+  
 end

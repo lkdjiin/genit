@@ -73,6 +73,15 @@ describe ProjectCreator do
     it "should copy templates/main.html" do
       File.exist?('spec/project-name/templates/main.html').should be_true
     end
+    
+    it "should have got templates/menu.html" do
+      File.exist?('data/templates/menu.html').should be_true
+    end
+  
+    it "should copy templates/menu.html" do
+      File.exist?('spec/project-name/templates/menu.html').should be_true
+    end
+    
   end # "The templates folder"
 
   describe "The pages folder" do

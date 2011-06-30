@@ -23,7 +23,8 @@ module Genit
 				FileUtils.makedirs @name
         create_dirs ['news', 'pages', 'scripts', 'styles', 'templates', 'www']
         create_dirs ['styles/alsa', 'styles/yui', 'styles/images']
-        copy_files ['templates/main.html', 'pages/index.html', 'styles/handheld.css', 'styles/print.css',
+        copy_files ['templates/main.html', 'templates/menu.html',
+                    'pages/index.html', 'styles/handheld.css', 'styles/print.css',
                     'styles/screen.css', 'styles/alsa/all.css', 'styles/yui/all.css', 'styles/yui/base.css',
                     'styles/yui/fonts.css', 'styles/yui/reset.css']
 			rescue SystemCallError
