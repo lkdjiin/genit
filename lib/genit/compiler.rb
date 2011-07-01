@@ -51,13 +51,20 @@ module Genit
       @template = builder.replace('genit.pages', @page_content)
     end
     
-    # Crée le menu ET le remplace au sein du template
     def tag_menu
+      build_menu
+      replace_menu_into_template
+    end
+    
+    def build_menu
       menu = Nokogiri::XML(File.open(File.join(@working_dir, "templates/menu.html"))) # XmlDocument
       builder = Builder.new(menu)
-      menu = builder.select_menu(@file)
+      @menu = builder.select_menu(@file)
+    end
+    
+    def replace_menu_into_template
       builder = Builder.new(@template)
-      @template = builder.replace('genit.menu', menu.to_html)
+      @template = builder.replace('genit.menu', @menu.to_html)
     end
     
     def save_file_as_html
