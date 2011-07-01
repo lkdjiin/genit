@@ -4,7 +4,7 @@ require 'fileutils'
 
 module Genit
 
-  # Build the web site.
+  # Web site "compiler".
   class Compiler
   
     # Public: Constructor.
@@ -14,27 +14,27 @@ module Genit
       @working_dir = working_dir
     end
   
-    # Public: Build the web site.
+    # Public: Compile the web site.
     def compile
-      process_pages
+      compile_pages
       FileUtils.cp_r File.join(@working_dir, 'styles'), File.join(@working_dir, 'www')
     end
     
     private
     
-    def process_pages
+    def compile_pages
       Dir.foreach(File.join(@working_dir, 'pages')) do |file|
         next if (file == ".") or (file == "..")
         @file = file
-        process_file
+        compile_page
       end
     end
     
-    def process_file
+    def compile_page
       @template = HtmlDocument.open(File.join(@working_dir, 'templates/main.html'))
       genit_tags = HtmlDocument.genit_tags_from @template
       genit_tags.each {|tag| process_tag tag }
-      write_file
+      save_file_as_html
     end
     
     def process_tag tag
@@ -44,22 +44,32 @@ module Genit
       end
     end
     
+    # Remplace la page au sein du template
     def tag_pages
       @page_content = HtmlDocument.open_as_string(File.join(@working_dir, 'pages', @file))
       builder = Builder.new(@template)
       @template = builder.replace('genit.pages', @page_content)
     end
     
+    # Crée le menu ET le remplace au sein du template
     def tag_menu
-      menu = Nokogiri::XML(File.open(File.join(@working_dir, "templates/menu.html")))
+      menu = Nokogiri::XML(File.open(File.join(@working_dir, "templates/menu.html"))) # XmlDocument
       builder = Builder.new(menu)
       menu = builder.select_menu(@file)
       builder = Builder.new(@template)
       @template = builder.replace('genit.menu', menu.to_html)
     end
     
-    def write_file
+    def save_file_as_html
+      force_file_to_html
+      write_file
+    end
+    
+    def force_file_to_html
       @file.gsub! /\.markdown$/, '.html'
+    end
+    
+    def write_file
       File.open(File.join(@working_dir, 'www', @file), "w") do |out| 
         out.puts @template.to_html
       end
