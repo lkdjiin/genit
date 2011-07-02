@@ -46,7 +46,7 @@ module Genit
     def select_menu page_name
       tags = @document.css("ul#menu a")
       tags.each {|tag|
-        if tag['href'] == page_name
+        if tag['href'] == page_name.gsub(/\.markdown$/, '.html')
           tag['id'] = 'selected'
           break
         end
