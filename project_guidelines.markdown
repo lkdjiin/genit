@@ -30,6 +30,7 @@ We use the following command line :
 #### Project structure
 
     my-site/
+      fragments/
       news/
         2011-06-19.markdown
       pages/
@@ -48,6 +49,16 @@ We use the following command line :
         main.html
         menu.html
       www/
+
+#### Fragments folder
+
+Here we are some fragments, pieces of page.
+
+    <genit class="fragment" file="foo.markdown" />
+
+A fragment can be included in any page you want.
+
+Thinking in page fragment help to modularize the xthml code, like any other "real" programming language.
 
 #### News folder
 
@@ -93,6 +104,8 @@ we can write (anywhere in the page but it's more readable at the beginning):
     <genit class="css" file="foo.css" />
 
 #### Templates folder
+
+Ce sont les parties qu'on retrouve sur toutes les pages du site.
 
 Only written in .html.
 For now, there is only one template.

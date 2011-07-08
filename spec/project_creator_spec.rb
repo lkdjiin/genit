@@ -29,6 +29,10 @@ describe ProjectCreator do
       File.exist?('spec/project-name/news').should == true
     end
     
+    it "should create a fragments folder" do
+      File.exist?('spec/project-name/fragments').should == true
+    end
+    
     it "should create a pages folder" do
       File.exist?('spec/project-name/pages').should == true
     end

@@ -21,7 +21,7 @@ module Genit
     def create
       begin
 				FileUtils.makedirs @name
-        create_dirs ['news', 'pages', 'scripts', 'styles', 'templates', 'www']
+        create_dirs ['fragments', 'news', 'pages', 'scripts', 'styles', 'templates', 'www']
         create_dirs ['styles/alsa', 'styles/yui', 'styles/images']
         copy_files ['templates/main.html', 'templates/menu.html',
                     'pages/index.html', 'styles/handheld.css', 'styles/print.css',
