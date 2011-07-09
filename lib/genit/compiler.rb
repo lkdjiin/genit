@@ -32,13 +32,13 @@ module Genit
     
     def compile_page
       pc = PageCompiler.new @working_dir, @filename
-      @template = pc.compile
+      @page = pc.compile
       save_file_as_html
     end
     
     def save_file_as_html
       doc_writer = DocumentWriter.new @working_dir
-      doc_writer.save_as_html @template, @filename
+      doc_writer.save_as_html @page, @filename
     end
     
   end

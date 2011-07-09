@@ -17,20 +17,35 @@ module Genit
       Nokogiri::HTML(File.open(file))
     end
     
-    # Public: Open a html or markdown file as a string.
+    # Public: Open a file as a string.
     #
     # file - Full path String name of a html or markdown file.
     #
     # Returns a String.
     def self.open_as_string file
       string = IO.read file
-      string = BlueCloth.new(string).to_html if file.end_with? '.markdown'
+      string = BlueCloth.new(string).to_html if file.end_with? '.markdown' # TODO faire une classe Markdown
       string
+    end
+    
+    # Public: Open a file as a string, taking care of fragment tags.
+    # All fragment tags are replaced by a new content.
+    #
+    # file - Full path String name of a html or markdown file.
+    #
+    # Returns a String.
+    def self.build_page_content file, working_dir
+      # TODO éviter le working_dir
+      if file.end_with? '.markdown'
+        BlueCloth.new(IO.read(file)).to_html # TODO faire une classe Markdown
+      else
+        Fragment.new(file, working_dir).to_html
+      end
     end
     
     # Public: Get the list of <genit> tag in a document.
     #
-    # file - Nokogiri::HTML document.
+    # file - Nokogiri::HTML or Nokogiri::XML document.
     #
     # Returns a list of Nokogiri::XML::NodeSet.
     def self.genit_tags_from file

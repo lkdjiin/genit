@@ -8,6 +8,7 @@ require 'genit/document_writer'
 require 'genit/compiler'
 require 'genit/page_compiler'
 require 'genit/builder'
+require 'genit/fragment'
 
 module Genit
 end

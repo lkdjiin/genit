@@ -37,9 +37,9 @@ module Genit
     
     # Remplace la page au sein du template
     def tag_pages
-      @page_content = HtmlDocument.open_as_string(File.join(@working_dir, 'pages', @filename))
+      page_content = HtmlDocument.open_as_string(File.join(@working_dir, 'pages', @filename))
       builder = Builder.new(@template)
-      @template = builder.replace('genit.pages', @page_content)
+      @template = builder.replace('genit.pages', page_content)
     end
     
     def tag_menu
