@@ -9,6 +9,11 @@ describe Fragment do
     fragment.to_html.start_with?('<h1>title</h1>').should be_true
   end
   
+  it "should replace one fragment tag in markdown" do
+    fragment = Fragment.new("spec/test-files/fragment3.html", 'spec/test-files')
+    fragment.to_html.start_with?('<h1>title</h1>').should be_true
+  end
+  
   it "should replace some fragment tags" do
     fragment = Fragment.new("spec/test-files/fragment2.html", 'spec/test-files')
     fragment.to_html.should == ("<p>ab\ncd\ne</p>\n")
