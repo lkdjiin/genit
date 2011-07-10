@@ -1,13 +1,14 @@
 # -*- encoding: utf-8 -*-
 
-require 'nokogiri'
-require 'bluecloth'
-
 module Genit
 
-  
+  # Replace each fragment in a page.
   class Fragment
   
+    # Public: Constructor.
+    #
+    # file        - Full String filename of the page.
+    # working_dir - The String working directory, where live the project.
     def initialize file, working_dir
       @page = XmlDocument.open file
       @working_dir = working_dir
@@ -20,6 +21,9 @@ module Genit
       end
     end
     
+    # Public: Get the page in html format.
+    #
+    # Returns the html code of the page as a String.
     def to_html
       @page.to_html
     end
