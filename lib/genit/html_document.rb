@@ -34,7 +34,7 @@ module Genit
     # file - Full path String name of a html or markdown file.
     #
     # Returns a String.
-    def self.build_page_content file, working_dir
+    def self.build_page_content(file, working_dir)
       # TODO éviter le working_dir
       if file.end_with? '.markdown'
         BlueCloth.new(IO.read(file)).to_html # TODO faire une classe Markdown

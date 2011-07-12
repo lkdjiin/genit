@@ -19,10 +19,13 @@ module Genit
     # document - A Nokogiri::HTML or Nokogiri::XML document
     # filename - The String name of the future saved document
     def save_as_html document, filename
-      filename.gsub! /\.markdown$/, '.html'
-      File.open(File.join(@working_dir, 'www', filename), "w") do |out| 
-        out.puts document.to_html
-      end
+      FileWriter.write document.to_html, get_full_path(filename.force_html_extension)
+    end
+    
+    private
+    
+    def get_full_path filename
+      File.join(@working_dir, 'www', filename)
     end
     
   end
