@@ -24,8 +24,11 @@ module Genit
     # Returns a String.
     def self.open_as_string file
       string = IO.read file
-      string = BlueCloth.new(string).to_html if file.end_with? '.markdown' # TODO faire une classe Markdown
-      string
+      if file.markdown_ext?
+        BlueCloth.new(string).to_html 
+      else
+        string
+      end
     end
     
     # Public: Open a file as a string, taking care of fragment tags.
@@ -36,8 +39,8 @@ module Genit
     # Returns a String.
     def self.build_page_content(file, working_dir)
       # TODO éviter le working_dir
-      if file.end_with? '.markdown'
-        BlueCloth.new(IO.read(file)).to_html # TODO faire une classe Markdown
+      if file.markdown_ext?
+        BlueCloth.new(IO.read(file)).to_html
       else
         Fragment.new(file, working_dir).to_html
       end

@@ -21,5 +21,15 @@ describe "Standard class String extensions" do
     string.force_html_extension!
     string.should == "file.txt"
   end
+  
+  it "should say if it has a markdown file extension" do
+    string = "file.markdown"
+    string.markdown_ext?.should be_true
+  end
+  
+  it "should say if it has not a markdown file extension" do
+    string = "file.other"
+    string.markdown_ext?.should be_false
+  end
 
 end

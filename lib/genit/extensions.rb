@@ -10,4 +10,8 @@ class String
     self.gsub! /markdown$/, 'html'
   end
   
+  def markdown_ext?
+    self.end_with?('.markdown')
+  end
+  
 end
