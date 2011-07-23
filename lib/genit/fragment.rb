@@ -10,7 +10,7 @@ module Genit
     # file        - Full String filename of the page.
     # working_dir - The String working directory, where live the project.
     def initialize file, working_dir
-      @page = XmlDocument.open(file)
+      @page = HtmlDocument.open_fragment file
       @working_dir = working_dir
       HtmlDocument.genit_tags_from(@page).each do |tag|
         case tag['class']

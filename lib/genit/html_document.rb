@@ -8,13 +8,25 @@ module Genit
   # Open an html file in various format.
   class HtmlDocument
   
-    # Public: Open a html document.
+    # Public: Open an entire html document.
+    # If the file does not contain a <bogy> tag, a doctype, etc, they will be
+    # automatically added.
     #
     # file - Full path String filename.
     #
     # Returns a Nokogiri::HTML document.
     def self.open file
       Nokogiri::HTML(File.open(file))
+    end
+    
+    # Public: Open a fragment of html document.
+    #
+    # file - Full path String filename.
+    #
+    # Returns a Nokogiri::HTML document.
+    def self.open_fragment file
+      string = IO.read file
+      Nokogiri::HTML.fragment string
     end
     
     # Public: Open a file as a string.
