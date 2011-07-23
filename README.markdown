@@ -2,7 +2,9 @@ Genit
 ================
 
 Genit builds a **static web site**, that is a web site without server side programing language
-and database. A site consists only of xhtml code (+ css and medias) and eventually of javascript.
+and database. A genit site consists only of xhtml code (+ css, medias and eventually javascript).
+
+There is no needs to know the Ruby language.
 
 The project is in early development stage, see
 [project guidelines](https://github.com/lkdjiin/genit/blob/master/project_guidelines.markdown).
@@ -37,6 +39,7 @@ First install ruby and rubygem (if there are not installed on your system) then:
 
     gem install genit
 
+All other dependencies will be downloaded and installed automatically.
 
 Usage
 --------------------------

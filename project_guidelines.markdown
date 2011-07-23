@@ -24,7 +24,7 @@ Implementation
 
 We use the following command line :
 
-    genit create mmy-site
+    genit create my-site
     cd my-site
 
 #### Project structure
@@ -58,7 +58,7 @@ Here we are some fragments, pieces of page.
 
 A fragment can be included in any page you want.
 
-Thinking in page fragment help to modularize the xthml code, like any other "real" programming language.
+Thinking in page fragment help to modularize the xthml code, like any other "real" programing language.
 
 #### News folder
 
@@ -75,18 +75,14 @@ no problem.
 #### Pages folder
 
 All site pages are in this folder. Written in .html or .markdown.
-Pages could include subpages.
-
-    <reflexion>
-    Pour inclure une page dans une page, on pourrait avoir un dossier "subpages" et
-    utiliser une ligne du genre : <genit class="subpage" file="foo.html" />
-    </refexion>
-
 
 
 #### Scripts folder
 
-I think to include prototype and scriptaculous by default.
+I think to include prototype and scriptaculous by default, but:
+
+  * If you don't want to use javascript, don't use it.
+  * You can use any framework you want.
 
 To include a script in the `<head></head>` tag of a particular page,
 we can write (anywhere in the page but it's more readable at the beginning):
@@ -105,10 +101,10 @@ we can write (anywhere in the page but it's more readable at the beginning):
 
 #### Templates folder
 
-Ce sont les parties qu'on retrouve sur toutes les pages du site.
+This is the wrapper(s) for all your site pages. Other frameworks may call it 'layout'.
 
 Only written in .html.
-For now, there is only one template.
+For now, there is only two templates: the 'main.html' and the 'menu.html'.
 
 To include a page in the template:
 
