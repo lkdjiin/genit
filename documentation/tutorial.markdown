@@ -95,7 +95,7 @@ much cleaner than html syntax. Why not using markdown ?
 
 Edit the index.html page as follow:
 
-    `<genit class="fragment" file="index_content.markdown"/>`
+    <genit class="fragment" file="index_content.markdown"/>
     <genit class="fragment" file="footer.html"/>
 
 Then add this `index_content.markdown` file in the fragments/ folder:
