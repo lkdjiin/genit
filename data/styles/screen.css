@@ -1,1 +1,26 @@
-/* Write your rules */
+/* Delete this content and write your own rules */
+
+body {
+width:600px;
+margin:0 auto;
+font-family: Arial, Helvetica, FreeSans, sans-serif;
+}
+
+#menu { display:none;}
+
+p {
+font-size:1.2em;
+color:#555;
+}
+
+p:hover {color:#001;}
+
+p:hover a {
+background-color:#001 !important;
+color:white !important;
+text-decoration:none !important;
+}
+
+a {
+color:#334 !important;
+}
