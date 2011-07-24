@@ -50,9 +50,7 @@ Usage
 
     genit compile
 
-[Get started](documentation/tutorial.markdown) 
-
-[User documentation](documentation/index.markdown)
+See the wiki for user documentation and a tutorial.
 
 
 Dependencies
