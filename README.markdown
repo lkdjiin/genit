@@ -61,6 +61,7 @@ Dependencies
   * ruby >= 1.9.2
   * nokogiri (xml parser)
   * bluecloth (markdown parser)
+  * clamp (command line utility)
 
 ### Contributors dependencies
 
