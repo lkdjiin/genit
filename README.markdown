@@ -50,8 +50,9 @@ Usage
 
     genit compile
 
-Take a look at the [tutorial](https://github.com/lkdjiin/genit/blob/master/documentation/tutorial.markdown) 
-for more information.
+[Get started](https://github.com/lkdjiin/genit/blob/master/documentation/tutorial.markdown) 
+
+[User documentation](https://github.com/lkdjiin/genit/blob/master/documentation/index.markdown)
 
 
 Dependencies
