@@ -13,8 +13,8 @@ describe ProjectCreator do
     clean_test_repository
   end
   
-  describe "Folder structure" do
-
+  describe "Project folder" do
+    
     it "should create a project folder" do
       File.exist?('spec/project-name').should == true
     end
@@ -24,6 +24,14 @@ describe ProjectCreator do
       $stdout.should_receive(:puts).with("Cannot create project...")
       project.create
     end
+    
+    it "should create a project file" do
+      File.exist?('spec/project-name/.genit').should == true
+    end
+    
+  end
+  
+  describe "Folder structure" do
 
     it "should create a news folder" do
       File.exist?('spec/project-name/news').should == true

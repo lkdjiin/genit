@@ -19,7 +19,7 @@ describe Compiler do
       file.puts content
     end
   end
-
+  
   it "should build an index.html page in www" do
     @compiler.compile
     File.exist?('spec/project-name/www/index.html').should == true
@@ -31,7 +31,7 @@ describe Compiler do
     File.exist?('spec/project-name/www/index.html').should == true
     File.exist?('spec/project-name/www/doc.html').should == true
   end
-  
+    
   it "should copy the styles/ into www/" do
     File.exist?('spec/project-name/www/styles/screen.css').should be_true
   end
@@ -40,6 +40,12 @@ describe Compiler do
     @compiler.compile
     doc = Nokogiri::HTML(File.open("spec/project-name/www/index.html"))
     doc.at_css("ul#menu a#selected")['href'].should == 'index.html'
+  end
+  
+  it "should take care of the hidden project file" do
+    compiler = Compiler.new File.expand_path('.')
+    $stdout.should_receive(:puts).with("Not a genit project folder")
+    compiler.compile
   end
   
 end

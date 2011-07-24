@@ -16,11 +16,23 @@ module Genit
   
     # Public: Compile the web site.
     def compile
-      compile_pages
-      FileUtils.cp_r File.join(@working_dir, 'styles'), File.join(@working_dir, 'www')
+      if genit_project_folder?
+        compile_site
+      else
+        puts 'Not a genit project folder'
+      end
     end
     
     private
+    
+    def genit_project_folder?
+      File.exist?(File.join(@working_dir, '.genit'))
+    end
+    
+    def compile_site
+      compile_pages
+      FileUtils.cp_r File.join(@working_dir, 'styles'), File.join(@working_dir, 'www')
+    end
     
     def compile_pages
       Dir.foreach(File.join(@working_dir, 'pages')) do |file|
