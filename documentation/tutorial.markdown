@@ -1,8 +1,16 @@
 Genit Tutorial
 ==============
 
+Install
+---------------------------------------
+
+
+Smoke Test
+---------------------------------------
+
+
 Create Your Project
--------------------
+---------------------------------------
 
 On the command line, type:
 
@@ -42,7 +50,7 @@ Edit this file as follow:
     </ul>
 
 Compile your project
---------------------
+----------------------------------------------------
 
 Now you have to 'compile' your site before seeing the result.
 
@@ -57,7 +65,7 @@ Congratulations ! You have made your first project using genit.
 
 
 Refactor your project
-----------------------
+--------------------------------------------------
 
 The two pages (index.html and about.html) have the same structure. Especially the footer
 section are identical. Let's refactor that.
@@ -88,7 +96,7 @@ and go to the www/ folder then open the index.html with your browser.
 
 
 Using Markdown
---------------
+-------------------------------------------------
 
 If a part a page doesn't need to use html tag attributes (id an class), markdown syntax is
 much cleaner than html syntax. Why not using markdown ?
@@ -111,7 +119,7 @@ Now recompile your project with `genit cc` before being able to view the change.
 
 
 Styling your site
------------------
+--------------------------------------------------------------
 
 Edit the styles/screen.css file as follow:
 
