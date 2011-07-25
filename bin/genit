@@ -26,12 +26,13 @@ $LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
 $GENIT_PATH = File.expand_path(File.dirname(__FILE__)) + '/..'
 
 require 'genit'
+require 'clamp'
 include Genit
 
 module Genit
 
   class AbstractCommand < Clamp::Command
-
+    
     option ['-v', '--version'], :flag, "print version" do
       puts "genit #{File.read('VERSION').strip}"
       exit 0
