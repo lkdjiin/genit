@@ -1,4 +1,15 @@
-v0.3  2001-07-23
+v0.4  2011-07-25
+
+  * better smoke test
+  
+  * basic user documentation 
+  
+  * genit use a simple project file
+  
+  * use clamp as a command line framework 
+  
+
+v0.3  2011-07-23
 
   * You can split a page in a multitude of fragments.
 
