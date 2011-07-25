@@ -25,11 +25,11 @@ because **xml can do it well**.
 
 For example, to generate the xhtml including the 4 latest news:
 
-    <generate class="news" number="4" />
+    <genit class="news" number="4" />
 
 And more simply, to generate the footer:
 
-    <generate class="footer" />
+    <genit class="footer" />
 
 
 Install
