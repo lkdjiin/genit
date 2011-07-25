@@ -28,26 +28,45 @@ $GENIT_PATH = File.expand_path(File.dirname(__FILE__)) + '/..'
 require 'genit'
 include Genit
 
-def usage
-  puts %q{usage: genit command
+module Genit
 
-where command is:
-  create project-name
-  compile | cc}
-end
+  class AbstractCommand < Clamp::Command
 
-case ARGV[0]
-  when "create"
-    case ARGV[1]
-      when /\w/
-        project = ProjectCreator.new ARGV[1]
-        project.create
-      else
-        usage
+    option ['-v', '--version'], :flag, "print version" do
+      puts "genit #{File.read('VERSION').strip}"
+      exit 0
     end
-  when "compile", "cc"
-    compiler = Compiler.new Dir.getwd
-    compiler.compile
-  else
-    usage
+
+  end
+  
+  class CreateCommand < AbstractCommand
+  
+    parameter "NAME", "the name of the project", :attribute_name => :project_name
+
+    def execute
+      project = ProjectCreator.new project_name
+      project.create
+    end
+    
+  end
+  
+  class CompileCommand < AbstractCommand
+
+    def execute
+      compiler = Compiler.new Dir.getwd
+      compiler.compile
+    end
+    
+  end
+  
+  class MainCommand < AbstractCommand
+    
+    subcommand "create", "Create a project.", CreateCommand
+    subcommand "compile", "Compile the web site.", CompileCommand
+    subcommand "cc", "Compile the web site.", CompileCommand
+
+  end
+
 end
+
+Genit::MainCommand.run
