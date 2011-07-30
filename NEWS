@@ -1,3 +1,8 @@
+v0.4.1  2011-07-30
+
+  * Fix a bug where the closing part of auto-closing tags were forgotten.
+
+
 v0.4  2011-07-25
 
   * better smoke test
