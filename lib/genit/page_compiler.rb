@@ -14,7 +14,7 @@ module Genit
     def initialize working_dir, filename
       @working_dir = working_dir
       @filename = filename
-      @template = HtmlDocument.open(File.join(@working_dir, 'templates/main.html'))
+      @template = XmlDocument.open(File.join(@working_dir, 'templates/main.html'))
     end
     
     # Public: Compile the page.

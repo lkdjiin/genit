@@ -14,12 +14,12 @@ module Genit
       @working_dir = working_dir
     end
     
-    # Save the document as an html file.
+    # Save the document as an xhtml file.
     #
     # document - A Nokogiri::HTML or Nokogiri::XML document
     # filename - The String name of the future saved document
-    def save_as_html document, filename
-      FileWriter.write document.to_html, get_full_path(filename.force_html_extension)
+    def save_as_xhtml document, filename
+      FileWriter.write document.to_xhtml, get_full_path(filename.force_html_extension)
     end
     
     private
