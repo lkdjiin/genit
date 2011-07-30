@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Genit - Open Source Static Web Framework</title>
+<link rel="stylesheet" type="text/css" media="all" href="styles/alsa/all.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="styles/grid.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css" />
+<link rel="stylesheet" type="text/css" media="print" href="styles/print.css" />
+</head>
+<body>
+
+  <div id="header">
+      <div class="row">
+        <div class="column grid_4"><h1>GENIT</h1></div>
+        <div class="column grid_12"><ul id="menu">
+  <li><a href="index.html" id="selected">Home</a></li>
+  <li><a href="overview.html">Overview</a></li>
+  <li><a href="download.html">Download</a></li>
+  <li><a href="documentation.html">Documentation</a></li>
+  <li><a href="about.html">About</a></li>
+</ul>
+</div>
+      </div>
+  </div>
+    
+  <div id="page_title">
+  <div class="row">
+      <div class="column grid_16">
+        <h1>Open source static web framework</h1>
+      </div>
+    </div>
+</div>
+  
+<div id="main"> 
+    <div class="row">
+      <div class="column grid_12" id="left-side">
+        <div class="article">
+          <h2>Quick overview</h2>
+
+<p>Genit is a command line framework, essentially based on conventions, to build static web site.
+It is designed with readability in mind.
+A simple example, to inject the pages in a template:</p>
+
+<pre><code>    &lt;genit class="pages" /&gt;
+</code></pre>
+
+<p>May be one can say Genit is a XHTML framework...</p>
+</div>
+        <div class="row">
+          <div class="column grid_6">
+            <div class="article">
+  <h2>Genit 0.4.1 released</h2>
+  <p class="date">2011-07-30</p>
+  <p>
+  Fix a bug where the closing part of auto-closing tags were forgotten.
+  <a href="download.html" title="Learn how to download and install Genit">Download it now.</a>
+  </p>
+</div>
+<div class="article">
+  <h2>Genit 0.4 released</h2>
+  <p class="date">2011-07-25</p>
+  <p>
+  This is mostly an internal maintenance realease, including a better smoke test,
+  basic user documentation and a better command-line usage.
+  </p>
+</div>
+<div class="article">
+  <h2>Genit in the real world</h2>
+  <p>
+  The Genit framework is a very young one, but hey, it works !<br /><strong>Want a proof ?</strong> You are just reading a web site made with Genit.
+  </p>
+</div>
+</div>
+          <div class="column grid_6">
+            <div class="article">
+  <h2>Quick Install</h2>
+  
+  <pre><code>
+    gem install genit
+  </code></pre>
+  <p>
+  Genit is a Ruby application, meaning you need a Ruby interpreter to be able to run it.
+  <a href="download.html">See installation details</a>.
+  </p>
+  
+</div>
+<div class="article">
+  <h2>Usage</h2>
+  <pre><code>
+        genit create my-test-site
+        cd my-test-site
+  </code></pre>
+  <p>
+  <em>(at this point edit the home page or create some more pages)</em> 
+  </p>
+  <pre><code>
+        genit compile
+  </code></pre>
+  <p>
+  Now go to the <code>my-test-site/www/</code> folder and double-click the index.html to view
+  your new site.
+  </p>
+</div>
+</div>
+        </div>
+      </div>
+      <div class="column grid_4">
+        <div class="right-side-section">
+<h2>Quick links</h2>
+
+<p><a href="documentation.html">Get started</a></p>
+
+<p><a href="download.html">Install</a></p>
+
+<p><a href="https://github.com/lkdjiin/genit/issues">Issue tracker</a></p>
+
+<p><a href="https://github.com/lkdjiin/genit/wiki">Wiki</a></p>
+
+<p><a href="https://github.com/lkdjiin/genit">Sources on GitHub</a></p>
+
+<p><a href="about.html">Who is behind that ?</a></p>
+
+<p><a href="news.html">All news</a></p>
+</div>
+        <div class="right-side-section">
+<h2>Licenses</h2>
+
+<p>Genit is a free, open source software licensed under
+the <a href="licences.html">Expat license</a> (also known as the MIT license).</p>
+</div>
+      </div>
+    </div>
+</div>
+  
+  <div class="row" id="footer">
+    <div class="column grid_16"><p>Copyright 2011 Xavier Nayrac</p></div>
+  </div>
+  
+</body>
+</html>

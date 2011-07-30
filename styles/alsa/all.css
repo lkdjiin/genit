@@ -1,0 +1,128 @@
+/* --- STYLES DE BASE ---
+ * 
+ * from alsacréations:
+ * http://www.alsacreations.com/astuce/lire/654-feuille-de-styles-de-base.html
+ */
+ 
+/* Page */ 
+html { 
+  font-size: 100%; /* Évite un bug d'IE 6-7. (1) */ 
+} 
+body { 
+  padding:0; 
+  font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+  font-size: 1em; /* À adapter pour la police choisie. (3) */ 
+  line-height: 1.3; /* À adapter au design. (4) */ 
+  color: black; 
+  background: white; 
+} 
+ 
+/* Titres */ 
+h1, h2, h3, h4, h5, h6 { 
+  margin: 1em 0 .5em 0; /* Rapproche le titre du texte. (5) */ 
+  line-height: 1.2; 
+  font-weight: bold; /* Valeur par défaut. (6) */ 
+  font-style: normal; 
+} 
+h1 { 
+  font-size: 1.40em; 
+} 
+h2 { 
+  font-size: 1.15em; 
+} 
+h3 { 
+  font-size: 1em; 
+} 
+h4 { 
+  font-size: 1em; 
+} 
+ 
+/* Listes */ 
+ul, ol { 
+  margin: .75em 0 .75em 32px; 
+  padding: 0; 
+} 
+ 
+/* Paragraphes */ 
+p { 
+  margin: .75em 0; /* Marges plus faibles que par défaut. (7) */ 
+} 
+address { 
+  margin: .75em 0; 
+  font-style: normal; 
+} 
+ 
+/* Liens */ 
+a { 
+  text-decoration: underline; 
+} 
+a:link { 
+  color: #11C; 
+} 
+a:visited { 
+  color: #339; 
+} 
+a:hover, a:focus, a:active { 
+  color: #00F; 
+} 
+ 
+/* Pas de bordure autour des images dans les liens */ 
+a img { 
+  border: none; 
+} 
+ 
+/* Divers éléments de type en-ligne (8) */ 
+em { 
+  font-style: italic; 
+} 
+strong { 
+  font-weight: bold; 
+} 
+ 
+/* Formulaires */ 
+form, fieldset { 
+  margin: 0; 
+  padding: 0; 
+  border: none; 
+} 
+input, button, select { 
+  vertical-align: middle; /* Solution pb. d'alignement. (9) */ 
+}
+
+/*
+ * 1. Bug décrit sur la page suivante: Bug avec l’unité relative em et Internet Explorer.
+ * 
+ * 2. Pour un choix de collections de polices (font-family, voir Quelles polices de caractères 
+ *    (fontes) utiliser sur le Web?.
+ * 
+ * 3. Ici, on utilise les styles de l'élément body pour définir la taille du texte globale pour le 
+ *    site. Une police Arial ou Helvetica à .8em, soit 80% de la taille du texte par défaut du 
+ *    navigateur, fournit une bonne lisibilité. Il faudra adapter cette valeur suivant la police 
+ *    choisie, les besoins du design, etc.
+ * 
+ * 4. Les valeurs 1.1 et 1.2 conviennent marchent bien pour les titres, voire pour le texte dans des 
+ *    colonnes étroites. Pour des lignes de texte plus longues, on utilisera plutôt des valeurs 
+ *    entre 1.2 (120%) et 1.8 (180%).
+ * 
+ * 5. Avec les styles par défaut des navigateurs, les titres ont souvent une marge supérieure et une 
+ *    marge inférieure égales. Du coup, on ne reconnait pas au premier coup d'œil que le titre se 
+ *    rapporte au texte qui le suit. Le style proposé corrige ce défaut. Pour retrouver le style par 
+ *    défaut des navigateurs, utilisez un margin: 1em 0;.
+ * 
+ * 6. Dans les styles par défaut des navigateurs, les titres sont en gras. Si vous souhaitez une 
+ *    graisse normale pour la plupart de vos titres, utilisez plutôt font-weight: normal.
+ * 
+ * 7. On utilise des em afin que les marges des paragraphes soient proportionnelles à la taille du 
+ *    texte, ce que ne font pas tous les navigateurs (notamment IE). On utilise une valeur de .75em, 
+ *    soit des retraits entre les paragraphes un peu plus faibles que ceux utilisés par défaut par 
+ *    les navigateurs. À modifier selon vos besoins.
+ * 
+ * 8. Ces styles correspondent aux valeurs par défaut des navigateurs, mais vous voudrez peut-être 
+ *    les modifier pour votre projet.
+ * 
+ * 9. Les éléments de formulaires sont assez difficiles à mettre en forme et à positionner. De plus, 
+ *    l'alignement vertical des boutons, cases à cocher et autres listes déroulantes est parfois 
+ *    difficile à gérer. Vu les différences de comportement entre navigateurs, il n'y a pas de 
+ *    solution parfaite, mais utiliser un alignement vertical centré dans la hauteur de ligne permet 
+ *    d'avoir un rendu décent avec tous les navigateurs.
+ */

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Genit - Open Source Static Web Framework</title>
+<link rel="stylesheet" type="text/css" media="all" href="styles/alsa/all.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="styles/grid.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css" />
+<link rel="stylesheet" type="text/css" media="print" href="styles/print.css" />
+</head>
+<body>
+
+  <div id="header">
+      <div class="row">
+        <div class="column grid_4"><h1>GENIT</h1></div>
+        <div class="column grid_12"><ul id="menu">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="overview.html" id="selected">Overview</a></li>
+  <li><a href="download.html">Download</a></li>
+  <li><a href="documentation.html">Documentation</a></li>
+  <li><a href="about.html">About</a></li>
+</ul>
+</div>
+      </div>
+  </div>
+    
+  <div id="page_title">
+  <div class="row">
+      <div class="column grid_16">
+        <h1>Framework overview</h1>
+      </div>
+    </div>
+</div>
+  
+<div id="main"> 
+    <div class="row">
+      <div class="column grid_12" id="left-side">
+        <div class="article">
+<h2 id="what">What is Genit ?</h2>
+
+<p>
+Genit aims to build <strong>static web sites</strong>.
+By static, I mean a web site without server side programing language or database management system.
+A site for Genit consists only of xhtml code (+ css and medias) and eventually of javascript code.
+</p>
+
+<p>
+The Genit project is a very young one. I started it in June 2011, and I work on it only in my
+spare time. So don't expect a major release every week ! 
+Take a look at this <a href="https://github.com/lkdjiin/genit/issues">Issues Tracker</a> GitHub 
+pages to know what is coming next.
+</p>
+</div>
+        <div class="article">
+<h2 id="description">Description</h2>
+
+<p>
+Genit is a command line framework, essentially based on conventions. It should be:
+</p>
+<ol><li><strong>Readable</strong></li>
+  <li><strong>Simple</strong></li>
+  <li><strong>Minimalist</strong></li>
+</ol><p>
+Genit is based on the idea that <em>we don't have</em> to learn any new languages to manage templates,
+layouts and pages because <strong>XML can do it very well</strong>.
+</p>
+
+<p>
+For example, to generate the xhtml including the 4 latest news:
+</p>
+<pre><code> &lt;genit class="news" number="4" /&gt;</code></pre>  
+<p>
+And more simply, to generate the footer:
+</p>
+<pre><code> &lt;genit class="footer" /&gt;</code></pre>
+</div>
+        <div class="article">
+<h2 id="why">why such a framework ?</h2>
+<p>
+<strong>A static website nowadays, is it a joke?</strong><br />
+No, it isn't, I'm very serious! Some websites, like GitHub, provide free hosting space, but only for static web 
+pages, no DBMS, no PHP, nothing more than HTML.
+</p>
+<p>
+There are many good solutions around but none of them suits my needs perfectly.
+As I would professionally need such a framework in the coming months and
+develop this type of application with Ruby is a real pleasure, I started the Genit project...
+</p>
+</div>
+        <div class="article">
+<h2 id="dependencies">Dependencies</h2>
+<p>
+Genit is written in the Ruby language. What this means is you have to <a href="#">install</a> the Ruby interpreter
+on your system (if it's not already done). But <strong>you don't have to know the Ruby language</strong> because when
+making web site with Genit, there is no Ruby programming.
+</p>
+
+<p>
+A web server, like Apache, is not required but could be of some help.
+</p>
+</div>
+      </div>
+      <div class="column grid_4">
+        <div class="right-side-section">
+<h2>Quick links</h2>
+
+<p><a href="documentation.html">Get started</a></p>
+
+<p><a href="download.html">Install</a></p>
+
+<p><a href="https://github.com/lkdjiin/genit/issues">Issue tracker</a></p>
+
+<p><a href="https://github.com/lkdjiin/genit/wiki">Wiki</a></p>
+
+<p><a href="https://github.com/lkdjiin/genit">Sources on GitHub</a></p>
+
+<p><a href="about.html">Who is behind that ?</a></p>
+
+<p><a href="news.html">All news</a></p>
+</div>
+        <div class="right-side-section">
+<h2>Licenses</h2>
+
+<p>Genit is a free, open source software licensed under
+the <a href="licences.html">Expat license</a> (also known as the MIT license).</p>
+</div>
+      </div>
+    </div>
+</div>
+  
+  <div class="row" id="footer">
+    <div class="column grid_16"><p>Copyright 2011 Xavier Nayrac</p></div>
+  </div>
+  
+</body>
+</html>
