@@ -62,7 +62,7 @@ module Genit
     #
     # file - Nokogiri::HTML or Nokogiri::XML document.
     #
-    # Returns a list of Nokogiri::XML::NodeSet.
+    # Returns Nokogiri::XML::NodeSet.
     def self.genit_tags_from file
       file.css "genit"
     end

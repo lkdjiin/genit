@@ -19,24 +19,44 @@ module Genit
     
     # Public: Compile the page.
     #
-    # Returns a Nokogiri::HTML document.
+    # Returns a Nokogiri::XML document.
     def compile
-      genit_tags = HtmlDocument.genit_tags_from @template
-      genit_tags.each {|tag| process_tag tag }
+      genit_tags_in_template.each {|tag| process_tag tag }
       @template
     end
     
     private
     
+    # Returns all <genit> tags found in the template.
+    def genit_tags_in_template
+      HtmlDocument.genit_tags_from @template
+    end
+    
     def process_tag tag
-      case tag['class']
-        when 'pages' then tag_pages
-        when 'menu' then tag_menu
+      if tag['class']
+        tag_class tag['class']
+      elsif tag['var']
+        tag_var tag['var']
       end
     end
     
+    def tag_class tag_value
+      case tag_value
+        when 'pages' then process_tag_pages
+        when 'menu' then process_tag_menu
+      end
+    end
+    
+    def tag_var tag_value
+      filename = File.join(@working_dir, 'pages', @filename)
+      doc = HtmlDocument.open filename
+      value = doc.at_css("genit[var='#{tag_value}']").inner_html
+      builder = Builder.new(@template)
+      @template = builder.replace("genit[var='#{tag_value}']", value)
+    end
+    
     # Remplace la page au sein du template
-    def tag_pages
+    def process_tag_pages
       builder = Builder.new(@template)
       @template = builder.replace('genit.pages', page_content)
     end
@@ -46,7 +66,7 @@ module Genit
       HtmlDocument.build_page_content filename, @working_dir
     end
     
-    def tag_menu
+    def process_tag_menu
       build_menu
       replace_menu_into_template
     end
