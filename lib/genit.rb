@@ -10,6 +10,10 @@ require 'genit/compiler'
 require 'genit/page_compiler'
 require 'genit/builder'
 require 'genit/fragment'
+require 'genit/tag_processor'
+require 'genit/tag'
+require 'genit/var_tag'
+require 'genit/class_tag'
 
 module Genit
 end
