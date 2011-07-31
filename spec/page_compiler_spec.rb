@@ -19,7 +19,17 @@ describe PageCompiler do
     create_sample_project
     pc = PageCompiler.new 'spec/project-name/', 'index.html'
     doc = pc.compile
+    
     doc.at_css('h1').inner_html.should == 'My Title'
+  end
+  
+  it "should not delete the tag from page when a var is subsituted" do
+    create_sample_project
+    pc = PageCompiler.new 'spec/project-name/', 'index.html'
+    doc = pc.compile
+    
+    page = IO.read 'spec/project-name/pages/index.html'
+    page.match('<genit var="title">My Title</genit>').should_not == nil
   end
 
 end

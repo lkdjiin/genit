@@ -8,5 +8,10 @@ describe XmlDocument do
     doc = XmlDocument.open("data/templates/menu.html")
     doc.css("ul#menu li").size.should >= 1
   end
+  
+  it "should load as a fragment" do
+    doc = XmlDocument.open_fragment("data/templates/menu.html")
+    doc.css("ul#menu li").size.should >= 1
+  end
 
 end
