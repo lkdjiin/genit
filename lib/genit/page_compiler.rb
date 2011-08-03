@@ -23,6 +23,8 @@ module Genit
         tp = TagProcessor.new(@working_dir, @template, @filename, tag)
         @template = tp.process
       end
+      #~ builder = HeadLinkBuilder.new @template
+      #~ @template = builder.build_for_page @filename
       @template
     end
     

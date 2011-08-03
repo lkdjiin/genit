@@ -4,7 +4,7 @@ require 'nokogiri'
 
 module Genit
 
-  # Build a document from various sources.
+  # Build a document, that may be a fragment, from various sources.
   class Builder
   
     # Public: Constructor.
@@ -28,29 +28,6 @@ module Genit
     def replace css_rule, replacement
       tag = @document.at_css(css_rule)
       tag.replace replacement
-      @document
-    end
-    
-    # Public: Mark the <a> element of the menu that is selected (the displayed 
-    # page).
-    #
-    # page_name - The String filename of the page
-    #
-    # Examples
-    #
-    #   menu = Nokogiri::XML(File.open('menu.html'))
-    #   builder = Builder.new(menu)
-    #   menu = builder.select_menu('index.html')
-    #
-    # Return the updated Nokogiri::XML::Document document.
-    def select_menu page_name
-      tags = @document.css("ul#menu a")
-      tags.each {|tag|
-        if tag['href'] == page_name.gsub(/\.markdown$/, '.html')
-          tag['id'] = 'selected'
-          break
-        end
-      }
       @document
     end
     

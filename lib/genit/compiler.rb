@@ -35,9 +35,9 @@ module Genit
     end
     
     def compile_pages
-      Dir.foreach(File.join(@working_dir, 'pages')) do |file|
-        next if (file == ".") or (file == "..")
-        @filename = file
+      Dir.glob(File.join(@working_dir, 'pages', '**/*')) do |file|
+        next if File.directory?(file)
+        @filename = file.gsub(File.join(@working_dir, 'pages') + '/', '')
         compile_page
       end
     end
