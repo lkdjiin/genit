@@ -19,16 +19,23 @@ module Genit
     #
     # Returns a Nokogiri::XML document.
     def compile
+      compile_body
+      compile_head
+    end
+    
+    private
+    
+    def compile_body
       genit_tags_in_template.each do |tag| 
         tp = TagProcessor.new(@working_dir, @template, @filename, tag)
         @template = tp.process
       end
-      #~ builder = HeadLinkBuilder.new @template
-      #~ @template = builder.build_for_page @filename
-      @template
     end
     
-    private
+    def compile_head
+      builder = HeadLinkBuilder.new @template
+      builder.build_for_page @filename
+    end
     
     # Returns all <genit> tags found in the template.
     def genit_tags_in_template
