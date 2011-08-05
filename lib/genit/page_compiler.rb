@@ -30,6 +30,8 @@ module Genit
         tp = TagProcessor.new(@working_dir, @template, @filename, tag)
         @template = tp.process
       end
+      builder = BodyLinkBuilder.new @template
+      @template = builder.build_for_page @filename
     end
     
     def compile_head
