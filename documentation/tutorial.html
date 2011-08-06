@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Genit - Open Source Static Web Framework</title>
+<link rel="stylesheet" type="text/css" media="all" href="../styles/alsa/all.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../styles/grid.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../styles/screen.css" />
+<link rel="stylesheet" type="text/css" media="print" href="../styles/print.css" />
+</head>
+<body>
+
+  <div id="header">
+      <div class="row">
+        <div class="column grid_4"><h1>GENIT</h1></div>
+        <div class="column grid_12"><ul id="menu">
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../overview.html">Overview</a></li>
+  <li><a href="../download.html">Download</a></li>
+  <li><a href="../documentation/index.html">Documentation</a></li>
+  <li><a href="../about.html">About</a></li>
+</ul>
+</div>
+      </div>
+  </div>
+  
+  <div id="page_title">
+    <div class="row">
+        <div class="column grid_16">
+          <h1>Genit documentation - Get started tutorial</h1>
+        </div>
+      </div>
+  </div>
+  
+  <div id="main"> 
+    <div class="row">
+      <div class="column grid_12" id="left-side">
+        <div class="article">
+  <h2>Install</h2>
+
+<p>First install ruby and rubygem (if there are not installed on your system) then:</p>
+
+<pre><code>gem install genit
+</code></pre>
+
+<p>All other dependencies will be downloaded and installed automatically.</p>
+
+<h2>Create Your Project</h2>
+
+<p>On the command line, type:</p>
+
+<pre><code>genit create my-site
+cd my-site
+</code></pre>
+
+<h3>Edit The Home Page</h3>
+
+<p>All pages go to the pages/ folder. Open the index.html in your favorite editor
+and modify its content as follow:</p>
+
+<pre><code>&lt;h1&gt;Welcome to Genit !&lt;/h1&gt;
+&lt;p&gt;This is my first Genit site.&lt;/p&gt;
+&lt;div id="footer"&gt;
+    &lt;p&gt;copyrighted by me&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3>Add A New Page</h3>
+
+<p>Create a new file in the pages/ folder and name it 'about.html'.
+Copy/paste the following code in that file:</p>
+
+<pre><code>&lt;h1&gt;The About Page&lt;/h1&gt;
+&lt;p&gt;This is a page about me.&lt;/p&gt;
+&lt;div id="footer"&gt;
+  &lt;p&gt;copyrighted by me&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3>Edit The Menu Template</h3>
+
+<p>In the templates/ folder there is a 'menu.html' file. Open it in your editor.
+Edit this file as follow:</p>
+
+<pre><code>&lt;ul id="menu"&gt;
+  &lt;li&gt;&lt;a href="index.html"&gt;home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="about.html"&gt;about&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h2>Compile your project</h2>
+
+<p>Now you have to 'compile' your site before seeing the result.</p>
+
+<pre><code>genit compile
+</code></pre>
+
+<p>There is a shortcut for this command:</p>
+
+<pre><code>genit cc
+</code></pre>
+
+<p>Then go to the www/ folder and open the index.html with your browser.
+Congratulations ! You have made your first project using genit.</p>
+
+<h2>Refactor your project</h2>
+
+<p>The two pages (index.html and about.html) have the same structure. Especially the footer
+section are identical. Let's refactor that.</p>
+
+<p>Create a file named 'footer.html' in the fragments/ folder and copy paste this code into it:</p>
+
+<pre><code>&lt;div id="footer"&gt;
+  &lt;p&gt;copyrighted by me&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Now edit the page index.html as follow:</p>
+
+<pre><code>&lt;h1&gt;Welcome to Genit !&lt;/h1&gt;
+&lt;p&gt;This is my first Genit site.&lt;/p&gt;
+&lt;genit class="fragment" file="footer.html"/&gt;
+</code></pre>
+
+<p>Do the same thing with the page about.html:</p>
+
+<pre><code>&lt;h1&gt;The About Page&lt;/h1&gt;
+&lt;p&gt;This is a page about me.&lt;/p&gt;
+&lt;genit class="fragment" file="footer.html"/&gt;
+</code></pre>
+
+<p>Now, recompile your site with:</p>
+
+<pre><code>genit cc
+</code></pre>
+
+<p>and go to the www/ folder then open the index.html with your browser.</p>
+
+<p>Ok, as the footer will appear in all our pages, we should put it in the template.
+To do so, remove the footer from the pages:</p>
+
+<p>In <code>pages/index.html</code>:</p>
+
+<pre><code>&lt;h1&gt;Welcome to Genit !&lt;/h1&gt;
+&lt;p&gt;This is my first Genit site.&lt;/p&gt;
+</code></pre>
+
+<p>In <code>pages/about.html</code>:</p>
+
+<pre><code>&lt;h1&gt;The About Page&lt;/h1&gt;
+&lt;p&gt;This is a page about me.&lt;/p&gt;
+</code></pre>
+
+<p>And now add it to the template. The template is in the <code>templates/</code> folder, under the
+name main.html.</p>
+
+<p>In <code>templates/main.html</code>:</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;
+    &lt;head&gt;
+        &lt;title&gt;Genit - Static web site framework&lt;/title&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/&gt;
+        &lt;link rel="stylesheet" type="text/css" media="all" href="styles/alsa/all.css" /&gt; 
+        &lt;link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css" /&gt; 
+        &lt;link rel="stylesheet" type="text/css" media="print" href="styles/print.css" /&gt; 
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;genit class="menu" /&gt;
+        &lt;genit class="pages" /&gt;
+        &lt;genit class="fragment" file="footer.html"/&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>Using Markdown</h2>
+
+<p>If a part a page doesn't need to use html tag attributes (id an class), markdown syntax is
+much cleaner than html syntax. Why not using markdown ?</p>
+
+<p>Edit the index.html page as follow:</p>
+
+<pre><code>&lt;genit class="fragment" file="index_content.markdown"/&gt;
+&lt;genit class="fragment" file="footer.html"/&gt;
+</code></pre>
+
+<p>Then add this <code>index_content.markdown</code> file in the fragments/ folder:</p>
+
+<pre><code>Welcome to Genit !  
+==================
+
+This is my first Genit site.
+
+I'm using HTML and markdown !
+</code></pre>
+
+<p>Now recompile your project with <code>genit cc</code> before being able to view the change.</p>
+
+<h2>Styling your site</h2>
+
+<p>Edit the styles/screen.css file as follow:</p>
+
+<pre><code>a#selected { color:red; }
+</code></pre>
+
+<p>Recompile your project with:</p>
+
+<pre><code>genit compile
+</code></pre>
+
+<p>or its shortcut:</p>
+
+<pre><code>genit cc
+</code></pre>
+
+<p>and reopen the index.html with your browser to see what's changed.</p>
+
+<h2>New features in v0.5</h2>
+
+<h3>Pass string variable from page to template</h3>
+
+<p>You can pass strings from a page to the template. As an example,
+suppose the page title is part of your template. In the template you can write:</p>
+
+<pre><code>&lt;h1&gt;&lt;genit var="page_title"/&gt;&lt;/h1&gt;
+</code></pre>
+
+<p>And in each pages you will write:</p>
+
+<pre><code>&lt;genit var="page_title"&gt;My Cool Title&lt;/genit&gt;
+</code></pre>
+
+<p>You can write this everywhere in the page, but it's much readable to put it at the begining of the page.</p>
+
+<h3>Pages subfolders</h3>
+
+<p>You can organize the <code>pages/</code> folder into many subfolders.</p>
+
+<p><strong>All internal links should be relatives to the root folder (the one with index.html).</strong></p>
+
+<p>For example you can have a <code>pages/documentation</code> subfolder with 2 files in it :
+<code>basic-help.html</code> and another one.
+In any page you should refer the <code>basic-help.html</code> as <code>documentation/basic-help.html</code></p>
+</div>
+      </div>
+      <div class="column grid_4">
+        <div class="right-side-section"><h2>Quick links</h2>
+
+<p><a href="../documentation/index.html">Get started</a></p>
+
+<p><a href="../download.html">Install</a></p>
+
+<p><a href="https://github.com/lkdjiin/genit/issues">Issue tracker</a></p>
+
+<p><a href="https://github.com/lkdjiin/genit/wiki">Wiki</a></p>
+
+<p><a href="https://github.com/lkdjiin/genit">Sources on GitHub</a></p>
+
+<p><a href="../about.html">Who is behind that ?</a></p>
+
+<p><a href="../news.html">All news</a></p></div>
+        <div class="right-side-section"><h2>Licenses</h2>
+
+<p>Genit is a free, open source software licensed under
+the <a href="../licences.html">Expat license</a> (also known as the MIT license).</p></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row" id="footer">
+    <div class="column grid_16"><p>Copyright 2011 Xavier Nayrac</p></div>
+  </div>
+  
+</body>
+</html>
