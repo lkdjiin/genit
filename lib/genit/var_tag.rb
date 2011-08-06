@@ -23,13 +23,6 @@ module Genit
     # Returns the template as a Nokogiri::XML::Document
     def process
       replace_tag_into_template! get_css_rule, get_variable_value
-      
-      #~ filename = File.join(@working_dir, 'pages', @filename)
-      #~ page = XmlDocument.open_fragment filename
-      #~ tag = page.at_css("genit[var='#{@tag['var']}']")
-      #~ tag.remove
-      #~ File.open(filename, "w") {|out| out.puts page.to_s }
-      
       @template
     end
     

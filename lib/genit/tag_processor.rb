@@ -19,6 +19,8 @@ module Genit
         @tag = ClassTag.new(@working_dir, @template, @filename, tag)
       elsif tag.genit_var?
         @tag = VarTag.new(@working_dir, @template, @filename, tag)
+      else
+        raise RuntimeError
       end
     end
     

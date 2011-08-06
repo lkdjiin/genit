@@ -9,9 +9,10 @@ module Genit
   
     # Public: Constructor.
     #
-    # menu - A Nokogiri::XML::Document
-    def initialize menu
-      @document = menu
+    # doc - A Nokogiri::XML::Document
+    def initialize doc
+      raise RuntimeError if doc.nil?
+      @document = doc
     end
     
     # Define me in child

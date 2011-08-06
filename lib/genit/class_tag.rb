@@ -3,9 +3,10 @@
 module Genit
 
   # A Genit general tag.
-  # Currently we have two tags:
+  # Currently we have three tags:
   #   * <genit class="pages"/>
   #   * <genit class="menu"/>
+  #   * <genit class="fragment" file="foo.html"/>
   class ClassTag < Tag
   
     # Public: Constructor.
@@ -25,6 +26,9 @@ module Genit
       case @tag['class']
         when 'pages' then process_tag_pages
         when 'menu' then process_tag_menu
+        when 'fragment' then process_fragment
+        else
+          raise RuntimeError
       end
     end
     
@@ -48,6 +52,13 @@ module Genit
       menu = XmlDocument.open(File.join(@working_dir, "templates/menu.html"))
       builder = MenuBuilder.new(menu)
       @menu = builder.build_for_page(@filename)
+    end
+    
+    def process_fragment
+      file = @tag['file']
+      fragment = HtmlDocument.build_page_content(File.join(@working_dir, 'fragments', file), @working_dir)
+      css_rule = "genit.fragment[file='#{file}']"
+      replace_tag_into_template! css_rule, fragment.to_s
     end
     
   end
