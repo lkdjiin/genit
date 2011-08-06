@@ -1,3 +1,12 @@
+v0.5  2011-08-06
+
+  * You can pass string variables from page to template
+  
+  * Pages can be organized into subfolders
+  
+  * fix a bug where the cli option -v crashed 
+  
+
 v0.4.1  2011-07-30
 
   * Fix a bug where the closing part of auto-closing tags were forgotten.
