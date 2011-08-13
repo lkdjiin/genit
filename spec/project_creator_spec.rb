@@ -5,7 +5,7 @@ require './spec/helper'
 describe ProjectCreator do
 
   before :all do
-    @project = ProjectCreator.new('spec/project-name')
+    @project = ProjectCreator.new('spec/project-name', 'html_5')
     @project.create
   end
   
@@ -20,7 +20,7 @@ describe ProjectCreator do
     end
     
     it "should say it if it cannot create a project" do
-      project = ProjectCreator.new('/root/project')
+      project = ProjectCreator.new('/root/project', 'html_5')
       $stdout.should_receive(:puts).with("Cannot create project...")
       project.create
     end

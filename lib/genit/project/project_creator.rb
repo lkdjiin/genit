@@ -9,9 +9,11 @@ module Genit
   
     # Sole constructor.
     #
-    # name  - The String name of the future project folder.
-    def initialize name
+    # name    - The String name of the future project folder.
+    # doctype - The String document type definition.
+    def initialize name, doctype
       @name = name
+      @doctype = doctype
     end
     
     # Public: Create the structure of the project, that is many
@@ -20,20 +22,25 @@ module Genit
     # Returns nothing.
     def create
       begin
-        FileUtils.makedirs @name
-        create_dirs ['fragments', 'news', 'pages', 'scripts', 'styles', 'templates', 'www',
-                     'styles/alsa', 'styles/yui', 'styles/images']
-        copy_files ['templates/main.html', 'templates/menu.html',
-                    'pages/index.html', 'styles/handheld.css', 'styles/print.css',
-                    'styles/screen.css', 'styles/alsa/all.css', 'styles/yui/all.css', 'styles/yui/base.css',
-                    'styles/yui/fonts.css', 'styles/yui/reset.css']
-        FileUtils.touch "#{@name}/.genit"
+        create_the_project
       rescue SystemCallError
         puts "Cannot create project..."
       end
     end
     
     private
+    
+    def create_the_project
+      FileUtils.makedirs @name
+      create_dirs ['fragments', 'news', 'pages', 'scripts', 'styles', 'templates', 'www',
+                   'styles/alsa', 'styles/yui', 'styles/images']
+      copy_main_template
+      copy_files ['templates/menu.html',
+                  'pages/index.html', 'styles/handheld.css', 'styles/print.css',
+                  'styles/screen.css', 'styles/alsa/all.css', 'styles/yui/all.css', 'styles/yui/base.css',
+                  'styles/yui/fonts.css', 'styles/yui/reset.css']
+      FileUtils.touch "#{@name}/.genit"
+    end
     
     # Create some subfolders inside the project folder.
     #
@@ -65,6 +72,23 @@ module Genit
         dest =  File.join @name, file
         FileUtils.cp src, dest
       end
+    end
+    
+    def copy_main_template
+      dest =  File.join @name, 'templates', 'main.html'
+      copy_first_part dest
+      ProjectCreator.append_last_part dest
+    end
+    
+    def copy_first_part dest
+      src = File.join $GENIT_PATH, 'data', 'templates', @doctype
+      FileUtils.cp src, dest
+    end
+    
+    def self.append_last_part dest
+      src = File.join $GENIT_PATH, 'data', 'templates', 'main.html'
+      content = File.open(src, "r").read
+      File.open(dest, "a") {|out| out.puts content }
     end
     
   end

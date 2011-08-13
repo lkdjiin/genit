@@ -37,15 +37,21 @@ module Genit
       puts "genit #{File.read(File.join($GENIT_PATH, 'VERSION')).strip}"
       exit 0
     end
-
+    
   end
   
   class CreateCommand < AbstractCommand
   
     parameter "NAME", "the name of the project", :attribute_name => :project_name
+    option ["-d", "--doctype"], "DOCTYPE", "The Document Type Definition", :default => "html_5"
 
     def execute
-      project = ProjectCreator.new project_name
+      valid_doctypes = ['xhtml_1.0_strict', 'xhtml_1.0_transitional', 'html_5']
+      unless valid_doctypes.include? doctype
+        puts 'Valid doctypes are ' + valid_doctypes.inspect
+        exit 1
+      end
+      project = ProjectCreator.new project_name, doctype
       project.create
     end
     
