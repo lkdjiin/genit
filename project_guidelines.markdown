@@ -15,7 +15,7 @@ At a minimum, Genit should allow to do this :
   + generate news section (with all news, or only a certain number)
   + include different css files per page
   + include different script files per page
-  + generate different <meta> per page (title, keywords, etc.)
+  + generate different `<meta>` per page (title, keywords, etc.)
 
 Implementation
 --------------
