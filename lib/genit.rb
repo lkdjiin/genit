@@ -1,23 +1,10 @@
 # -*- encoding: utf-8 -*-
-
 require 'genit/extensions'
-require 'genit/project_creator'
-require 'genit/html_document'
-require 'genit/xml_document'
-require 'genit/file_writer'
-require 'genit/document_writer'
-require 'genit/compiler'
-require 'genit/page_compiler'
-require 'genit/builder'
-require 'genit/builder_base'
-require 'genit/menu_builder'
-require 'genit/head_link_builder'
-require 'genit/body_link_builder'
-require 'genit/fragment'
-require 'genit/tag_processor'
-require 'genit/tag'
-require 'genit/var_tag'
-require 'genit/class_tag'
+require 'genit/project'
+require 'genit/documents'
+require 'genit/utils'
+require 'genit/builders'
+require 'genit/tags'
 
 module Genit
 end
