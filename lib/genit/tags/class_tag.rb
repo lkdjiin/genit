@@ -27,6 +27,7 @@ module Genit
         when 'pages' then process_tag_pages
         when 'menu' then process_tag_menu
         when 'fragment' then process_fragment
+        when 'news' then process_tag_news
         else
           raise RuntimeError
       end
@@ -60,6 +61,28 @@ module Genit
       css_rule = "genit.fragment[file='#{file}']"
       replace_tag_into_template! css_rule, fragment.to_s
     end
+    
+    ########### NEWS #################
+    
+    def process_tag_news
+      replace_tag_into_template! 'genit.news', news_content
+    end
+    
+    def news_content
+      news_files = Dir.glob(File.join(@working_dir, 'news', '*')).sort.reverse
+      news_string = ''
+      if @tag['number']
+        news_files = news_files[0...(@tag['number']).to_i]
+      end
+      news_files.each do |file|
+        doc = HtmlDocument.open_fragment file
+        news_string += doc.to_s
+      end
+      
+      news_string
+    end
+    
+    
     
   end
 

@@ -26,10 +26,20 @@ module Genit
     private
     
     def compile_body
-      genit_tags_in_template.each do |tag| 
-        tp = TagProcessor.new(@working_dir, @template, @filename, tag)
-        @template = tp.process
+      # Pourquoi 2 fois ?
+      # Parce que la 1ere fois, on inclus essentiellement la page au sein du
+      # template, et la seconde fois, on s'occupe des tag restants (ceux qui
+      # étaient dans la page).
+      # Suivant comment la hiérarchie de tag évoluera, il est possible qu'on
+      # ai un jour besoin de faire une boucle du genre :
+      # "Tant qu'il reste des tags"
+      2.times do
+        genit_tags_in_template.each do |tag| 
+          tp = TagProcessor.new(@working_dir, @template, @filename, tag)
+          @template = tp.process
+        end
       end
+
       builder = BodyLinkBuilder.new @template
       @template = builder.build_for_page @filename
     end
