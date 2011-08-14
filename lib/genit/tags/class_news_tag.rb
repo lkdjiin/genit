@@ -28,7 +28,11 @@ module Genit
       news_string = ''
       news_files.each do |file|
         doc = HtmlDocument.open_as_string file
-        news_string += doc.to_s
+        if @tag['wrapper']
+          news_string += "<div class='#{@tag['wrapper']}'>" + doc.to_s + '</div>'
+        else
+          news_string += doc.to_s
+        end
       end
       news_string
     end
