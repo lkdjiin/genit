@@ -2,6 +2,7 @@
 
 module Genit
 
+  # Replace the <genit class="pages"/> in the template.
   class ClassPagesTag < Tag
   
     # Public: Constructor.
@@ -14,7 +15,7 @@ module Genit
       super working_dir, template, filename, tag
     end
     
-    # Public: Replace the <genit class="pages"/> in the template.
+    # Public: Do the replacement.
     #
     # Returns the template as a Nokogiri::XML::Document
     def process

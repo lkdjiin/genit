@@ -2,6 +2,7 @@
 
 module Genit
 
+  # Replace the <genit class="news"/> in the template.
   class ClassNewsTag < Tag
   
     # Public: Constructor.
@@ -14,7 +15,7 @@ module Genit
       super working_dir, template, filename, tag
     end
     
-    # Public: Replace the <genit class="news"/> in the template.
+    # Public: Do the replacement.
     #
     # Returns the template as a Nokogiri::XML::Document
     def process
@@ -24,17 +25,22 @@ module Genit
     private
     
     def news_content
-      news_files = Dir.glob(File.join(@working_dir, 'news', '*')).sort.reverse
       news_string = ''
-      if @tag['number']
-        news_files = news_files[0...(@tag['number']).to_i]
-      end
       news_files.each do |file|
         doc = HtmlDocument.open_fragment file
         news_string += doc.to_s
       end
-      
       news_string
+    end
+    
+    def news_files
+      files = Dir.glob(File.join(@working_dir, 'news', '*')).sort.reverse
+      number = @tag['number']
+      if number
+        files[0...(number).to_i]
+      else
+        files
+      end
     end
     
   end
