@@ -27,7 +27,7 @@ module Genit
     def news_content
       news_string = ''
       news_files.each do |file|
-        doc = HtmlDocument.open_fragment file
+        doc = HtmlDocument.open_as_string file
         news_string += doc.to_s
       end
       news_string
