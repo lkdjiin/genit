@@ -34,20 +34,6 @@ describe MenuBuilder do
     new_menu.css("ul#menu a#selected").first['href'].should == 'about.html'
   end
   
-  #~ it "should set the menu for doc/index.html page" do
-    #~ builder = MenuBuilder.new(@menu_doc)
-    #~ new_menu = builder.build_for_page('doc/index.html')
-    #~ new_menu.css("ul#menu a#selected").size.should == 1
-    #~ new_menu.css("ul#menu a#selected").first['href'].should == '../doc/index.html'
-  #~ end
-  #~ 
-  #~ it "should set the menu for a/b/c2.html page" do
-    #~ builder = MenuBuilder.new(@menu_doc)
-    #~ new_menu = builder.build_for_page('a/b/c2.html')
-    #~ new_menu.css("ul#menu a#selected").size.should == 1
-    #~ new_menu.css("ul#menu a#selected").first['href'].should == '../../a/b/c2.html'
-  #~ end
-  
   it "should set the menu for /absolute.html page" do
     builder = MenuBuilder.new(@menu_doc)
     new_menu = builder.build_for_page('/absolute.html')

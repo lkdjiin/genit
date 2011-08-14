@@ -29,7 +29,7 @@ describe PageCompiler do
     doc = pc.compile
     
     page = IO.read 'spec/project-name/pages/index.html'
-    page.match('<genit var="title">My Title</genit>').should_not == nil
+    page.match('<genit var="title">My Title</genit>').should_not be_nil
   end
 
 end
