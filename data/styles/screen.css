@@ -1,9 +1,14 @@
 /* Delete this content and write your own rules */
 
 body {
-width:600px;
+width:300px;
 margin:0 auto;
 font-family: Arial, Helvetica, FreeSans, sans-serif;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+-o-border-radius:10px;
+border-radius:10px;
+margin-top:50px;
 }
 
 #menu { display:none;}
@@ -13,10 +18,10 @@ font-size:1.2em;
 color:#555;
 }
 
-p:hover {color:#001;}
+p:hover {color:#003;}
 
 p:hover a {
-background-color:#001 !important;
+background-color:#003 !important;
 color:white !important;
 text-decoration:none !important;
 }
@@ -24,3 +29,7 @@ text-decoration:none !important;
 a {
 color:#334 !important;
 }
+
+h1{color:#003;}
+
+html{background-color:#336;}
