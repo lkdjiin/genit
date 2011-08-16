@@ -17,10 +17,11 @@ module Genit
       @template = template
       if tag.genit_class?
         @tag = ClassTag.new(@working_dir, @template, @filename, tag)
-      elsif tag.genit_var?
-        @tag = VarTag.new(@working_dir, @template, @filename, tag)
+      elsif tag.genit_here?
+        @tag = HereTag.new(@working_dir, @template, @filename, tag)
       else
-        raise RuntimeError
+        puts "Genit aborted! Unknown tag: #{tag}"
+        exit 1
       end
     end
     

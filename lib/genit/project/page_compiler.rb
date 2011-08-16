@@ -40,6 +40,7 @@ module Genit
     
     def replace_all_genit_tags
       genit_tags_in_template.each do |tag| 
+        next if tag.genit_what?
         tp = TagProcessor.new(@working_dir, @template, @filename, tag)
         @template = tp.process
       end

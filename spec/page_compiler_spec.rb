@@ -11,15 +11,14 @@ describe PageCompiler do
   def create_sample_project
     FileUtils.makedirs('spec/project-name/templates')
     FileUtils.makedirs('spec/project-name/pages')
-    File.open('spec/project-name/templates/main.html', "w") {|out| out.puts '<h1><genit var="title"/></h1>' }
-    File.open('spec/project-name/pages/index.html', "w") {|out| out.puts '<genit var="title">My Title</genit>' }
+    File.open('spec/project-name/templates/main.html', "w") {|out| out.puts '<h1><genit here="title"/></h1>' }
+    File.open('spec/project-name/pages/index.html', "w") {|out| out.puts '<genit what="title">My Title</genit>' }
   end
   
   it "should substitute a variable" do
     create_sample_project
     pc = PageCompiler.new 'spec/project-name/', 'index.html'
     doc = pc.compile
-    
     doc.at_css('h1').inner_html.should == 'My Title'
   end
   
@@ -29,7 +28,7 @@ describe PageCompiler do
     doc = pc.compile
     
     page = IO.read 'spec/project-name/pages/index.html'
-    page.match('<genit var="title">My Title</genit>').should_not be_nil
+    page.match('<genit what="title">My Title</genit>').should_not be_nil
   end
 
 end

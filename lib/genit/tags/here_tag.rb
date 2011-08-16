@@ -5,7 +5,7 @@ module Genit
   # A Genit tag that represents a variable.
   # For example, in the template you have: <genit var="page_title"/>,
   # and in the page you have: <genit var="page_title">My Title</genit>.
-  class VarTag < Tag
+  class HereTag < Tag
   
     # Public: Constructor.
     #
@@ -29,14 +29,19 @@ module Genit
     private
     
     def get_css_rule
-      var_name = @tag['var']
-      "genit[var='#{var_name}']"
+      var_name = @tag['here']
+      "genit[here='#{var_name}']"
     end
     
     def get_variable_value
       filename = File.join(@working_dir, 'pages', @filename)
-      doc = HtmlDocument.open filename
-      doc.at_css("genit[var='#{@tag['var']}']").inner_html
+      doc = HtmlDocument.open_fragment filename
+      elem = doc.at_css("genit[what='#{@tag['here']}']")
+      if elem.nil?
+        ""
+      else
+        elem.inner_html
+      end
     end
     
   end

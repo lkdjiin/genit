@@ -16,14 +16,22 @@ module Nokogiri
         end
       end
       
-      def genit_var?
-        if self['var']
+      def genit_here?
+        if self['here']
           true
         else
           false
         end
       end
       
+      def genit_what?
+        if self['what']
+          true
+        else
+          false
+        end
+      end
+
     end
   end
 end
