@@ -24,10 +24,14 @@ module Genit
     
     def update link
       @path = link['href']
-      return if @path =~ URI::regexp
+      return if not_an_internal_link?
       nb = BuilderBase::get_number_of_base_dirs @page_name
       make_relative nb
       link['href'] = @path
+    end
+    
+    def not_an_internal_link?
+      @path.nil? or @path =~ URI::regexp
     end
   
   end
