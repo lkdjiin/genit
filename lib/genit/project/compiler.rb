@@ -33,6 +33,7 @@ module Genit
       compile_pages
       FileUtils.cp_r File.join(@working_dir, 'styles'), File.join(@working_dir, 'www')
       FileUtils.cp_r File.join(@working_dir, 'public'), File.join(@working_dir, 'www')
+      FileUtils.cp_r File.join(@working_dir, 'scripts'), File.join(@working_dir, 'www')
     end
     
     def compile_pages
