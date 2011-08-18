@@ -72,6 +72,10 @@ describe ProjectCreator do
     it "should create a images folder inside the styles" do
       File.exist?('spec/project-name/styles/images').should == true
     end
+    
+    it "should create a public folder" do
+      File.exist?('spec/project-name/public').should == true
+    end
   
   end # "Folder structure"
   

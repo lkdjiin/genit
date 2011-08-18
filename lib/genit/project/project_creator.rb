@@ -33,7 +33,7 @@ module Genit
     def create_the_project
       FileUtils.makedirs @name
       create_dirs ['fragments', 'news', 'pages', 'scripts', 'styles', 'templates', 'www',
-                   'styles/alsa', 'styles/yui', 'styles/images']
+                   'styles/alsa', 'styles/yui', 'styles/images', 'public']
       copy_main_template
       copy_files ['templates/menu.html',
                   'pages/index.html', 'styles/handheld.css', 'styles/print.css',
