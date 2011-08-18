@@ -7,9 +7,9 @@ module Genit
   # Modify links.
   class BodyLinkBuilder < BuilderBase
   
-    # Public: Build the menu of a particular page.
+    # Public: Relativize links.
     #
-    # page_name - The string filename of the page to build menu for.
+    # page_name - The string filename of the page.
     #
     # Returns the modified Nokogiri::XML::Document
     def build_for_page page_name

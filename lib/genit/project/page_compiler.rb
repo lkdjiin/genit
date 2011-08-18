@@ -34,7 +34,11 @@ module Genit
       # ai un jour besoin de faire une boucle du genre :
       # "Tant qu'il reste des tags"
       2.times { replace_all_genit_tags }
+      
       builder = BodyLinkBuilder.new @template
+      @template = builder.build_for_page @filename
+      
+      builder = ImgBuilder.new @template
       @template = builder.build_for_page @filename
     end
     
