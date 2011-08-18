@@ -2,10 +2,10 @@
 
 module Genit
 
-  # Modify head link tags.
-  class HeadLinkBuilder < BuilderBase
+  # Modify script tags.
+  class ScriptBuilder < BuilderBase
     
-    # Public: Build the document head link tags of a particular page.
+    # Public: Relativize the <script src=""> tags of a particular page.
     #
     # page_name - The string filename of the page.
     #
@@ -17,15 +17,15 @@ module Genit
     private
     
     def head_links
-      @document.css("head link")
+      @document.css("script")
     end
     
     def update link
-      @path = link['href']
+      @path = link['src']
       return if not_an_internal_link?
       nb = BuilderBase::get_number_of_base_dirs @page_name
       make_relative nb
-      link['href'] = @path
+      link['src'] = @path
     end
     
     def not_an_internal_link?

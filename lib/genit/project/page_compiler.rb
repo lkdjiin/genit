@@ -21,6 +21,9 @@ module Genit
     def compile
       compile_body
       compile_head
+      
+      builder = ScriptBuilder.new @template
+      builder.build_for_page @filename
     end
     
     private
