@@ -11,9 +11,11 @@ module Genit
     #
     # name    - The String name of the future project folder.
     # doctype - The String document type definition.
-    def initialize name, doctype
+    # empty   - A Boolean telling if we produce a smoke test or not.
+    def initialize name, doctype, empty
       @name = name
       @doctype = doctype
+      @empty = empty
     end
     
     # Public: Create the structure of the project, that is many
@@ -35,10 +37,11 @@ module Genit
       create_dirs ['fragments', 'news', 'pages', 'scripts', 'styles', 'templates', 'www',
                    'styles/alsa', 'styles/yui', 'styles/images', 'public']
       copy_main_template
-      copy_files ['templates/menu.html',
-                  'pages/index.html', 'styles/handheld.css', 'styles/print.css',
-                  'styles/screen.css', 'styles/alsa/all.css', 'styles/yui/all.css', 'styles/yui/base.css',
+      copy_files ['templates/menu.html', 'styles/handheld.css', 'styles/print.css',
+                  'styles/alsa/all.css', 'styles/yui/all.css', 'styles/yui/base.css',
                   'styles/yui/fonts.css', 'styles/yui/reset.css']
+      copy_index
+      copy_screen_css
       FileUtils.touch "#{@name}/.genit"
     end
     
@@ -70,6 +73,26 @@ module Genit
       a_array.each do |file|
         src = File.join $GENIT_PATH, 'data', file
         dest =  File.join @name, file
+        FileUtils.cp src, dest
+      end
+    end
+    
+    def copy_index
+      dest =  File.join @name, 'pages/index.html'
+      if @empty
+        src = File.join $GENIT_PATH, 'data/pages/index2.html'
+      else
+        src = File.join $GENIT_PATH, 'data/pages/index.html'
+      end
+      FileUtils.cp src, dest
+    end
+    
+    def copy_screen_css
+      dest =  File.join @name, 'styles/screen.css'
+      if @empty
+        FileUtils.touch dest
+      else
+        src = File.join $GENIT_PATH, 'data/styles/screen.css'
         FileUtils.cp src, dest
       end
     end
