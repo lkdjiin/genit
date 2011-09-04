@@ -21,6 +21,17 @@ line-height:40px;
 font-family: Impact, "Arial Black", sans-serif;
 }
 
+
+code {
+color:#006400;
+font-weight:bold;
+}
+
+pre code {
+color:#000;
+font-weight:normal;
+}
+
 /******************************************************************************/
 
 #menu {
@@ -98,14 +109,8 @@ padding-left:18px;
 }
 
 p, li { 
-color:#5D5D5D; 
--moz-transition:color 500ms;
--webkit-transition:color 500ms;
--o-transition:color 500ms;
-transition:color 500ms;
+color: #333;
 }
-
-p:hover { color: #222;}
 
 #main a { color: #5D95C9; }
 
@@ -147,3 +152,1586 @@ text-align: center;
 /******************************************************************************/
 
 .align_left p { text-align:left;}
+
+/******************************************************************************/
+
+pre{
+background-color:#eee;
+border-left:10px solid #999;
+}
+
+.note, .green_note, .blue_note {
+padding:10px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+-o-border-radius:10px;
+border-radius:10px;
+margin:2em 0;
+}
+
+.note{
+background-color:#fcc;
+border:2px solid #640000;
+
+}
+
+.green_note{
+background-color:#cfc;
+border:2px solid #006400;
+}
+
+.blue_note{
+background-color:#ddf;
+border:2px solid #000064;
+}
+
+/********************** BOOK *********************************/
+
+a.screenshot{
+display:block;
+width:400px;
+margin:20px auto 40px auto;
+}
+
+a[name] {
+color:black !important;
+font-weight:bold;
+text-decoration:none;
+}
+
+a.figure, a.listing {
+display:block;
+margin-top:40px;
+}
+
+img.screenshot{
+display:block;
+margin:5px 0 40px 0;
+}
+
+
+
+#book h2,
+#book h3,
+#book h4 { 
+margin:2em 0 1em;
+color:#222;
+border-left:0;
+padding-left:0;
+}
+
+#book h2 a,
+#book h3 a,
+#book h4 a,
+#book h4 {
+text-decoration:none;
+color:#222;
+}
+
+#book h2 {
+border-top:2px solid #777;
+border-bottom:2px solid #bbb;
+padding:5px 0;
+}
+
+#book h3 {
+background-color:white;
+text-align:left;
+text-transform:uppercase;
+border-top:1px solid #ccc;
+border-bottom:1px solid #ccc;
+}
+
+#book h4 {
+text-transform:uppercase;
+font-weight:normal;
+}
+
+
+#book span.bash_out {
+color:#000064;
+}
+
+
+/********************** HTML *********************************/
+
+.listing_html {
+  font-family: Monospace, monospace;
+  font-size: 10pt;
+  border:2px solid #ccc;
+  padding:10px;
+  margin-bottom:40px;
+}
+.style_0 {
+  color: #000000;
+  background-color: #ffffff;
+}
+.style_1 {
+  color: #000099;
+  background-color: #ffffff;
+}
+.style_2 {
+  color: #ff0000;
+  background-color: #ffffff;
+}
+.style_3 {
+  color: #007f00;
+  background-color: #ffffff;
+}
+.style_5
+{
+  color: #301010;
+  background-color: #ffffff;
+}
+.style_6 {
+  color: #ff901e;
+  background-color: #ffffff;
+}
+.style_8 {
+  color: #800080;
+  background-color: #ffffff;
+}
+.style_10
+  {
+    color: #ff9000;
+    background-color: #ffffff;
+    font-weight: bold;
+  }
+.style_11 {
+  color: #000080;
+  background-color: #ffffff;
+}
+.style_17
+  {
+    color: #00c8ff;
+    background-color: #ffffff;
+    font-weight: bold;
+  }
+.style_21 {
+  color: #000000;
+  background-color: #ffffff;
+}
+.style_22 {
+  color: #111199;
+  background-color: #ffffff;
+  font-weight: bold;
+}
+.style_23 {
+  color: #404080;
+  background-color: #ffffff;
+}
+.style_32
+  {
+    color: #bf96a8d4;
+    background-color: #000000;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_33
+  {
+    color: #9459c0;
+    background-color: #bf96a7a8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_34
+  {
+    color: #bf96a7c8;
+    background-color: #4d0a6e;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_35
+  {
+    color: #4cfcc7;
+    background-color: #92b0758;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_37
+  {
+    color: #95bbc40;
+    background-color: #bf96a7f8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_38
+  {
+    color: #bf96a808;
+    background-color: #4f897c;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_39
+  {
+    color: #96c9af0;
+    background-color: #bf96a8c0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_40
+  {
+    color: #926f0f4;
+    background-color: #000014;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_41
+  {
+    color: #000014;
+    background-color: #bf96a848;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_42
+  {
+    color: #bf96a868;
+    background-color: #50aff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_43
+  {
+    color: #4fac4c;
+    background-color: #000014;
+    font-style: italic;
+  }
+  .style_44
+  {
+    color: #50aff4;
+    background-color: #92b0950;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_45
+  {
+    color: #bf96aa0c;
+    background-color: #bf96a8d4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_46
+  {
+    color: #bf96a806;
+    background-color: #50aff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_47
+  {
+    color: #c481a1;
+    background-color: #96e7960;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_48
+  {
+    color: #96c9af0;
+    background-color: #50aff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_49
+  {
+    color: #000001;
+    background-color: #bf96a8c8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_50
+  {
+    color: #96e7960;
+    background-color: #96e795c;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_51
+  {
+    color: #4f5bd1;
+    background-color: #926d0f0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_52
+  {
+    color: #96e7958;
+    background-color: #000000;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_53
+  {
+    color: #000006;
+    background-color: #519779;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_54
+  {
+    color: #0005fd;
+    background-color: #50aff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_56
+  {
+    color: #000028;
+    background-color: #1091780;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_57
+  {
+    color: #000014;
+    background-color: #50b454;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_58
+  {
+    color: #92b0920;
+    background-color: #96c9af0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_59
+  {
+    color: #92b02e8;
+    background-color: #926f13c;
+    font-weight: bold;
+  }
+  .style_63
+  {
+    color: #000000;
+    background-color: #000000;
+  }
+  .style_66
+  {
+    color: #000000;
+    background-color: #f9fce5;
+  }
+  .style_67
+  {
+    color: #51b3d1;
+    background-color: #235ff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_68
+  {
+    color: #000002;
+    background-color: #50aff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_69
+  {
+    color: #000001;
+    background-color: #bf96aa58;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_70
+  {
+    color: #10913c0;
+    background-color: #94e7248;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_71
+  {
+    color: #c82e3a;
+    background-color: #926d0f0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_72
+  {
+    color: #94e7248;
+    background-color: #000080;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_73
+  {
+    color: #000050;
+    background-color: #000048;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_74
+  {
+    color: #000002;
+    background-color: #51b3d1;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_75
+  {
+    color: #233d75;
+    background-color: #000002;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_76
+  {
+    color: #927c9c1;
+    background-color: #cf8ff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_77
+  {
+    color: #000000;
+    background-color: #bf96ab18;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_78
+  {
+    color: #bf96ab08;
+    background-color: #4f7933;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_79
+  {
+    color: #f61468;
+    background-color: #bf96ab84;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_80
+  {
+    color: #92ac64c;
+    background-color: #927df18;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_81
+  {
+    color: #1047a8f;
+    background-color: #cf8ff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_82
+  {
+    color: #000010;
+    background-color: #4f7933;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_83
+  {
+    color: #b6fff4;
+    background-color: #bf96ac8c;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_84
+  {
+    color: #94fb330;
+    background-color: #975b370;
+    font-style: italic;
+  }
+  .style_85
+  {
+    color: #50aff4;
+    background-color: #bf96abb8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_86
+  {
+    color: #000001;
+    background-color: #000000;
+    font-style: italic;
+  }
+  .style_87
+  {
+    color: #94fb32c;
+    background-color: #92bb150;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_88
+  {
+    color: #bf96ac7c;
+    background-color: #92bb206;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_89
+  {
+    color: #000001;
+    background-color: #bf96abf0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_90
+  {
+    color: #bf96abf8;
+    background-color: #233d75;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_91
+  {
+    color: #bf96abf0;
+    background-color: #bf96ac8c;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_93
+  {
+    color: #000000;
+    background-color: #000000;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_94
+  {
+    color: #000008;
+    background-color: #4f7933;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_95
+  {
+    color: #b6fff4;
+    background-color: #94fb328;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_96
+  {
+    color: #000010;
+    background-color: #9406a10;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_97
+  {
+    color: #bf96acc0;
+    background-color: #bf96aca8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_98
+  {
+    color: #bf96ac8c;
+    background-color: #000000;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_99
+  {
+    color: #000337;
+    background-color: #94fb328;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_100
+  {
+    color: #94fb328;
+    background-color: #bf96acc0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_101
+  {
+    color: #bf96acc0;
+    background-color: #bf96adb0;
+    font-style: italic;
+  }
+  .style_102
+  {
+    color: #000034;
+    background-color: #000012;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_103
+  {
+    color: #b6fff4;
+    background-color: #a0c220;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_106
+  {
+    color: #000000;
+    background-color: #b6fff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_107
+  {
+    color: #844664;
+    background-color: #9393278;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_108
+  {
+    color: #9393278;
+    background-color: #b5574b;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_109
+  {
+    color: #bf96adb0;
+    background-color: #bf96ad98;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_110
+  {
+    color: #bf96adb0;
+    background-color: #000000;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_111
+  {
+    color: #000328;
+    background-color: #9393278;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_112
+  {
+    color: #9393278;
+    background-color: #bf96adb0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_113
+  {
+    color: #bf96adb0;
+    background-color: #bf96ae80;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_115
+  {
+    color: #b6fff4;
+    background-color: #96e78f0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_116
+  {
+    color: #9393278;
+    background-color: #bf96ae80;
+    font-style: italic;
+  }
+  .style_117
+  {
+    color: #94682b8;
+    background-color: #bf96ae28;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_118
+  {
+    color: #a0c220;
+    background-color: #bf96ae80;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_119
+  {
+    color: #b6fff4;
+    background-color: #96e78f0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_120
+  {
+    color: #96e78f0;
+    background-color: #a0c220;
+    font-weight: bold;
+  }
+  .style_121
+  {
+    color: #92c6a00;
+    background-color: #00026e;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_122
+  {
+    color: #bf96ae80;
+    background-color: #b6fff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_123
+  {
+    color: #a0c287;
+    background-color: #bf96af50;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_124
+  {
+    color: #000328;
+    background-color: #000274;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_125
+  {
+    color: #000020;
+    background-color: #bf96aeb8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_126
+  {
+    color: #bf96aec8;
+    background-color: #8070fd;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_127
+  {
+    color: #51b3d1;
+    background-color: #235ff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_128
+  {
+    color: #000002;
+    background-color: #000001;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_129
+  {
+    color: #000001;
+    background-color: #bf96af08;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_130
+  {
+    color: #bf96af18;
+    background-color: #c481a1;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_131
+  {
+    color: #c82e3a;
+    background-color: #926d0f0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_132
+  {
+    color: #94e72e8;
+    background-color: #00007f;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_133
+  {
+    color: #000050;
+    background-color: #000048;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_134
+  {
+    color: #bf96af78;
+    background-color: #3c0ff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_135
+  {
+    color: #34515c;
+    background-color: #000050;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_136
+  {
+    color: #b6fff4;
+    background-color: #96e1b68;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_137
+  {
+    color: #96e9960;
+    background-color: #96a7660;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_138
+  {
+    color: #bf96afe8;
+    background-color: #c82e3a;
+    font-weight: bold;
+  }
+  .style_139
+  {
+    color: #b6fff4;
+    background-color: #845f10;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_140
+  {
+    color: #9698678;
+    background-color: #96e1b68;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_141
+  {
+    color: #9459c0;
+    background-color: #bf96b018;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_142
+  {
+    color: #000003;
+    background-color: #4f7933;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_143
+  {
+    color: #000000;
+    background-color: #9698678;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_144
+  {
+    color: #9698678;
+    background-color: #96b3f20;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_145
+  {
+    color: #000001;
+    background-color: #845f10;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_146
+  {
+    color: #95f99d;
+    background-color: #b6fff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_147
+  {
+    color: #844897;
+    background-color: #9698678;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_148
+  {
+    color: #96ff2f0;
+    background-color: #000274;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_149
+  {
+    color: #92bb1e4;
+    background-color: #9829ecc;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_150
+  {
+    color: #bf96b0c8;
+    background-color: #8d0a10;
+    font-weight: bold;
+  }
+  .style_151
+  {
+    color: #4fad7c;
+    background-color: #96ff2f0;
+    font-style: italic;
+  }
+  .style_152
+  {
+    color: #000000;
+    background-color: #000000;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_153
+  {
+    color: #40008004;
+    background-color: #40008003;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_154
+  {
+    color: #000002;
+    background-color: #96ff2f0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_155
+  {
+    color: #b6fff4;
+    background-color: #9393278;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_156
+  {
+    color: #92b0758;
+    background-color: #40000000;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_157
+  {
+    color: #40008004;
+    background-color: #40008004;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_158
+  {
+    color: #bf96b168;
+    background-color: #4f897c;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_159
+  {
+    color: #50aff4;
+    background-color: #bf96b214;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_160
+  {
+    color: #bf96b214;
+    background-color: #000274;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_162
+  {
+    color: #0005fd;
+    background-color: #4fac2a;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_163
+  {
+    color: #4e3c89;
+    background-color: #bf96b214;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_164
+  {
+    color: #bf96b200;
+    background-color: #000001;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_165
+  {
+    color: #bf96b214;
+    background-color: #bf96b1d8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_166
+  {
+    color: #bf96b201;
+    background-color: #50aff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_167
+  {
+    color: #51b3d1;
+    background-color: #235ff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_168
+  {
+    color: #000002;
+    background-color: #9698678;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_169
+  {
+    color: #cf8ff4;
+    background-color: #bf96b258;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_170
+  {
+    color: #bf96b258;
+    background-color: #c52598;
+    font-weight: bold;
+  }
+  .style_171
+  {
+    color: #000017;
+    background-color: #518337;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_172
+  {
+    color: #96ff2f0;
+    background-color: #92c6a00;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_173
+  {
+    color: #cf9400;
+    background-color: #bf96b388;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_174
+  {
+    color: #bf96b2a8;
+    background-color: #51b3d1;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_175
+  {
+    color: #233d75;
+    background-color: #000001;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_176
+  {
+    color: #000002;
+    background-color: #cf8ff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_177
+  {
+    color: #000010;
+    background-color: #bf96b2c8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_178
+  {
+    color: #bf96b2d8;
+    background-color: #233d75;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_179
+  {
+    color: #c8260a;
+    background-color: #926d0f0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_180
+  {
+    color: #926d0f0;
+    background-color: #000000;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_181
+  {
+    color: #000000;
+    background-color: #000032;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_182
+  {
+    color: #bf96b368;
+    background-color: #4d33bc;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_183
+  {
+    color: #000008;
+    background-color: #93ca758;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_184
+  {
+    color: #93ca758;
+    background-color: #1046985;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_185
+  {
+    color: #000000;
+    background-color: #982e0b8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_186
+  {
+    color: #4d339b;
+    background-color: #50aff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_187
+  {
+    color: #4f6cc9;
+    background-color: #982e0b0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_188
+  {
+    color: #938b880;
+    background-color: #108fff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_189
+  {
+    color: #93cd870;
+    background-color: #000000;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_190
+  {
+    color: #93ca758;
+    background-color: #fa07ee;
+  }
+  .style_191
+  {
+    color: #fa07ee;
+    background-color: #92e6e10;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_193
+  {
+    color: #000000;
+    background-color: #bf96b4b8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_194
+  {
+    color: #000048;
+    background-color: #977f648;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_195
+  {
+    color: #9774e90;
+    background-color: #bf96b444;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_196
+  {
+    color: #bf96b454;
+    background-color: #982e0b0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_197
+  {
+    color: #000019;
+    background-color: #108fff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_198
+  {
+    color: #108fff4;
+    background-color: #9774e90;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_199
+  {
+    color: #000010;
+    background-color: #000048;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_200
+  {
+    color: #000048;
+    background-color: #000040;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_201
+  {
+    color: #9774e90;
+    background-color: #bf96b4b8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_202
+  {
+    color: #4d365b;
+    background-color: #c6ac5e;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_203
+  {
+    color: #50aff4;
+    background-color: #50aff4;
+    font-style: italic;
+  }
+  .style_204
+  {
+    color: #000000;
+    background-color: #000036;
+    font-style: italic;
+  }
+  .style_205
+  {
+    color: #1047a9f;
+    background-color: #cf8ff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_206
+  {
+    color: #000000;
+    background-color: #108fff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_207
+  {
+    color: #fa2f53;
+    background-color: #000001;
+  }
+  .style_208
+  {
+    color: #000036;
+    background-color: #95a8ea0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_209
+  {
+    color: #9821b80;
+    background-color: #98230d2;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_210
+  {
+    color: #98230c0;
+    background-color: #1047ae9;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_211
+  {
+    color: #c8479e;
+    background-color: #982fb38;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_213
+  {
+    color: #9821b80;
+    background-color: #bf96b5c8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_214
+  {
+    color: #bf96b5c8;
+    background-color: #4820c7;
+    font-weight: bold;
+  }
+  .style_215
+  {
+    color: #000020;
+    background-color: #95a8ee0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_216
+  {
+    color: #bf96b5c8;
+    background-color: #fa341d;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_218
+  {
+    color: #bf96b618;
+    background-color: #bf96b5fc;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_219
+  {
+    color: #485a65;
+    background-color: #95a8ea0;
+    font-weight: bold;
+  }
+  .style_220
+  {
+    color: #9577798;
+    background-color: #ffffffff;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_221
+  {
+    color: #970b390;
+    background-color: #bf96b658;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_222
+  {
+    color: #c44dcf;
+    background-color: #cf8ff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_223
+  {
+    color: #941f290;
+    background-color: #000000;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_224
+  {
+    color: #bf96b668;
+    background-color: #fa341d;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_225
+  {
+    color: #98230c0;
+    background-color: #bf96b688;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_226
+  {
+    color: #938b888;
+    background-color: #4c2ff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_228
+  {
+    color: #000000;
+    background-color: #941f2b0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_229
+  {
+    color: #bf96b6d4;
+    background-color: #96f7d10;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_230
+  {
+    color: #bf96b6e8;
+    background-color: #233d75;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_231
+  {
+    color: #87d4df;
+    background-color: #96c9d40;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_232
+  {
+    color: #926d0f0;
+    background-color: #bf96b798;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_233
+  {
+    color: #bf96b798;
+    background-color: #bf96b768;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_234
+  {
+    color: #bf96b74c;
+    background-color: #b6fff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_235
+  {
+    color: #000000;
+    background-color: #96ec138;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_236
+  {
+    color: #96d03e0;
+    background-color: #fa07ee;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_237
+  {
+    color: #929d178;
+    background-color: #0005fd;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_238
+  {
+    color: #bf96b7c8;
+    background-color: #8710a8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_239
+  {
+    color: #bf96b7a0;
+    background-color: #000040;
+    font-style: italic;
+  }
+  .style_240
+  {
+    color: #10913c0;
+    background-color: #000036;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_241
+  {
+    color: #000035;
+    background-color: #bf96b7c8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_242
+  {
+    color: #10913f0;
+    background-color: #cf8ff4;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_243
+  {
+    color: #c6ab04;
+    background-color: #000036;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_244
+  {
+    color: #94ed965;
+    background-color: #f036ec;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_245
+  {
+    color: #000035;
+    background-color: #bf96b838;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_246
+  {
+    color: #000035;
+    background-color: #cadf9e;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_247
+  {
+    color: #95a8ea0;
+    background-color: #cadf89;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_248
+  {
+    color: #95a8ea0;
+    background-color: #ffffffff;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_249
+  {
+    color: #000035;
+    background-color: #000000;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_250
+  {
+    color: #ff2fc5;
+    background-color: #c50090;
+    font-weight: bold;
+  }
+  .style_251
+  {
+    color: #c45a39;
+    background-color: #000000;
+  }
+  .style_253
+  {
+    color: #982e0b0;
+    background-color: #bf96b8e8;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .style_254
+  {
+    color: #000007;
+    background-color: #95a8ea0;
+    font-weight: bold;
+    font-style: italic;
+  }

@@ -2,11 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Genit - Open Source Static Web Framework</title>
+<meta name="description" content="Genit is a kind of xhtml static web framework." />
+<meta name="keywords" content="install download learn genit" />
+<meta name="author" content="Xavier Nayrac" />
+<title>Genit - Open Source Static Web Framework - create</title>
 <link rel="stylesheet" type="text/css" media="all" href="../styles/alsa/all.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="../styles/grid.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="../styles/screen.css" />
 <link rel="stylesheet" type="text/css" media="print" href="../styles/print.css" />
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
+
 </head>
 <body>
 
@@ -42,7 +49,7 @@
 
 <h2>SYNOPSIS</h2>
 
-<p><strong>genit create</strong> <em>project</em></p>
+<p><strong>genit create</strong> [options] <em>project</em></p>
 
 <h2>DESCRIPTION</h2>
 
@@ -51,7 +58,16 @@ and subfolders, and perfoms basic initialization.</p>
 
 <h2>OPTIONS</h2>
 
-<p>None.</p>
+<p><strong>-d, --doctype</strong> <em>DOCTYPE</em><br />
+By default, the doctype of a Genit project is HTML5. You can specify another doctype.
+<em>DOCTYPE</em> could be one of:</p>
+
+<ul><li><code>xhtml_1.0_strict</code></li>
+<li><code>xhtml_1.0_transitional</code></li>
+<li><code>html_5</code></li>
+</ul><p><strong>-e, --empty</strong><br />
+By default, Genit create a smoke test with each new project. This option create a project
+without the smoke test.</p>
 
 <h2>BUGS</h2>
 
