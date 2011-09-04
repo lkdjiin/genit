@@ -17,6 +17,7 @@ module Genit
     # Public: Compile the web site.
     def compile
       if genit_project_folder?
+        remove_content_of_www
         compile_site
       else
         puts 'Not a genit project folder'
@@ -27,6 +28,15 @@ module Genit
     
     def genit_project_folder?
       File.exist?(File.join(@working_dir, '.genit'))
+    end
+    
+    def remove_content_of_www
+      Dir.foreach(File.join(@working_dir, 'www')) do |file|
+        next if (file == ".") or (file == "..")
+        filename = File.join(@working_dir, 'www', file)
+        FileUtils.remove_dir(filename) if File.directory?(filename)
+        FileUtils.remove_file(filename) if File.file?(filename)
+      end
     end
     
     def compile_site
