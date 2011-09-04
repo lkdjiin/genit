@@ -1,3 +1,23 @@
+v0.9  2011-09-04
+
+  * You can add news to your site with ease
+  
+  * The tag 'var' does not exist anymore. It is replaced by the two-part tag
+    'here' & 'what'
+  
+  * Put your public files (photo, text, pdf, etc.) in the 'public' folder
+  
+  * Put your javascript in the 'scripts' folder
+  
+  * Relative links should be written relative to the root (the index.hmtl file)
+  
+  * New '--empty' switch for the 'create' command
+  
+  * New '--doctype' option for the 'create' command
+  
+  * Fix bug #38: named anchor crashes the compiler
+  
+
 v0.5  2011-08-06
 
   * You can pass string variables from page to template
