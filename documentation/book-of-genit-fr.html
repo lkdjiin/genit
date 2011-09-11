@@ -69,8 +69,11 @@
     <li><a href="../documentation/book-of-genit-fr.html#String_what">5.2 L'attribut what</a></li>
     <li><a href="../documentation/book-of-genit-fr.html#String_exercises">5.3 Exercices</a></li>
   </ul><li><a href="../documentation/book-of-genit-fr.html#News">6. Les actualités</a></li>
-  
-  <li><a href="../documentation/book-of-genit-fr.html#Public">7. Le dossier public</a></li>
+  <ul><li><a href="../documentation/book-of-genit-fr.html#News_folder">6.1 Le dossier news</a></li>
+    <li><a href="../documentation/book-of-genit-fr.html#News_all">6.2 Afficher toutes les actualités</a></li>
+    <li><a href="../documentation/book-of-genit-fr.html#News_number">6.3 Afficher les plus récentes actualités</a></li>
+    <li><a href="../documentation/book-of-genit-fr.html#News_wrapper">6.4 Du style pour les actualités</a></li>
+  </ul><li><a href="../documentation/book-of-genit-fr.html#Public">7. Le dossier public</a></li>
   
   <li><a href="../documentation/book-of-genit-fr.html#Javascript">8. Javascript</a></li>
 </ul><!--
@@ -479,14 +482,14 @@ chapitre : création puis compilation du projet.
 
 <a name="Figure_2.1" class="figure" id="Figure_2.1">Figure 2.1 - Création du projet et compilation</a>
   <img src="../public/images/5.jpg" class="screenshot" /><p>
-Genit place le résultat de la compilation dans le dossier <code>sample_app/www</code>. La 
+Genit place le résultat de la compilation dans le dossier <code>www</code>. La 
 <a href="../documentation/book-of-genit-fr.html#Figure_2.2">figure 2.2</a> montre le contenu du
-dossier <code>sample_app/www</code> après compilation.
+dossier <code>www</code> après compilation.
 </p>
 
 <a name="Figure_2.2" class="figure" id="Figure_2.2">Figure 2.2 - Contenu du dossier www</a>
   <img src="../public/images/6.jpg" class="screenshot" /><p>
-Pour voir le résultat, il faut ouvrir le fichier <code>sample_app/www/index.html</code> dans
+Pour voir le résultat, il faut ouvrir le fichier <code>www/index.html</code> dans
 votre navigateur (<a href="../documentation/book-of-genit-fr.html#Figure_2.3">figure 2.3</a>)
 </p>
 
@@ -494,27 +497,27 @@ votre navigateur (<a href="../documentation/book-of-genit-fr.html#Figure_2.3">fi
 <img src="../public/images/7.jpg" class="screenshot" /><!-------------------------------------------------------------------------------------><h3><a name="Add_pages" id="Add_pages">2.3 Ajouter des pages</a></h3>
 
 <p>
-La page <code>sample_app/www/index.html</code>, que vous venez d'ouvrir à la fin de la section précedente 
+La page <code>www/index.html</code>, que vous venez d'ouvrir à la fin de la section précedente 
 (<a href="../documentation/book-of-genit-fr.html#Compilation">2.2</a>) ne vient pas de
 nulle-part.<br />
-Vous trouverez son contenu dans le fichier <code>sample_app/pages/index.html</code>
+Vous trouverez son contenu dans le fichier <code>pages/index.html</code>
 (<a href="../documentation/book-of-genit-fr.html#Listing_2.1">listing 2.1</a>). Avec Genit,
-vous placerez toutes les pages de votre site dans le dossier <code>sample_app/pages</code>.
+vous placerez toutes les pages de votre site dans le dossier <code>pages</code>.
 </p>
 
-<a name="Listing_2.1" class="listing" id="Listing_2.1">Listing 2.1 - Le fichier sample_app/pages/index.html</a>
+<a name="Listing_2.1" class="listing" id="Listing_2.1">Listing 2.1 - Le fichier pages/index.html</a>
 <p class="listing_html">
 <span class="style_1">&lt;h1&gt;</span><span class="style_0">home page</span><span class="style_1">&lt;/h1&gt;</span><br /></p>
 
 
 <p>
 Nous allons maintenant ajouter la page d'actualités. Pour cela créez le fichier 
-<code>sample_app/pages/news.html</code> (<a href="../documentation/book-of-genit-fr.html#Figure_2.4">figure 2.4</a>)
+<code>pages/news.html</code> (<a href="../documentation/book-of-genit-fr.html#Figure_2.4">figure 2.4</a>)
 et remplissez le avec le simple code du <a href="../documentation/book-of-genit-fr.html#Listing_2.2">listing 2.2</a>.
 </p>
 
 <a name="Figure_2.4" class="figure" id="Figure_2.4">Figure 2.4 - Le fichier news.html</a>
-<img src="../public/images/8.jpg" class="screenshot" /><a name="Listing_2.2" class="listing" id="Listing_2.2">Listing 2.2 - Le fichier sample_app/pages/news.html</a>
+<img src="../public/images/8.jpg" class="screenshot" /><a name="Listing_2.2" class="listing" id="Listing_2.2">Listing 2.2 - Le fichier pages/news.html</a>
 <p class="listing_html">
 <span class="style_1">&lt;h1&gt;</span><span class="style_0">news page</span><span class="style_1">&lt;/h1&gt;</span><br /></p>
 
@@ -528,7 +531,7 @@ Utilisez la commande de compilation pour prendre en compte les changements :
 </code></pre>
 
 <p>
-Vous pouvez maintenant ouvrir le fichier <code>sample_app/www/news.html</code> 
+Vous pouvez maintenant ouvrir le fichier <code>www/news.html</code> 
 (<a href="../documentation/book-of-genit-fr.html#Figure_2.5">figure 2.5</a>), qui
 vient de s'ajouter à votre site.
 </p>
@@ -540,8 +543,8 @@ Nous allons maintenant créer trois pages de documentation. Une page pour la doc
 utilisateur (<code>user.html</code>), une seconde pour la documentation 
 développeur (<code>developer.html</code>), et enfin une dernière qui regroupera
 les liens vers les deux pages précédentes (<code>documentation.html</code>).<br />
-Comme pour la page d'actualités, vous allez créer ces pages dans le dossier <code>sample_app/pages</code>.
-La figure <a href="../documentation/book-of-genit-fr.html#Figure_2.6">2.6</a> montre à quoi doit maintenant ressembler votre dossier <code>sample_app/pages</code>:
+Comme pour la page d'actualités, vous allez créer ces pages dans le dossier <code>pages</code>.
+La figure <a href="../documentation/book-of-genit-fr.html#Figure_2.6">2.6</a> montre à quoi doit maintenant ressembler votre dossier <code>pages</code>:
 </p>
 
 <a name="Figure_2.6" class="figure" id="Figure_2.6">Figure 2.6 - Contenu du dossier pages après ajout des 3 pages de documentation</a>
@@ -549,15 +552,15 @@ La figure <a href="../documentation/book-of-genit-fr.html#Figure_2.6">2.6</a> mo
 Vous allez remplir ces trois fichiers avec le contenu des listings 2.3, 2.4 et 2.5 :
 </p>
 
-<a name="Listing_2.3" class="listing" id="Listing_2.3">Listing 2.3 - Le fichier sample_app/pages/developer.html</a>
+<a name="Listing_2.3" class="listing" id="Listing_2.3">Listing 2.3 - Le fichier pages/developer.html</a>
 <p class="listing_html">
 <span class="style_1">&lt;h1&gt;</span><span class="style_0">developer page</span><span class="style_1">&lt;/h1&gt;</span><br /></p>
 
-<a name="Listing_2.4" class="listing" id="Listing_2.4">Listing 2.4 - Le fichier sample_app/pages/user.html</a>
+<a name="Listing_2.4" class="listing" id="Listing_2.4">Listing 2.4 - Le fichier pages/user.html</a>
 <p class="listing_html">
 <span class="style_1">&lt;h1&gt;</span><span class="style_0">user page</span><span class="style_1">&lt;/h1&gt;</span><br /></p>
 
-<a name="Listing_2.5" class="listing" id="Listing_2.5">Listing 2.5 - Le fichier sample_app/pages/documentation.html</a>
+<a name="Listing_2.5" class="listing" id="Listing_2.5">Listing 2.5 - Le fichier pages/documentation.html</a>
 <p class="listing_html">
 <span class="style_1">&lt;h1&gt;</span><span class="style_0">documentation page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_1">&lt;ul&gt;</span><br />
     <span class="style_1">&lt;li&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"user.html"</span><span class="style_1">&gt;</span><span class="style_0">User documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
@@ -566,7 +569,7 @@ Vous allez remplir ces trois fichiers avec le contenu des listings 2.3, 2.4 et 2
 
 <p>
 Une nouvelle compilation et vous pourrez voir le résultat en ouvrant le fichier 
-<code>sample_app/www/documentation.html</code> dans votre navigateur. Essayez les liens pour vous
+<code>www/documentation.html</code> dans votre navigateur. Essayez les liens pour vous
 assurez qu'ils fonctionnent.
 </p>
 
@@ -574,14 +577,14 @@ assurez qu'ils fonctionnent.
 Dans un site réel, vous pourriez avoir des dizaines de pages de documentation. Dans ce cas, je prefère
 organiser le dossier <code>pages</code> en sous-dossiers. Allons-y !
 <br /><br />
-Vous créez le sous-dossier <code>sample_app/pages/doc</code> dans lequel vous deplacez les 3 fichiers
+Vous créez le sous-dossier <code>pages/doc</code> dans lequel vous deplacez les 3 fichiers
 créés précédement (<a href="../documentation/book-of-genit-fr.html#Figure_2.7">figure 2.7</a>) :
 </p>
 
 <a name="Figure_2.7" class="figure" id="Figure_2.7">Figure 2.7 - Contenu du dossier pages</a>
 <img src="../public/images/11.jpg" class="screenshot" /><p>
-Puis vous renommez le fichier <code>sample_app/pages/doc/documentation.html</code>
-en <code>sample_app/pages/doc/index.html</code> (<a href="../documentation/book-of-genit-fr.html#Figure_2.8">figure 2.8</a>), 
+Puis vous renommez le fichier <code>pages/doc/documentation.html</code>
+en <code>pages/doc/index.html</code> (<a href="../documentation/book-of-genit-fr.html#Figure_2.8">figure 2.8</a>), 
 ce qui est une pratique courante. Ainsi, si un
 internaute requiert le dossier <code>doc</code> dans son navigateur, le serveur saura lui fournir
 le fichier <code>doc/index.html</code>.
@@ -589,25 +592,25 @@ le fichier <code>doc/index.html</code>.
 
 <a name="Figure_2.8" class="figure" id="Figure_2.8">Figure 2.8 - documentation.html renommé en index.html</a>
 <img src="../public/images/12.jpg" class="screenshot" /><p>
-Il reste encore à modifier les liens de <code>sample_app/pages/doc/index.html</code> 
+Il reste encore à modifier les liens de <code>pages/doc/index.html</code> 
 (<a href="../documentation/book-of-genit-fr.html#Listing_2.6">listing 2.6</a>) :
 </p>
 
-<a name="Listing_2.6" class="listing" id="Listing_2.6">Listing 2.6 - Contenu de sample_app/pages/doc/index.html</a>
+<a name="Listing_2.6" class="listing" id="Listing_2.6">Listing 2.6 - Contenu de pages/doc/index.html</a>
 <p class="listing_html">
 <span class="style_1">&lt;h1&gt;</span><span class="style_0">documentation page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_1">&lt;ul&gt;</span><br />
     <span class="style_1">&lt;li&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"doc/user.html"</span><span class="style_1">&gt;</span><span class="style_0">User documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
     <span class="style_1">&lt;li&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"doc/developer.html"</span><span class="style_1">&gt;</span><span class="style_0">Developer documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br /><span class="style_1">&lt;/ul&gt;</span><br /></p>
 
 <p>
-Recompilez votre site puis ouvrez <code>sample_app/pages/doc/index.html</code> dans votre navigateur
+Recompilez votre site puis ouvrez <code>pages/doc/index.html</code> dans votre navigateur
 pour constater que les liens fonctionnent toujours comme avant.
 </p>
 
 <p class="green_note">
 Avec Genit, comme avec la plupart des autres frameworks web, vous écrivez les liens internes à votre site
 <strong><em>relativement à la racine du site</em></strong>. C'est à dire relativement au dossier
-<code>sample_app/pages</code>.
+<code>pages</code>.
 </p>
 
 
@@ -618,11 +621,11 @@ Avec Genit, comme avec la plupart des autres frameworks web, vous écrivez les l
 <p>
 Vous avez certainement remarqué le lien <code>home</code> au début de chaque pages web que vous avez
 ouvertes dans votre navigateur. Il s'agit du menu par défaut de Genit et il se trouve dans le dossier
-<code>sample_app/templates/menu.html</code>. Voici son contenu 
+<code>templates/menu.html</code>. Voici son contenu 
 (<a href="../documentation/book-of-genit-fr.html#Listing_2.7">listing 2.7</a>) :
 </p>
 
-<a name="Listing_2.7" class="listing" id="Listing_2.7">Listing 2.7 - Contenu initial de sample_app/templates/menu.html</a>
+<a name="Listing_2.7" class="listing" id="Listing_2.7">Listing 2.7 - Contenu initial de templates/menu.html</a>
 <p class="listing_html">
 <span class="style_1">&lt;ul </span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"menu"</span><span class="style_1">&gt;</span><br />
   <span class="style_1">&lt;li&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"index.html"</span><span class="style_1">&gt;</span><span class="style_0">home</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br /><span class="style_1">&lt;/ul&gt;</span><br /><br /></p>
@@ -632,7 +635,7 @@ Nous allons lui ajouter les liens pour la page d'acualités et la page de docume
 ainsi (<a href="../documentation/book-of-genit-fr.html#Listing_2.8">listing 2.8</a>) :
 </p>
 
-<a name="Listing_2.8" class="listing" id="Listing_2.8">Listing 2.8 - Le nouveau contenu de sample_app/templates/menu.html</a>
+<a name="Listing_2.8" class="listing" id="Listing_2.8">Listing 2.8 - Le nouveau contenu de templates/menu.html</a>
 <p class="listing_html">
 <span class="style_1">&lt;ul </span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"menu"</span><span class="style_1">&gt;</span><br />
   <span class="style_1">&lt;li&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"index.html"</span><span class="style_1">&gt;</span><span class="style_0">home</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
@@ -651,11 +654,11 @@ essayer les liens du menu !
 <p>
 Avant de conclure ce chapitre il nous reste à voir le template principal. C'est le fichier
 central de votre site. Celuio dans lequel sont incluses toutes les pages. vous le trouverez
-dans <code>sample_app/templates/main.html</code>, voici son contenu
+dans <code>templates/main.html</code>, voici son contenu
 (<a href="../documentation/book-of-genit-fr.html#Listing_2.9">listing 2.9</a>) :
 </p>
 
-<a name="Listing_2.9" class="listing" id="Listing_2.9">Listing 2.9 - Contenu initial de sample_app/templates/main.html</a>
+<a name="Listing_2.9" class="listing" id="Listing_2.9">Listing 2.9 - Contenu initial de templates/main.html</a>
 <p class="listing_html">
 <span class="style_21">&lt;!</span><span class="style_22">DOCTYPE </span><span class="style_23">html</span><span class="style_21">&gt;</span><br /><br /><span class="style_1">&lt;html </span><span class="style_3">lang</span><span class="style_8">=</span><span class="style_6">"en"</span><span class="style_1">&gt;</span><br /><span class="style_1">&lt;head&gt;</span><br />
   <span class="style_1">&lt;meta </span><span class="style_3">charset</span><span class="style_8">=</span><span class="style_6">"UTF-8"</span><span class="style_1">&gt;</span><br />
@@ -679,11 +682,11 @@ La balise <code>&lt;genit class="menu" /&gt;</code> intègre le menu et la bal
 <p>
 Nous allons ajoutez un entête et un pied de page sur toutes les pages du site. Comme il s'agit de
 modifier toutes les pages du site, nous le faisons dans le template principal. Éditez le
-fichier <code>sample_app/templates/main.html</code> de cette manière
+fichier <code>templates/main.html</code> de cette manière
 (<a href="../documentation/book-of-genit-fr.html#Listing_2.10">listing 2.10</a>) :
 </p>
 
-<a name="Listing_2.10" class="listing" id="Listing_2.10">Listing 2.10 - Le nouveau contenu de sample_app/templates/main.html</a>
+<a name="Listing_2.10" class="listing" id="Listing_2.10">Listing 2.10 - Le nouveau contenu de templates/main.html</a>
 <p class="listing_html">
 <span class="style_21">&lt;!</span><span class="style_22">DOCTYPE </span><span class="style_23">html</span><span class="style_21">&gt;</span><br /><br /><span class="style_1">&lt;html </span><span class="style_3">lang</span><span class="style_8">=</span><span class="style_6">"en"</span><span class="style_1">&gt;</span><br /><span class="style_1">&lt;head&gt;</span><br />
   <span class="style_1">&lt;meta </span><span class="style_3">charset</span><span class="style_8">=</span><span class="style_6">"UTF-8"</span><span class="style_1">&gt;</span><br />
@@ -722,23 +725,23 @@ Il ne vous reste plus qu'a recompiler le projet pour voir le résultat
   <li><a href="../#" onclick="Effect.SlideUp('solution_2'); return false;">Cacher la solution</a></li>
 </ul><div id="solution_2" style="display:none">
   <p>
-  Pour ajoutez la page de téléchargement, créez le fichier <code>sample_app/pages/download.html</code>
+  Pour ajoutez la page de téléchargement, créez le fichier <code>pages/download.html</code>
   (<a href="../documentation/book-of-genit-fr.html#Figure_2.11">figure 2.11</a>) et remplissez le avec 
   le contenu du <a href="../documentation/book-of-genit-fr.html#Listing_2.11">listing 2.11</a>
   </p>
   
-  <a name="Figure_2.11" class="figure" id="Figure_2.11">Figure 2.11 - Création de <code>sample_app/pages/download.html</code></a>
-  <img src="../public/images/15.jpg" class="screenshot" /><a name="Listing_2.11" class="listing" id="Listing_2.11">Listing 2.11 - Contenu de <code>sample_app/pages/download.html</code></a>
+  <a name="Figure_2.11" class="figure" id="Figure_2.11">Figure 2.11 - Création de <code>pages/download.html</code></a>
+  <img src="../public/images/15.jpg" class="screenshot" /><a name="Listing_2.11" class="listing" id="Listing_2.11">Listing 2.11 - Contenu de <code>pages/download.html</code></a>
   <p class="listing_html">
   <span class="style_1">&lt;h1&gt;</span><span class="style_0">download page</span><span class="style_1">&lt;/h1&gt;</span><br /></p>
   
   <p>
   Pour ajouter la page <code>download.html</code> au menu, éditez le fichier
-  <code>sample_app/templates/menu.html</code> comme dans le 
+  <code>templates/menu.html</code> comme dans le 
   <a href="../documentation/book-of-genit-fr.html#Listing_2.12">listing 2.12</a>
   </p>
   
-  <a name="Listing_2.12" class="listing" id="Listing_2.12">Listing 2.12 - Contenu de <code>sample_app/templates/menu.html</code></a>
+  <a name="Listing_2.12" class="listing" id="Listing_2.12">Listing 2.12 - Contenu de <code>templates/menu.html</code></a>
   <p class="listing_html">
   <span class="style_1">&lt;ul </span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"menu"</span><span class="style_1">&gt;</span><br />
     <span class="style_1">&lt;li&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"index.html"</span><span class="style_1">&gt;</span><span class="style_0">home</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
@@ -767,7 +770,7 @@ Dans ce chapitre, nous allons voir comment ajouter du style à votre site.
 <h3><a name="CSS_styles" id="CSS_styles">3.1 Le dossier styles</a></h3>
 
 <p>
-Ouvrez le fichier <code>sample_app/templates/main.html</code> dans votre éditeur de code et
+Ouvrez le fichier <code>templates/main.html</code> dans votre éditeur de code et
 reperez les deux lignes suivantes (<a href="../documentation/book-of-genit-fr.html#Listing_3.1">listing 3.1</a>) :
 </p>
 
@@ -783,27 +786,27 @@ reperez les deux lignes suivantes (<a href="../documentation/book-of-genit-fr.ht
 .<br /></p>
 
 <p>
-La première ligne fait appel au fichier CSS <code>sample_app/styles/alsa/all.css</code>. Kesako ? Il
+La première ligne fait appel au fichier CSS <code>styles/alsa/all.css</code>. Kesako ? Il
 s'agit d'une feuille de style de base dont je me sert très souvent 
 (<a href="http://www.alsacreations.com/astuce/lire/654-feuille-de-styles-de-base.html">voir sur alsacréations</a>),
 je l'ai donc intégrée à Genit. Mais vous allez voir rapidement que vous n'êtes pas obligé de l'utiliser.<br />
-La seconde ligne appelle le fichier CSS <code>sample_app/styles/screen.css</code>, qui contiendra vos règles
+La seconde ligne appelle le fichier CSS <code>styles/screen.css</code>, qui contiendra vos règles
 CSS pour le média screen (l'écran).
 </p>
 
 <p>
-Si vous ouvrez le dossier <code>sample_app/styles</code>, vous allez voir ceci
+Si vous ouvrez le dossier <code>styles</code>, vous allez voir ceci
 (<a href="../documentation/book-of-genit-fr.html#Figure_3.1">figure 3.1</a>) :
 </p>
 
-<a name="Figure_3.1" class="figure" id="Figure_3.1">Figure 3.1 - Contenu de <code>sample_app/styles</code></a>
+<a name="Figure_3.1" class="figure" id="Figure_3.1">Figure 3.1 - Contenu de <code>styles</code></a>
 <img src="../public/images/16.jpg" class="screenshot" /><p>
 Le dossier <code>images</code> contiendra bien entendu les éléments graphiques de votre design.<br />
 Comme dit plus-haut, le dossier <code>alsa</code> contient une feuille de style de base, qui n'est pas
 indispensable. Pour le prouver je vous invite à supprimer purement et simplement le dossier <code>alsa</code>
 et son contenu. Nous allons utiliser à la place le reset CSS 
 <a href="http://yuilibrary.com/">YUI</a>, développé par Yahoo, et que j'ai aussi intégré par défaut à Genit.<br />
-Pour cela modifiez le fichier <code>sample_app/templates/main.html</code> comme dans le 
+Pour cela modifiez le fichier <code>templates/main.html</code> comme dans le 
 <a href="../documentation/book-of-genit-fr.html#Listing_3.2">listing 3.2</a>
 </p>
 
@@ -840,7 +843,7 @@ le template principal (<code>templates/main.html</code>).
 Nous allons maintenant preparer le site à recevoir un peu de style.<br />
 La première chose que nous allons faire est d'ajouter du contenu à la page d'accueil. Nous
 ajouterons un bouton de téléchargement et un paragraphe de texte quelconque. Plus tard dans le livre, le
-texte sera remplacé par les actualités. Ouvrez le fichier <code>sample_app/pages/index.html</code>
+texte sera remplacé par les actualités. Ouvrez le fichier <code>pages/index.html</code>
 dans votre éditeur et modifiez le pour qu'il ressemble au <a href="../documentation/book-of-genit-fr.html#Listing_3.3">listing 3.3</a> :
 </p>
 
@@ -850,7 +853,7 @@ dans votre éditeur et modifiez le pour qu'il ressemble au <a href="../documenta
 <span class="style_1">&lt;h1&gt;</span><span class="style_0">home page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_1">&lt;p&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"download.html" </span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"download_button"</span><span class="style_1">&gt;</span><span class="style_0">DOWNLOAD</span><span class="style_1">&lt;/a&gt;&lt;/p&gt;</span><br /><br /><span class="style_1">&lt;p&gt;</span><br /><span class="style_0">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </span><br /><span class="style_0">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </span><br /><span class="style_0">veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea </span><br /><span class="style_0">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate </span><br /><span class="style_0">velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat </span><br /><span class="style_0">cupidatat non proident, sunt in culpa qui officia deserunt mollit anim </span><br /><span class="style_0">id est laborum."</span><br /><span class="style_1">&lt;/p&gt;</span><br /></p>
 
 <p>
-Il nous reste à modifier légerement le template (<code>sample_app/templates/main.html</code>) comme dans
+Il nous reste à modifier légerement le template (<code>templates/main.html</code>) comme dans
 le <a href="../documentation/book-of-genit-fr.html#Listing_3.4">listing 3.4</a> :
 </p>
 
@@ -883,19 +886,19 @@ Voilà, votre projet est prêt à être stylé...
 <h3><a name="CSS_do" id="CSS_do">3.3 Du style !</a></h3>
 
 <p>
-Nous sommes maintenant prêt à éditer le fichier <code>sample_app/styles/screen.css</code> pour y
+Nous sommes maintenant prêt à éditer le fichier <code>styles/screen.css</code> pour y
 ajouter nos règles. Ouvrez le dans votre éditeur et copiez/collez le contenu du 
 <a href="../documentation/book-of-genit-fr.html#Listing_3.5">listing 3.5</a> :
 </p>
 
-<a name="Listing_3.5" class="listing" id="Listing_3.5">Listing 3.5 - Le CSS du projet (<code>sample_app/styles/screen.css</code>)</a>
+<a name="Listing_3.5" class="listing" id="Listing_3.5">Listing 3.5 - Le CSS du projet (<code>styles/screen.css</code>)</a>
 <p class="listing_html">
 <span class="style_1">html </span><span class="style_5">{ </span><br /><span class="style_6">background-color</span><span class="style_5">:</span><span class="style_8">#F7BF65</span><span class="style_5">; </span><br /><span class="style_6">color</span><span class="style_5">:</span><span class="style_8">#457CAA</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /><br /><span class="style_5">#</span><span class="style_10">header</span><span class="style_5">, #</span><span class="style_10">footer </span><span class="style_5">{</span><br /><span class="style_6">width</span><span class="style_5">:</span><span class="style_8">100%</span><span class="style_5">;</span><br /><span class="style_6">text-align</span><span class="style_5">:</span><span class="style_8">center</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /><br /><span class="style_5">#</span><span class="style_10">header </span><span class="style_1">h1 </span><span class="style_5">{</span><br /><span class="style_6">font-size</span><span class="style_5">:</span><span class="style_8">30px</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /><br /><span class="style_5">#</span><span class="style_10">content </span><span class="style_5">{</span><br /><span class="style_6">width</span><span class="style_5">:</span><span class="style_8">500px</span><span class="style_5">;</span><br /><span class="style_6">margin</span><span class="style_5">:</span><span class="style_8">0 auto</span><span class="style_5">;</span><br /><span class="style_6">background-color</span><span class="style_5">:</span><span class="style_8">#AB9546</span><span class="style_5">;</span><br /><span class="style_6">padding</span><span class="style_5">:</span><span class="style_8">10px 30px</span><span class="style_5">;</span><br /><span class="style_17">border-radius</span><span class="style_5">:</span><span class="style_8">10px</span><span class="style_5">;</span><br /><span class="style_6">color</span><span class="style_5">:</span><span class="style_8">#333</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /><br /><span class="style_5">#</span><span class="style_10">menu </span><span class="style_5">{</span><br /><span class="style_6">text-align</span><span class="style_5">:</span><span class="style_8">center</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /><br /><span class="style_5">#</span><span class="style_10">menu </span><span class="style_1">li </span><span class="style_5">{</span><br /><span class="style_6">display</span><span class="style_5">:</span><span class="style_8">inline</span><span class="style_5">;</span><br /><span class="style_6">list-style-type</span><span class="style_5">: </span><span class="style_8">none</span><span class="style_5">;</span><br /><span class="style_6">margin-left</span><span class="style_5">: </span><span class="style_8">5px</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /><br /><span class="style_5">#</span><span class="style_10">menu </span><span class="style_1">a </span><span class="style_5">{</span><br /><span class="style_6">font-size</span><span class="style_5">:</span><span class="style_8">14px</span><span class="style_5">;</span><br /><span class="style_6">font-weight</span><span class="style_5">:</span><span class="style_8">bold</span><span class="style_5">;</span><br /><span class="style_6">padding</span><span class="style_5">: </span><span class="style_8">5px</span><span class="style_5">;</span><br /><span class="style_6">text-decoration</span><span class="style_5">:</span><span class="style_8">none</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /><br /><span class="style_5">#</span><span class="style_10">menu </span><span class="style_1">a</span><span class="style_5">#</span><span class="style_10">selected</span><span class="style_5">,</span><br /><span class="style_5">#</span><span class="style_10">menu </span><span class="style_1">a</span><span class="style_5">:</span><span class="style_3">hover </span><span class="style_5">{</span><br /><span class="style_6">border-bottom</span><span class="style_5">:</span><span class="style_8">5px solid #020</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /><br /><span class="style_5">#</span><span class="style_10">content </span><span class="style_1">a </span><span class="style_5">{</span><br /><span class="style_6">color</span><span class="style_5">:</span><span class="style_8">#020</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /><br /><span class="style_1">a</span><span class="style_5">.</span><span class="style_2">download_button </span><span class="style_5">{</span><br /><span class="style_6">background-color</span><span class="style_5">:</span><span class="style_8">#640000</span><span class="style_5">;</span><br /><span class="style_6">text-decoration</span><span class="style_5">:</span><span class="style_8">none</span><span class="style_5">;</span><br /><span class="style_6">font-weight</span><span class="style_5">:</span><span class="style_8">bold</span><span class="style_5">;</span><br /><span class="style_6">color</span><span class="style_5">:</span><span class="style_8">white </span><span class="style_5">!</span><span class="style_11">important</span><span class="style_5">;</span><br /><span class="style_6">padding</span><span class="style_5">:</span><span class="style_8">15px 0</span><span class="style_5">;</span><br /><span class="style_6">display</span><span class="style_5">:</span><span class="style_8">block</span><span class="style_5">;</span><br /><span class="style_6">width</span><span class="style_5">:</span><span class="style_8">40%</span><span class="style_5">;</span><br /><span class="style_6">text-align</span><span class="style_5">:</span><span class="style_8">center</span><span class="style_5">;</span><br /><span class="style_17">border-radius</span><span class="style_5">:</span><span class="style_8">10px</span><span class="style_5">;</span><br /><span class="style_6">margin</span><span class="style_5">:</span><span class="style_8">0 auto</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /><br /><span class="style_1">a</span><span class="style_5">.</span><span class="style_2">download_button</span><span class="style_5">:</span><span class="style_3">hover </span><span class="style_5">{</span><br /><span class="style_6">background-color</span><span class="style_5">:</span><span class="style_8">#900000</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /></p>
 
 
 <p>
 Comme d'habitude, vous devez recompiler le projet avant de voir les changements. Une fois ceci fait,
-ouvrez le fichier <code>sample_app/www/index.html</code> dans votre navigateur. Il devrait ressembler
+ouvrez le fichier <code>www/index.html</code> dans votre navigateur. Il devrait ressembler
 à la <a href="../documentation/book-of-genit-fr.html#Figure_3.3">figure 3.3</a> :
 </p>
 
@@ -909,13 +912,13 @@ de la page d'accueil vers la page d'actualités. C'est ce que j'ai fait dans le
 <a href="../documentation/book-of-genit-fr.html#Listing_4.1">listing 4.1</a>.
 </p>
 
-<a name="Listing_4.1" class="listing" id="Listing_4.1">Listing 4.1 Le bouton ajouté à la page <code>sample_app/pages/news.html</code></a>
+<a name="Listing_4.1" class="listing" id="Listing_4.1">Listing 4.1 Le bouton ajouté à la page <code>pages/news.html</code></a>
 <p class="listing_html">
 <span class="style_1">&lt;h1&gt;</span><span class="style_0">news page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_1">&lt;p&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"download.html" </span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"download_button"</span><span class="style_1">&gt;</span><span class="style_0">DOWNLOAD</span><span class="style_1">&lt;/a&gt;&lt;/p&gt;</span><br /></p>
 
 <p>
 Une fois le projet recompilé, vous pouvez voir le résultat en ouvrant le fichier
-<code>sample_app/www/news.html</code> dans votre navigateur
+<code>www/news.html</code> dans votre navigateur
 (<a href="../documentation/book-of-genit-fr.html#Figure_4.1">figure 4.1</a>)
 </p>
 
@@ -929,18 +932,18 @@ permettront de mettre du code en commun, et de modulariser les grands fichiers.
 </p>
 
 <p>
-Première étape, nous plaçons le code du bouton dans le fichier <code>sample_app/fragments/button.html</code>
+Première étape, nous plaçons le code du bouton dans le fichier <code>fragments/button.html</code>
 (<a href="../documentation/book-of-genit-fr.html#Listing_4.2">listing 4.2</a>).
 Bien sûr, comme ce fichier n'existe pas, vous devrez d'abord le créer.
 </p>
 
-<a name="Listing_4.2" class="listing" id="Listing_4.2">Listing 4.2 Contenu du fichier <code>sample_app/fragments/button.html</code></a>
+<a name="Listing_4.2" class="listing" id="Listing_4.2">Listing 4.2 Contenu du fichier <code>fragments/button.html</code></a>
 <p class="listing_html">
 <span class="style_1">&lt;p&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"download.html" </span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"download_button"</span><span class="style_1">&gt;</span><span class="style_0">DOWNLOAD</span><span class="style_1">&lt;/a&gt;&lt;/p&gt;</span><br /></p>
 
 <p>
-Dernière étape, nous devons remplacer le code du bouton dans les deux fichiers <code>sample_app/pages/index.html</code>
-et <code>sample_app/pages/news.html</code> par le code du <a href="../documentation/book-of-genit-fr.html#Listing_4.3">listing 4.3</a> :
+Dernière étape, nous devons remplacer le code du bouton dans les deux fichiers <code>pages/index.html</code>
+et <code>pages/news.html</code> par le code du <a href="../documentation/book-of-genit-fr.html#Listing_4.3">listing 4.3</a> :
 </p>
 
 <a name="Listing_4.3" class="listing" id="Listing_4.3">Listing 4.3 Code de remplacement du bouton dans les fichiers <code>index.html</code> et <code>news.html</code></a>
@@ -950,15 +953,15 @@ et <code>sample_app/pages/news.html</code> par le code du <a href="../documentat
 <p>
 Recompilez le projet et actualisez votre navigateur pour constater que ça marche !<br />
 Si vous avez raté quelque chose, je vous met le contenu complet des fichiers
-<code>sample_app/pages/index.html</code> (<a href="../documentation/book-of-genit-fr.html#Listing_4.4">listing 4.4</a>)
-et <code>sample_app/pages/news.html</code> (<a href="../documentation/book-of-genit-fr.html#Listing_4.5">listing 4.5</a>) :
+<code>pages/index.html</code> (<a href="../documentation/book-of-genit-fr.html#Listing_4.4">listing 4.4</a>)
+et <code>pages/news.html</code> (<a href="../documentation/book-of-genit-fr.html#Listing_4.5">listing 4.5</a>) :
 </p>
 
-<a name="Listing_4.4" class="listing" id="Listing_4.4">Listing 4.4 <code>sample_app/pages/index.html</code></a>
+<a name="Listing_4.4" class="listing" id="Listing_4.4">Listing 4.4 <code>pages/index.html</code></a>
 <p class="listing_html">
 <span class="style_1">&lt;h1&gt;</span><span class="style_0">home page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_2">&lt;genit class="fragment" file="button.html"/&gt;</span><br /><br /><span class="style_1">&lt;p&gt;</span><br /><span class="style_0">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </span><br /><span class="style_0">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </span><br /><span class="style_0">veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea </span><br /><span class="style_0">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate </span><br /><span class="style_0">velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat </span><br /><span class="style_0">cupidatat non proident, sunt in culpa qui officia deserunt mollit anim </span><br /><span class="style_0">id est laborum."</span><br /><span class="style_1">&lt;/p&gt;</span><br /></p>
 
-<a name="Listing_4.5" class="listing" id="Listing_4.5">Listing 4.5 <code>sample_app/pages/news.html</code></a>
+<a name="Listing_4.5" class="listing" id="Listing_4.5">Listing 4.5 <code>pages/news.html</code></a>
 <p class="listing_html">
 <span class="style_1">&lt;h1&gt;</span><span class="style_0">news page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_2">&lt;genit class="fragment" file="button.html"/&gt;</span><br /></p>
 
@@ -974,12 +977,12 @@ Il arrivera un moment où vous voudrez passer une chaîne de caractères depuis 
 Je prend un exemple simple : pour l'instant la barre de titre de la fenêtre du navigateur affiche
 "Amazing game". Je veux qu'elle affiche "Amazing game - Home" lorsque s'affiche la page d'accueil, 
 "Amazing game - Download" lorsque s'affiche la page de téléchargement, etc.<br />
-Le problème est que la barre de titre du navigateur est définie dans <code>sample_app/templates/main.html</code>,
+Le problème est que la barre de titre du navigateur est définie dans <code>templates/main.html</code>,
 c'est à dire pour <strong>toutes</strong> les pages 
 (<a href="../documentation/book-of-genit-fr.html#Listing_5.1">listing 5.1</a>).
 </p>
 
-<a name="Listing_5.1" class="listing" id="Listing_5.1">Listing 5.1 - Extrait de <code>sample_app/templates/main.html</code></a>
+<a name="Listing_5.1" class="listing" id="Listing_5.1">Listing 5.1 - Extrait de <code>templates/main.html</code></a>
 <p class="listing_html">
 <span class="style_21">&lt;!</span><span class="style_22">DOCTYPE </span><span class="style_23">html</span><span class="style_21">&gt;</span><br /><br /><span class="style_1">&lt;html </span><span class="style_3">lang</span><span class="style_8">=</span><span class="style_6">"en"</span><span class="style_1">&gt;</span><br /><span class="style_1">&lt;head&gt;</span><br />
   <span class="style_1">&lt;meta </span><span class="style_3">charset</span><span class="style_8">=</span><span class="style_6">"UTF-8"</span><span class="style_1">&gt;</span><br />
@@ -995,7 +998,7 @@ c'est à dire pour <strong>toutes</strong> les pages
 La conception d'un site web avec Genit n'utilise pas de langage de programmation ; nous n'avons donc
 pas accès à des variables. Malgré tout, XML nous fournit une solution simple pour passer des chaînes
 de caractères entre fichiers.<br />
-Éditez le fichier <code>sample_app/templates/main.html</code> comme suit 
+Éditez le fichier <code>templates/main.html</code> comme suit 
 (<a href="../documentation/book-of-genit-fr.html#Listing_5.2">listing 5.2</a>) :
 </p>
 
@@ -1021,7 +1024,7 @@ référencer avec le nom <code>window_title</code>. En anglais, 'here' signifie 
 
 <p>
 Nous pouvons maintenant, dans chaque page, dire à Genit ce que nous voulons écrire à l'endroit
-référencé par <code>window_title</code>. Ouvrez le fichier <code>sample_app/pages/index.html</code>
+référencé par <code>window_title</code>. Ouvrez le fichier <code>pages/index.html</code>
 dans votre éditeur et ajoutez lui, au tout début du fichier le code du
 <a href="../documentation/book-of-genit-fr.html#Listing_5.3">listing 5.3</a> :
 </p>
@@ -1031,7 +1034,7 @@ Vous pouvez écrire cette ligne à n'importe quel endroit du fichier. Mais au d�
 plus lisible et plus facile à maintenir.
 </p>
 
-<a name="Listing_5.3" class="listing" id="Listing_5.3">Listing 5.3 - L'attribut what au début du fichier <code>sample_app/pages/index.html</code></a>
+<a name="Listing_5.3" class="listing" id="Listing_5.3">Listing 5.3 - L'attribut what au début du fichier <code>pages/index.html</code></a>
 <p class="listing_html">
 <span class="style_2">&lt;genit what="window_title"&gt;</span><span class="style_0">Home</span><span class="style_2">&lt;/genit&gt;</span><br />
 .<br />
@@ -1059,8 +1062,153 @@ barre de titre : "Amazing game - News", etc.
 <!------------------------------------------------------------------------------------->
 <h2><a name="News" id="News">6. Les actualités</a></h2>
 
-<p>Prochainement...</p>
+<p>
+Peu de site peuvent se passer d'une rubrique actualités. Genit vous permet de les gérer
+facilement dans le cadre d'un site web statique.<br />
+Pour commencer, nous allons écrire trois actualités. Ensuite nous les afficherons toutes
+sur la page des actualités. Puis nous afficherons juste les deux plus récentes sur la page d'accueil.
+Et enfin, nous leur donnerons un rendu graphique différent sur les deux pages.
+</p>
 
+<!------------------------------------------------------------------------------------->
+<h3><a name="News_folder" id="News_folder">6.1 Le dossier news</a></h3>
+<p>
+Les actualités doivent être placées dans le dossier <code>news</code>. Leur nom doit être une
+date au format ISO (année-mois-jour). Créer donc les fichiers <code>news/2011-09-07.html</code>,
+<code>news/2011-09-06.html</code> et <code>news/2011-09-05.html</code>. Puis remplissez les avec
+le contenu des trois listings suivants (
+<a href="../documentation/book-of-genit-fr.html#Listing_6.1">listing 6.1</a>,
+<a href="../documentation/book-of-genit-fr.html#Listing_6.2">listing 6.2</a> et
+<a href="../documentation/book-of-genit-fr.html#Listing_6.3">listing 6.3</a>)
+</p>
+
+<a name="Listing_6.1" class="listing" id="Listing_6.1">Listing 6.1 - <code>news/2011-09-07.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;div </span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"article"</span><span class="style_1">&gt;</span><br />
+    <span class="style_1">&lt;h1&gt;</span><span class="style_0">Donec quis sapien scelerisque risus hendrerit</span><span class="style_1">&lt;/h1&gt;</span><br />
+    <span class="style_1">&lt;p </span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"date"</span><span class="style_1">&gt;</span><span class="style_0">2011-09-07</span><span class="style_1">&lt;/p&gt;</span><br />
+    <span class="style_1">&lt;p&gt;</span><br />
+        <span class="style_0">Donec quis sapien scelerisque risus hendrerit aliquet id sit </span><br />
+        <span class="style_0">amet risus. Integer sollicitudin, quam mollis rhoncus feugiat, </span><br />
+        <span class="style_0">ligula enim pellentesque sem, vel commodo orci augue quis justo.</span><br />
+    <span class="style_1">&lt;/p&gt;</span><br /><span class="style_1">&lt;/div&gt;</span><br /></p>
+
+<a name="Listing_6.2" class="listing" id="Listing_6.2">Listing 6.2 - <code>news/2011-09-06.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;div </span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"article"</span><span class="style_1">&gt;</span><br />
+    <span class="style_1">&lt;h1&gt;</span><span class="style_0">Vestibulum ante ipsum</span><span class="style_1">&lt;/h1&gt;</span><br />
+    <span class="style_1">&lt;p </span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"date"</span><span class="style_1">&gt;</span><span class="style_0">2011-09-06</span><span class="style_1">&lt;/p&gt;</span><br />
+    <span class="style_1">&lt;p&gt;</span><br />
+        <span class="style_0">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</span><br />
+        <span class="style_0">posuere cubilia Curae; Nam at felis sed dui lobortis blandit. </span><br />
+        <span class="style_0">Pellentesque habitant morbi tristique senectus et netus et </span><br />
+        <span class="style_0">malesuada fames ac turpis egestas.</span><br />
+    <span class="style_1">&lt;/p&gt;</span><br /><span class="style_1">&lt;/div&gt;</span><br /></p>
+
+<a name="Listing_6.3" class="listing" id="Listing_6.3">Listing 6.3 - <code>news/2011-09-05.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;div </span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"article"</span><span class="style_1">&gt;</span><br />
+    <span class="style_1">&lt;h1&gt;</span><span class="style_0">Lorem ipsum dolor sit amet</span><span class="style_1">&lt;/h1&gt;</span><br />
+    <span class="style_1">&lt;p </span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"date"</span><span class="style_1">&gt;</span><span class="style_0">2011-09-05</span><span class="style_1">&lt;/p&gt;</span><br />
+    <span class="style_1">&lt;p&gt;</span><br />
+        <span class="style_0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque</span><br />
+        <span class="style_0">at diam arcu. Sed in magna id libero iaculis suscipit quis vel </span><br />
+        <span class="style_0">nulla. Proin sit amet neque purus</span><br />
+    <span class="style_1">&lt;/p&gt;</span><br /><span class="style_1">&lt;/div&gt;</span><br /></p>
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="News_all" id="News_all">6.2 Afficher toutes les actualités</a></h3>
+
+<p>
+Ajoutons tout d'abord un minimum de style à nos actualités. Ajoutez le contenu du
+<a href="../documentation/book-of-genit-fr.html#Listing_6.4">listing 6.4</a>
+au fichier CSS <code>styles/screen.css</code> :
+</p>
+
+<a name="Listing_6.4" class="listing" id="Listing_6.4">Listing 6.4 - <code>styles/screen.css</code></a>
+<p class="listing_html">
+.<br />
+.<br />
+.<br /><span class="style_9">/* NEWS */</span><br /><br /><span class="style_5">.</span><span class="style_2">article </span><span class="style_1">h1 </span><span class="style_5">{</span><br /><span class="style_6">margin-bottom</span><span class="style_5">:</span><span class="style_8">0</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /><br /><span class="style_5">.</span><span class="style_2">article </span><span class="style_1">p</span><span class="style_5">.</span><span class="style_2">date </span><span class="style_5">{</span><br /><span class="style_6">font-size</span><span class="style_5">:</span><span class="style_8">10px</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /></p>
+
+<p>
+Maintenant nous ajoutons toutes les actualités à la page d'actualité, en toute simplicité
+(<a href="../documentation/book-of-genit-fr.html#Listing_6.5">listing 6.5</a>)
+</p>
+
+<a name="Listing_6.4" class="listing" id="Listing_6.4">Listing 6.5 - <code>pages/news.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit what="window_title"&gt;</span><span class="style_0">News</span><span class="style_2">&lt;/genit&gt;</span><br /><br /><span class="style_1">&lt;h1&gt;</span><span class="style_0">news page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_2">&lt;genit class="fragment" file="button.html"/&gt;</span><br /><br /><span class="style_2">&lt;genit class="news"/&gt;</span><br /></p>
+
+<p>
+C'est la ligne <code>&lt;genit class="news"/&gt;</code> qui s'occupe d'ajouter les actualités,
+de la plus récente à la plus ancienne.<br />
+Une fois le projet recompilé, voici ce qu'affiche la page actualités
+(<a href="../documentation/book-of-genit-fr.html#Figure_6.1">figure 6.1</a>) :
+</p>
+
+<a name="Figure_6.1" class="figure" id="Figure_6.1">Figure 6.1 - La page d'actualité</a>
+<img src="../public/images/21.jpg" class="screenshot" /><!-------------------------------------------------------------------------------------><h3><a name="News_number" id="News_number">6.3 Afficher les plus récentes actualités</a></h3>
+
+<p>
+Sur la page d'accueil, nous voulons afficher les deux plus récentes actualités. Rien de plus simple,
+voyez vous même le nouveau code de la page d'acceuil
+(<a href="../documentation/book-of-genit-fr.html#Listing_6.6">listing 6.6</a>) :
+</p>
+
+<a name="Listing_6.6" class="listing" id="Listing_6.6">Listing 6.6 - Inclusion des deux dernières actualités (<code>pages/index.html</code>)</a>
+<p class="listing_html">
+<span class="style_2">&lt;genit what="window_title"&gt;</span><span class="style_0">Home</span><span class="style_2">&lt;/genit&gt;</span><br /><br /><span class="style_1">&lt;h1&gt;</span><span class="style_0">home page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_2">&lt;genit class="fragment" file="button.html"/&gt;</span><br /><br /><span class="style_2">&lt;genit class="news" number="2" /&gt;</span><br /></p>
+
+<p>
+Comme d'habitude, une fois le projet recompilé, vous pouvez voir le résultat dans votre navigateur
+(<a href="../documentation/book-of-genit-fr.html#Figure_6.2">figure 6.2</a>) :
+</p>
+
+<a name="Figure_6.2" class="figure" id="Figure_6.2">Figure 6.2 - La page d'accueil avec les actualités</a>
+<img src="../public/images/22.jpg" class="screenshot" /><!-------------------------------------------------------------------------------------><h3><a name="News_wrapper" id="News_wrapper">6.4 Du style pour les actualités</a></h3>
+
+<p>
+Si nous voulons donner un style différent aux actualités affichées sur la page d'accueil et sur la
+page d'actualité, nous pouvons déjà le faire facilement. Dans la page <code>pages/news.html</code>,
+entourez la balise <code>&lt;genit&gt;</code> par une simple balise <code>&lt;div&gt;</code>
+(<a href="../documentation/book-of-genit-fr.html#Listing_6.7">listing 6.7</a>) :
+</p>
+
+<a name="Listing_6.7" class="listing" id="Listing_6.7">Listing 6.7 - <code>pages/news.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit what="window_title"&gt;</span><span class="style_0">News</span><span class="style_2">&lt;/genit&gt;</span><br /><br /><span class="style_1">&lt;h1&gt;</span><span class="style_0">news page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_2">&lt;genit class="fragment" file="button.html"/&gt;</span><br /><br /><span class="style_1">&lt;div </span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"news_section"</span><span class="style_1">&gt;</span><br />
+    <span class="style_2">&lt;genit class="news"/&gt;</span><br /><span class="style_1">&lt;/div&gt;</span><br /></p>
+
+<p>
+Puis ajoutez le code CSS du <a href="../documentation/book-of-genit-fr.html#Listing_6.8">listing 6.8</a> qui
+ajoutera une ligne après chaque actualité. N'oubliez de recompilé le projet pour voir le résultat.
+</p>
+
+<a name="Listing_6.8" class="listing" id="Listing_6.8">Listing 6.8 - <code>styles/screen.css</code></a>
+<p class="listing_html">
+.<br />
+.<br />
+.<br /><span class="style_9">/* A NEWS ON NEWS PAGE */</span><br /><span class="style_5">.</span><span class="style_2">news_section </span><span class="style_5">.</span><span class="style_2">article </span><span class="style_5">{</span><br /><span class="style_6">border-bottom</span><span class="style_5">:</span><span class="style_8">1px solid #020</span><span class="style_5">;</span><br /><span class="style_5">}</span><br /></p>
+
+
+<p>
+Genit propose une autre solution pour gérer le style des actualités
+suivant l'endroit où on les affichent. Vous pouvez utiliser l'attribut <code>wrapper</code>. 
+Éditez le fichier <code>pages/news.html</code> et modifiez son code
+comme dans le <a href="../documentation/book-of-genit-fr.html#Listing_6.9">listing 6.9</a> :
+</p>
+
+<a name="Listing_6.9" class="listing" id="Listing_6.9">Listing 6.9 - <code>pages/news.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit what="window_title"&gt;</span><span class="style_0">News</span><span class="style_2">&lt;/genit&gt;</span><br /><br /><span class="style_1">&lt;h1&gt;</span><span class="style_0">news page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_2">&lt;genit class="fragment" file="button.html"/&gt;</span><br /><br /><span class="style_2">&lt;genit class="news" wrapper="news_section"/&gt;</span><br /></p>
+
+<p>
+Le rendu visuel sera le même, mais le code XHTML résultant est légerement différent de celui obtenu avec le code du
+<a href="../documentation/book-of-genit-fr.html#Listing_6.7">listing 6.7</a>, car cette fois <strong>chaque</strong>
+actualité sera entourée de la balise <code>&lt;div class="news_section"&gt;</code>. Utilisez donc
+cette solution si elle vous convient, oubliez là si vous ne l'aimez pas...
+</p>
 
 
 
