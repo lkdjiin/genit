@@ -1215,18 +1215,116 @@ cette solution si elle vous convient, oubliez là si vous ne l'aimez pas...
 <!------------------------------------------------------------------------------------->
 <h2><a name="Public" id="Public">7. Le dossier public</a></h2>
 
-<p>Prochainement...</p>
+<p>
+Le dossier <code>public</code> est destiné à recevoir les fichiers du site qui seront
+servis sans traitement, notamment :
+</p>
 
+<ul><li>les fichiers médias (images, audios, vidéos) qui ne font pas partie du design du site.</li>
+  <li>les fichiers PDF</li>
+  <li>les fichiers en texte pur</li>
+  <li>etc...</li>
+</ul><p>
+Pour illustrer cela, notre site va proposer la licence du jeu en format <code>.txt</code>.
+Créez le fichier <code>public/license.txt</code> et remplissez le avec le
+<a href="../documentation/book-of-genit-fr.html#Listing_7.1">listing 7.1</a> (ou ce que
+vous voulez) :
+</p>
 
+<a name="Listing_7.1" class="listing" id="Listing_7.1">Listing 7.1 - <code>public/license.txt</code></a>
+<p class="listing_html">
+**************************************************<br />
+Amazing Game<br />
+**************************************************<br /><br />
+This is the license of Amazing Game.<br /></p>
 
+<p>
+Ajoutons maintenant le lien vers ce fichier, dans <code>pages/doc/index.html</code>
+(<a href="../documentation/book-of-genit-fr.html#Listing_7.2">listing 7.2</a>)
+</p>
 
+<a name="Listing_7.2" class="listing" id="Listing_7.2">Listing 7.2 - <code>pages/doc/index.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit what="window_title"&gt;</span><span class="style_0">Documentation</span><span class="style_2">&lt;/genit&gt;</span><br /><br /><span class="style_1">&lt;h1&gt;</span><span class="style_0">documentation page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_1">&lt;ul&gt;</span><br />
+    <span class="style_1">&lt;li&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"doc/user.html"</span><span class="style_1">&gt;</span><span class="style_0">User documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+    <span class="style_1">&lt;li&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"doc/developer.html"</span><span class="style_1">&gt;</span><span class="style_0">Developer documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+    <span class="style_1">&lt;li&gt;&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"public/license.txt"</span><span class="style_1">&gt;</span><span class="style_0">Read license</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br /><span class="style_1">&lt;/ul&gt;</span><br /></p>
+
+<p>
+Voilà. Recompilez le projet, affichez la page <code>pages/doc/index.html</code>
+(<a href="../documentation/book-of-genit-fr.html#Figure_7.1">figure 7.1</a>), et cliquez sur le lien
+pour afficher la licence (<a href="../documentation/book-of-genit-fr.html#Figure_7.2">figure 7.2</a>)
+</p>
+
+<a name="Figure_7.1" class="figure" id="Figure_7.1">Figure 7.1 - </a>
+<img src="../public/images/23.jpg" class="screenshot" /><a name="Figure_7.2" class="figure" id="Figure_7.2">Figure 7.2 - </a>
+<img src="../public/images/24.jpg" class="screenshot" /><p class="green_note">
+Autre exemple d'utilisation du dossier <code>public</code> : toutes les captures d'écran que vous
+voyez sur cette page (comme la <a href="../documentation/book-of-genit-fr.html#Figure_7.1">figure 7.1</a>)
+
+sont dans le dossier <code>public</code> du site de Genit.
+</p>
 
 <!------------------------------------------------------------------------------------->
 <h2><a name="Javascript" id="Javascript">8. Javascript</a></h2>
 
-<p>Prochainement...</p>
+<p>
+Utiliser javascript sur votre site est très facile. Respectez simplement la convention suivante :
+les fichiers et bibliothèques javascript vont dans le dossier <code>script</code>. Rien de plus.<br />
+Pour illustrer cela, nous allons ajouter un lien à la page de téléchargement ; ce lien ouvrira une 
+boite de dialogue indiquant que la fonctionnalité n'est pas encore prête.
+</p>
 
-</div> <!-- book -->
+<p>
+Tout d'abord, téléchargez la librairie <a href="http://ssssnakes.com/smoke/">smoke.js</a> 
+et placez les deux fichiers dont nous aurons besoin 
+(<code>smoke.css</code> et <code>smoke.js</code>) dans le dossier <code>scripts</code> 
+(<a href="../documentation/book-of-genit-fr.html#Figure_8.1">figure 8.1</a>) :
+</p>
+
+<a name="Figure_8.1" class="figure" id="Figure_8.1">Figure 8.1 - </a>
+<img src="../public/images/25.jpg" class="screenshot" /><p>
+Puis appellez ces deux fichiers dans la balise &lt;head&gt; du template principal (<code>templates/main.html</code>),
+comme indiqué dans le <a href="../documentation/book-of-genit-fr.html#Listing_8.1">listing 8.1</a> :
+</p>
+
+<a name="Listing_8.1" class="listing" id="Listing_8.1">Listing 8.1 - Chargement de smoke.js dans <code>templates/main.html</code></a>
+<p class="listing_html">
+<span class="style_21">&lt;!</span><span class="style_22">DOCTYPE </span><span class="style_23">html</span><span class="style_21">&gt;</span><br /><br /><span class="style_1">&lt;html </span><span class="style_3">lang</span><span class="style_8">=</span><span class="style_6">"en"</span><span class="style_1">&gt;</span><br /><span class="style_1">&lt;head&gt;</span><br />
+.<br />
+.<br />
+.<br />
+    <span class="style_1">&lt;script </span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/javascript" </span><span class="style_3">src</span><span class="style_8">=</span><span class="style_6">"scripts/smoke.js"</span><span class="style_11">/&gt;</span><br />
+    <span class="style_1">&lt;link </span><span class="style_3">rel</span><span class="style_8">=</span><span class="style_6">"stylesheet" </span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/css" </span><span class="style_3">media</span><span class="style_8">=</span><span class="style_6">"screen" </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"scripts/smoke.css" </span><span class="style_11">/&gt; </span><br /><span class="style_1">&lt;/head&gt;</span><br />
+.<br />
+.<br />
+.<br /></p>
+
+
+<p>
+Nous pouvons maintenant ajouter le lien sur la page de téléchargement
+(<a href="../documentation/book-of-genit-fr.html#Listing_8.2">listing 8.2</a>). Ce lien
+appelle la fonction <code>smoke.alert()</code> de la bibliothèque <code>smoke.js</code>.
+</p>
+
+<a name="Listing_8.2" class="listing" id="Listing_8.2">Listing 8.2 - <code>pages/download.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit what="window_title"&gt;</span><span class="style_0">Download</span><span class="style_2">&lt;/genit&gt;</span><br /><br /><span class="style_1">&lt;h1&gt;</span><span class="style_0">download page</span><span class="style_1">&lt;/h1&gt;</span><br /><br /><span class="style_1">&lt;a </span><span class="style_3">onclick</span><span class="style_8">=</span><span class="style_6">"javascript:smoke.alert('Not implemented');" </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"#"</span><span class="style_1">&gt;</span><br />
+    <span class="style_0">Download the amazing game</span><br /><span class="style_1">&lt;/a&gt;</span><br /></p>
+
+<p>
+Comme d'habitude, recompilez le projet et voyez la nouvelle page de téléchargement
+(<a href="../documentation/book-of-genit-fr.html#Figure_8.2">figure 8.2</a>) :
+</p>
+
+<a name="Figure_8.2" class="figure" id="Figure_8.2">Figure 8.2 - La nouvelle page de téléchargement</a>
+<img src="../public/images/26.jpg" class="screenshot" /><p>
+Si vous cliquez sur le lien, une jolie boite de dialogue s'ouvrira
+(<a href="../documentation/book-of-genit-fr.html#Figure_8.3">figure 8.3</a>) :
+</p>
+
+<a name="Figure_8.3" class="figure" id="Figure_8.3">Figure 8.3 - </a>
+<img src="../public/images/27.jpg" class="screenshot" /></div> <!-- book -->
       </div>
       <div class="column grid_4">
         <div class="right-side-section"><h2>Quick links</h2>
