@@ -29,7 +29,7 @@ describe ProjectCreator do
       File.exist?('spec/project-name/.genit').should == true
     end
     
-    pending "should create a config file" do
+    it "should create a config file" do
       File.exist?('spec/project-name/.config').should == true
     end
     
