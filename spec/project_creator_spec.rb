@@ -29,6 +29,17 @@ describe ProjectCreator do
       File.exist?('spec/project-name/.genit').should == true
     end
     
+    pending "should create a config file" do
+      File.exist?('spec/project-name/.config').should == true
+    end
+    
+  end
+  
+  describe "Config file" do
+    it "should have an address key"
+    it "should have an rss key"
+    it "should have an rss_title key"
+    it "should have an rss_description key"
   end
   
   describe "Folder structure" do
