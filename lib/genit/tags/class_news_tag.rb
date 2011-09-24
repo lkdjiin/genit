@@ -33,21 +33,15 @@ module Genit
     def news_files
       files = Dir.glob(File.join(@working_dir, 'news', '*')).sort.reverse
       number = @tag['number']
-      if number
-        files[0...(number).to_i]
-      else
-        files
-      end
+      return files[0...(number).to_i] if number
+      files
     end
     
     def process_the_news file 
       doc_as_string = HtmlDocument.open_as_string(file).to_s
       wrapper = @tag['wrapper']
-      if wrapper
-        "<div class='#{wrapper}'>" + doc_as_string + '</div>'
-      else
-        doc_as_string
-      end
+      return "<div class='#{wrapper}'>" + doc_as_string + '</div>' if wrapper
+      doc_as_string
     end
     
   end

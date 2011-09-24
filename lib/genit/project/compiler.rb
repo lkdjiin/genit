@@ -42,6 +42,7 @@ module Genit
     def compile_site
       compile_pages
       copy_static_content
+      create_rss_feed
     end
     
     def compile_pages
@@ -68,6 +69,13 @@ module Genit
       FileUtils.cp_r File.join(@working_dir, 'styles'), destination
       FileUtils.cp_r File.join(@working_dir, 'public'), destination
       FileUtils.cp_r File.join(@working_dir, 'scripts'), destination
+    end
+    
+    def create_rss_feed
+      all_news_files = Dir.glob(File.join(@working_dir, 'news', '*')).sort.reverse
+      config_file = YAML.load_file(File.join(@working_dir, '.config'))
+      return unless config_file[:rss]
+      RssFeed.new(@working_dir, all_news_files, config_file).generate_rss
     end
     
   end

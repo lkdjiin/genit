@@ -22,14 +22,14 @@ describe Compiler do
   
   it "should build an index.html page in www" do
     @compiler.compile
-    File.exist?('spec/project-name/www/index.html').should == true
+    File.exist?('spec/project-name/www/index.html').should be_true
   end
   
   it "should build two pages" do
     write_file 'pages/doc.html', '<h1>documentation</h1>'
     @compiler.compile
-    File.exist?('spec/project-name/www/index.html').should == true
-    File.exist?('spec/project-name/www/doc.html').should == true
+    File.exist?('spec/project-name/www/index.html').should be_true
+    File.exist?('spec/project-name/www/doc.html').should be_true
   end
     
   it "should copy the styles/ into www/" do
@@ -48,29 +48,41 @@ describe Compiler do
     compiler.compile
   end
   
-  it "should allow template to include a fragment (Bug#37)" do
-    # add a fragment
-    File.open('spec/project-name/fragments/footer.html', "w") {|out| out.puts '<p>footer</p>' }
-    # replace main.html
-    main = %q{
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-      <head>
-        <title>Genit - Static web site framework</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <link rel="stylesheet" type="text/css" media="all" href="styles/alsa/all.css" /> 
-        <link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css" /> 
-        <link rel="stylesheet" type="text/css" media="print" href="styles/print.css" /> 
-      </head>
-      <body>
-        <genit class="menu" />
-        <genit class="pages" />
-        <genit class="fragment" file="footer.html"/>
-      </body>
-    </html>}
-    File.open('spec/project-name/templates/main.html', "w") {|out| out.puts main }
-    lambda {@compiler.compile}.should_not raise_error
+  describe "RSS feed" do
+  
+    it "should build the rss.xml file" do
+       File.exist?('spec/project-name/www/rss.xml').should be_true
+    end
+    
+  end
+  
+  describe "BUGS" do
+  
+    it "should allow template to include a fragment (Bug#37)" do
+      # add a fragment
+      File.open('spec/project-name/fragments/footer.html', "w") {|out| out.puts '<p>footer</p>' }
+      # replace main.html
+      main = %q{
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+        <head>
+          <title>Genit - Static web site framework</title>
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+          <link rel="stylesheet" type="text/css" media="all" href="styles/alsa/all.css" /> 
+          <link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css" /> 
+          <link rel="stylesheet" type="text/css" media="print" href="styles/print.css" /> 
+        </head>
+        <body>
+          <genit class="menu" />
+          <genit class="pages" />
+          <genit class="fragment" file="footer.html"/>
+        </body>
+      </html>}
+      File.open('spec/project-name/templates/main.html', "w") {|out| out.puts main }
+      lambda {@compiler.compile}.should_not raise_error
+    end
+  
   end
   
 end
