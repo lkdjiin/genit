@@ -36,10 +36,27 @@ describe ProjectCreator do
   end
   
   describe "Config file" do
-    it "should have an address key"
-    it "should have an rss key"
-    it "should have an rss_title key"
-    it "should have an rss_description key"
+    
+    before :each do
+      @config_file = YAML.load_file('spec/project-name/.config')
+    end
+  
+    it "should have an address value of 'http://www.example.com'" do
+      @config_file[:address].should == 'http://www.example.com'
+    end
+    
+    it "should have an rss value at true" do
+      @config_file[:rss].should be_true
+    end
+    
+    it "should have an rss_title value of 'RSS TITLE'" do
+      @config_file[:rss_title].should == 'RSS TITLE'
+    end
+    
+    it "should have an rss_description value of 'RSS DESCRIPTION'" do
+      @config_file[:rss_description].should == 'RSS DESCRIPTION'
+    end
+    
   end
   
   describe "Folder structure" do
