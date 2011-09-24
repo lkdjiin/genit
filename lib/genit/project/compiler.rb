@@ -41,10 +41,7 @@ module Genit
     
     def compile_site
       compile_pages
-      destination = File.join(@working_dir, 'www')
-      FileUtils.cp_r File.join(@working_dir, 'styles'), destination
-      FileUtils.cp_r File.join(@working_dir, 'public'), destination
-      FileUtils.cp_r File.join(@working_dir, 'scripts'), destination
+      copy_static_content
     end
     
     def compile_pages
@@ -64,6 +61,13 @@ module Genit
     def save_file_as_xhtml
       doc_writer = DocumentWriter.new @working_dir
       doc_writer.save_as_xhtml @page, @filename
+    end
+    
+    def copy_static_content
+      destination = File.join(@working_dir, 'www')
+      FileUtils.cp_r File.join(@working_dir, 'styles'), destination
+      FileUtils.cp_r File.join(@working_dir, 'public'), destination
+      FileUtils.cp_r File.join(@working_dir, 'scripts'), destination
     end
     
   end
