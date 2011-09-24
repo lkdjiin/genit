@@ -41,9 +41,10 @@ module Genit
     
     def compile_site
       compile_pages
-      FileUtils.cp_r File.join(@working_dir, 'styles'), File.join(@working_dir, 'www')
-      FileUtils.cp_r File.join(@working_dir, 'public'), File.join(@working_dir, 'www')
-      FileUtils.cp_r File.join(@working_dir, 'scripts'), File.join(@working_dir, 'www')
+      destination = File.join(@working_dir, 'www')
+      FileUtils.cp_r File.join(@working_dir, 'styles'), destination
+      FileUtils.cp_r File.join(@working_dir, 'public'), destination
+      FileUtils.cp_r File.join(@working_dir, 'scripts'), destination
     end
     
     def compile_pages

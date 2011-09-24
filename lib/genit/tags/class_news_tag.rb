@@ -26,14 +26,7 @@ module Genit
     
     def news_content
       news_string = ''
-      news_files.each do |file|
-        doc = HtmlDocument.open_as_string file
-        if @tag['wrapper']
-          news_string += "<div class='#{@tag['wrapper']}'>" + doc.to_s + '</div>'
-        else
-          news_string += doc.to_s
-        end
-      end
+      news_files.each { |file| news_string += process_the_news(file) }
       news_string
     end
     
@@ -44,6 +37,16 @@ module Genit
         files[0...(number).to_i]
       else
         files
+      end
+    end
+    
+    def process_the_news file 
+      doc_as_string = HtmlDocument.open_as_string(file).to_s
+      wrapper = @tag['wrapper']
+      if wrapper
+        "<div class='#{wrapper}'>" + doc_as_string + '</div>'
+      else
+        doc_as_string
       end
     end
     

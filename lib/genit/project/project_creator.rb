@@ -34,20 +34,32 @@ module Genit
     private
     
     def create_the_project
+      create_the_project_folders
+      copy_the_project_files
+      create_the_project_config
+    end
+    
+    def create_the_project_folders
       FileUtils.makedirs @project_name
-      create_dirs ['fragments', 'news', 'pages', 'scripts', 'styles', 'templates', 'www',
+      create_subfolders ['fragments', 'news', 'pages', 'scripts', 'styles', 'templates', 'www',
                    'styles/alsa', 'styles/yui', 'styles/images', 'public']
+    end
+    
+    def copy_the_project_files
       copy_main_template
       copy_files ['templates/menu.html', 'styles/handheld.css', 'styles/print.css',
                   'styles/alsa/all.css', 'styles/yui/all.css', 'styles/yui/base.css',
                   'styles/yui/fonts.css', 'styles/yui/reset.css']
       copy_index
       copy_screen_css
+    end
+
+    def create_the_project_config
       FileUtils.touch "#{@project_name}/.genit"
-      config_file = { address: 'http://www.example.com',
-                      rss: true, 
-                      rss_title: 'RSS TITLE',
-                      rss_description: 'RSS DESCRIPTION'}.to_yaml
+      config_file = { :address => 'http://www.example.com',
+                      :rss => true, 
+                      :rss_title => 'RSS TITLE',
+                      :rss_description => 'RSS DESCRIPTION'}.to_yaml
       dest =  File.join @project_name, '.config'
       File.open(dest, "w") {|out| out.puts config_file }
     end
@@ -58,12 +70,12 @@ module Genit
     #
     # Examples
     #
-    #   create_dirs ['styles', 'scripts']
+    #   create_subfolders ['styles', 'scripts']
     #
-    #   create_dirs ['styles/css/alsa', 'styles/css/yui', 'styles/css/images']
+    #   create_subfolders ['styles/css/alsa', 'styles/css/yui', 'styles/css/images']
     #
     # Returns nothing.
-    def create_dirs a_array
+    def create_subfolders a_array
       a_array.each {|dir| FileUtils.makedirs File.join(@project_name, dir) }
     end
     
@@ -84,6 +96,7 @@ module Genit
       end
     end
     
+    # @TODO document
     def copy_index
       dest =  File.join @project_name, 'pages/index.html'
       if @empty
@@ -94,6 +107,7 @@ module Genit
       FileUtils.cp src, dest
     end
     
+    # @TODO document
     def copy_screen_css
       dest =  File.join @project_name, 'styles/screen.css'
       if @empty
@@ -104,17 +118,20 @@ module Genit
       end
     end
     
+    # @TODO document
     def copy_main_template
       dest =  File.join @project_name, 'templates', 'main.html'
       copy_first_part dest
       ProjectCreator.append_last_part dest
     end
     
+    # @TODO document
     def copy_first_part dest
       src = File.join $GENIT_PATH, 'data', 'templates', @doctype
       FileUtils.cp src, dest
     end
     
+    # @TODO document
     def self.append_last_part dest
       src = File.join $GENIT_PATH, 'data', 'templates', 'main.html'
       content = File.open(src, "r").read
