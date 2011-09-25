@@ -252,6 +252,18 @@ font-weight:normal;
 color:#000064;
 }
 
+#book span.new_chapter {
+background-color: #a00;
+color: white;
+padding: 0 4px;
+font-size: 12px;
+font-weight:bold;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+-o-border-radius:10px;
+border-radius:10px;
+}
+
 
 /********************** HTML *********************************/
 

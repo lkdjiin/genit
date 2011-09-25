@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>RSS TITLE</title>
+    <link>http://www.example.com</link>
+    <description>RSS DESCRIPTION</description>
+    <item>
+      <title>Genit 0.99 released</title>
+      <link>http://www.example.com</link>
+      <pubDate>Sun, 25 Sep 2011 00:00:00 +0200</pubDate>
+      <dc:date>2011-09-25T00:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Genit 0.9 released</title>
+      <link>http://www.example.com</link>
+      <pubDate>Sun, 04 Sep 2011 00:00:00 +0200</pubDate>
+      <dc:date>2011-09-04T00:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Genit 0.5 released</title>
+      <link>http://www.example.com</link>
+      <pubDate>Sat, 06 Aug 2011 00:00:00 +0200</pubDate>
+      <dc:date>2011-08-06T00:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Genit 0.4.1 released</title>
+      <link>http://www.example.com</link>
+      <pubDate>Sat, 30 Jul 2011 00:00:00 +0200</pubDate>
+      <dc:date>2011-07-30T00:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Genit 0.4 released</title>
+      <link>http://www.example.com</link>
+      <pubDate>Tue, 05 Jul 2011 00:00:00 +0200</pubDate>
+      <dc:date>2011-07-05T00:00:00+02:00</dc:date>
+    </item>
+  </channel>
+</rss>

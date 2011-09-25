@@ -76,11 +76,12 @@
   </ul><li><a href="../documentation/book-of-genit-fr.html#Public">7. Le dossier public</a></li>
   
   <li><a href="../documentation/book-of-genit-fr.html#Javascript">8. Javascript</a></li>
+  
+  <li>
+<a href="../documentation/book-of-genit-fr.html#RSS">9. Flux RSS</a> <span class="new_chapter">nouveau dans 0.99</span>
+</li>
 </ul><!--
   * markdown
-* Les news
-* javascript
-* le dossier public
 --><!-------------------------------------------------------------------------------------><h2><a name="Install" id="Install">1. Installation</a></h2>
 
 <p>
@@ -1324,7 +1325,55 @@ Si vous cliquez sur le lien, une jolie boite de dialogue s'ouvrira
 </p>
 
 <a name="Figure_8.3" class="figure" id="Figure_8.3">Figure 8.3 - </a>
-<img src="../public/images/27.jpg" class="screenshot" /></div> <!-- book -->
+<img src="../public/images/27.jpg" class="screenshot" /><!-------------------------------------------------------------------------------------><h2><a name="RSS" id="RSS">9. Flux RSS</a></h2>
+
+<p>
+À partir de la version 0.99, Genit peut créer le flux RSS des actualités de votre site. Ouvrez
+le fichier de configuration de votre projet Genit, il s'agit d'un fichier caché à la racine
+du projet, nommé <code>.config</code> 
+(<a href="../documentation/book-of-genit-fr.html#Listing_9.1">listing 9.1</a>) :
+</p>
+
+
+<a name="Listing_9.1" class="listing" id="Listing_9.1">Listing 9.1 - <code>.config</code> : le fichier de configuration de votre projet</a>
+<p class="listing_html">
+--- <br />
+:address: http://www.example.com<br />
+:rss: true<br />
+:rss_title: RSS TITLE<br />
+:rss_description: RSS DESCRIPTION<br /></p>
+
+
+<p>
+Sur la ligne qui commence par <code>:address:</code>, remplacez l'adresse par celle de votre site. 
+Si vous ne la connaissez pas encore, n'oubliez pas de le faire plus tard.<br />
+La ligne  qui commence par <code>:rss:</code> indique si vous voulez ou non générer un flux RSS. Si
+vous ne voulez pas de flux RSS pour un site, changez cette ligne en <code>:rss: false</code>.<br />
+Les lignes commencants par <code>:rss_title:</code> et <code>:rss_description:</code> indiquent
+respectivement le titre et la description du flux RSS.<br />
+Éditez le fichier <code>.config</code> selon vos besoins, par exemple
+(<a href="../documentation/book-of-genit-fr.html#Listing_9.2">listing 9.2</a>) :
+</p>
+
+<a name="Listing_9.2" class="listing" id="Listing_9.2">Listing 9.2 - </a>
+<p class="listing_html">
+--- <br />
+:address: http://www.mon-site.fr<br />
+:rss: true<br />
+:rss_title: Titre de mon flux<br />
+:rss_description: Description de mon flux<br /></p>
+
+<p>
+Sur votre site vous pouvez lié le flux RSS avec une ligne comme la suivante
+(<a href="../documentation/book-of-genit-fr.html#Listing_9.3">listing 9.3</a>) :
+</p>
+
+<a name="Listing_9.3" class="listing" id="Listing_9.3">Listing 9.3 - </a>
+<p class="listing_html">
+<span class="style_1">&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"rss.xml"</span><span class="style_1">&gt;</span><span class="style_0">RSS Feed</span><span class="style_1">&lt;/a&gt;</span><br /></p>
+
+
+</div> <!-- book -->
       </div>
       <div class="column grid_4">
         <div class="right-side-section"><h2>Quick links</h2>
@@ -1342,6 +1391,7 @@ Si vous cliquez sur le lien, une jolie boite de dialogue s'ouvrira
 <p><a href="../about.html">Who is behind that ?</a></p>
 
 <p><a href="../news.html">All news</a></p></div>
+        <div style="text-align:center"><a href="../rss.xml"><img src=".././styles/images/rss32.png" alt="" width="32" height="32" /></a></div>
         <div class="right-side-section"><h2>Licenses</h2>
 
 <p>Genit is a free, open source software licensed under
