@@ -2,12 +2,16 @@
 
 module Genit
 
+  # Build an XML sitemap.
   class Sitemap
   
-    def initialize array
+    # Public: Constructor.
+    #
+    # urls - an Array of all the URLs to include in the sitemap.
+    def initialize urls
       @builder = Nokogiri::XML::Builder.new do |xml|
         xml.urlset('xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9') do
-          array.each do |elem|
+          urls.each do |elem|
             xml.url do
               xml.loc elem
             end
@@ -16,7 +20,10 @@ module Genit
       end
     end
   
-    def build
+    # Public: Get the sitemap
+    #
+    # Returns
+    def get
       @builder.to_xml
     end
     
