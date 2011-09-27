@@ -23,6 +23,10 @@ module Genit
       list.map { |name| name.force_html_extension }
     end
     
+    def self.pagenames2urls array, url_string
+      array.map { |name| File.join(url_string, name) }
+    end
+    
   end
   
 end

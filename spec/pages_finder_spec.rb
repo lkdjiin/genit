@@ -45,4 +45,14 @@ describe PagesFinder do
     list.include?("b.html").should be_true
   end
   
+  it "should transform an array of pagenames into an array of URL strings" do
+    pagenames = ['a.html', 'b.html', 'c/d.html']
+    url = 'http://www.example.com'
+    result = PagesFinder.pagenames2urls(pagenames, url)
+    result.size.should == 3
+    result.include?('http://www.example.com/a.html').should be_true
+    result.include?('http://www.example.com/b.html').should be_true
+    result.include?('http://www.example.com/c/d.html').should be_true
+  end
+  
 end
