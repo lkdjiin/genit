@@ -56,6 +56,14 @@ describe Compiler do
     
   end
   
+  describe "Sitemap XML" do
+  
+    it "should build the 'sitemap.xml'" do
+      File.exist?('spec/project-name/www/sitemap.xml').should be_true
+    end
+    
+  end
+  
   describe "BUGS" do
   
     it "should allow template to include a fragment (Bug#37)" do

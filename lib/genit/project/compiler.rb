@@ -43,6 +43,7 @@ module Genit
       compile_pages
       copy_static_content
       create_rss_feed
+      create_sitemap_xml
     end
     
     def compile_pages
@@ -76,6 +77,14 @@ module Genit
       config_file = YAML.load_file(File.join(@working_dir, '.config'))
       return unless config_file[:rss]
       RssFeed.new(@working_dir, all_news_files, config_file).generate_rss
+    end
+    
+    def create_sitemap_xml
+      pages = PagesFinder.new(@working_dir).find
+      config_file = YAML.load_file(File.join(@working_dir, '.config'))
+      urls = PagesFinder.pagenames2urls(pages, config_file[:address])
+      sitemap = Sitemap.new(urls).get
+      FileWriter.write sitemap, File.join(@working_dir, 'www', 'sitemap.xml')
     end
     
   end
