@@ -12,7 +12,7 @@ describe Sitemap do
     @sitemap.get.class.should == String
   end
   
-  it "should have tonly one <urlset> element" do
+  it "should have only one <urlset> element" do
     doc = Nokogiri::XML::Document.parse @sitemap.get
     doc.css("urlset").size.should == 1
   end
