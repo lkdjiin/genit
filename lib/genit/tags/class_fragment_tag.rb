@@ -13,17 +13,18 @@ module Genit
     # tag         - The tag to process as a Nokogiri::XML::Element
     def initialize working_dir, template, filename, tag
       super working_dir, template, filename, tag
+      @file = @tag['file']
+      error "Incomplete #{@tag}" if @file.nil?
+      @full_path = File.join(@working_dir, 'fragments', @file)
+      error "No such file #{@tag}" unless File.exists?(@full_path)
     end
     
     # Public: Do the replacement.
     #
     # Returns the template as a Nokogiri::XML::Document
     def process
-      file = @tag['file']
-      error "Incomplete #{@tag}" if file.nil?
-      error "No such file #{@tag}" unless File.exists?(File.join(@working_dir, 'fragments', file))
-      fragment = HtmlDocument.build_page_content(File.join(@working_dir, 'fragments', file), @working_dir)
-      css_rule = "genit.fragment[file='#{file}']"
+      fragment = HtmlDocument.build_page_content(@full_path, @working_dir)
+      css_rule = "genit.fragment[file='#{@file}']"
       replace_tag_into_template! css_rule, fragment.to_s
     end
     
