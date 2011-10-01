@@ -19,6 +19,12 @@ describe ProjectCreator do
       File.exist?('spec/project-name').should == true
     end
     
+    it "should create a project folder with version number" do
+      a = File.read('VERSION').strip
+      b = File.read('spec/project-name/.genit').strip
+      b.should eql a
+    end
+    
     it "should say it if it cannot create a project" do
       project = ProjectCreator.new('/root/project', 'html_5', false)
       $stdout.should_receive(:puts).with("Cannot create project...")

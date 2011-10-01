@@ -55,13 +55,19 @@ module Genit
     end
 
     def create_the_project_config
-      FileUtils.touch "#{@project_name}/.genit"
+      version =  File.read(File.join($GENIT_PATH, 'VERSION')).strip
+      write_config version, '.genit'
+
       config_file = { :address => 'http://www.example.com',
                       :rss => true, 
                       :rss_title => 'RSS TITLE',
                       :rss_description => 'RSS DESCRIPTION'}.to_yaml
-      dest =  File.join @project_name, '.config'
-      File.open(dest, "w") {|out| out.puts config_file }
+      write_config config_file, '.config'
+    end
+    
+    def write_config content, filename
+      dest =  File.join @project_name, filename
+      File.open(dest, "w") {|out| out.puts content }
     end
     
     # Create some subfolders inside the project folder.
