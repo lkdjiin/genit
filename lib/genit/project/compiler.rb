@@ -12,22 +12,22 @@ module Genit
     # working_dir - The String working directory, where live the project.
     def initialize working_dir
       @working_dir = working_dir
+      check_missing_file '.genit', 'Not a genit project folder'
+      check_missing_file '.config', 'Missing config file'
     end
   
     # Public: Compile the web site.
     def compile
-      if genit_project_folder?
-        remove_content_of_www
-        compile_site
-      else
-        puts 'Not a genit project folder'
-      end
+      remove_content_of_www
+      compile_site
     end
     
     private
     
-    def genit_project_folder?
-      File.exist?(File.join(@working_dir, '.genit'))
+    def check_missing_file filename, message
+      unless File.exist?(File.join(@working_dir, filename))
+        error message
+      end
     end
     
     def remove_content_of_www
@@ -74,7 +74,11 @@ module Genit
     
     def create_rss_feed
       all_news_files = Dir.glob(File.join(@working_dir, 'news', '*')).sort.reverse
-      config_file = YAML.load_file(File.join(@working_dir, '.config'))
+      begin
+        config_file = YAML.load_file(File.join(@working_dir, '.config'))
+      rescue ArgumentError => msg
+        error "In .config file: #{msg}"
+      end
       return unless config_file[:rss]
       RssFeed.new(@working_dir, all_news_files, config_file).generate_rss
     end

@@ -4,13 +4,13 @@ require './spec/helper'
 
 describe Compiler do
 
-  before :all do
+  before :each do
     @project = ProjectCreator.new('spec/project-name', 'html_5', false)
     @project.create
-    @compiler = Compiler.new File.expand_path('spec/project-name')
+    @compiler = Compiler.new test_project_path
   end
   
-  after :all do
+  after :each do
     clean_test_repository
   end
   
@@ -33,6 +33,7 @@ describe Compiler do
   end
     
   it "should copy the styles/ into www/" do
+    @compiler.compile
     File.exist?('spec/project-name/www/styles/screen.css').should be_true
   end
   
@@ -42,26 +43,137 @@ describe Compiler do
     doc.at_css("ul#menu a#selected")['href'].should == 'index.html'
   end
   
-  it "should take care of the hidden project file" do
-    compiler = Compiler.new File.expand_path('.')
-    $stdout.should_receive(:puts).with("Not a genit project folder")
-    compiler.compile
+  context "with no '.genit' file" do
+    it "should exit" do
+      $stdout.should_receive(:puts).with(/Not a genit project folder/i)
+      lambda{Compiler.new File.expand_path('.')}.should raise_error(SystemExit)
+    end
+  end
+  
+  context "with no '.config' file" do
+    it "should exit" do
+      $stdout.should_receive(:puts).with(/Missing config file/i)
+      FileUtils.rm 'spec/project-name/.config'
+      lambda{Compiler.new test_project_path}.should raise_error(SystemExit)
+    end
   end
   
   describe "RSS feed" do
-  
     it "should build the rss.xml file" do
-       File.exist?('spec/project-name/www/rss.xml').should be_true
+      @compiler.compile
+      File.exist?('spec/project-name/www/rss.xml').should be_true
+    end
+  end
+  
+  describe "Sitemap XML" do
+    it "should build the 'sitemap.xml'" do
+      @compiler.compile
+      File.exist?('spec/project-name/www/sitemap.xml').should be_true
+    end
+  end
+  
+  context "with bad tag syntax" do
+    context "with unknown class into template" do
+      it "should exit" do
+        # replace main.html
+        main = %q{
+          <html>
+            <body>
+              <genit class="foo"/>
+            </body>
+          </html>
+        }
+        File.open('spec/project-name/templates/main.html', "w") {|out| out.puts main }
+        
+        $stdout.should_receive(:puts).with(/Unknown tag <genit class="foo"/i)
+        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+      end
+    end
+    
+    context "with unknown class into page" do
+      it "should exit" do
+        # replace index.html
+        index = %q{<genit class="foo"/>}
+        File.open('spec/project-name/pages/index.html', "w") {|out| out.puts index }
+        
+        $stdout.should_receive(:puts).with(/Unknown tag <genit class="foo"/i)
+        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+      end
+    end
+    
+    context "with incomplete fragment tag into template" do
+      it "should exit" do
+        # replace main.html
+        main = %q{
+          <html>
+            <body>
+              <genit class="fragment"/>
+            </body>
+          </html>
+        }
+        File.open('spec/project-name/templates/main.html', "w") {|out| out.puts main }
+        
+        $stdout.should_receive(:puts).with(/Incomplete <genit class="fragment"/i)
+        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+      end
+    end
+    
+    context "with incomplete fragment tag into page" do
+      it "should exit" do
+        # replace index.html
+        index = %q{<genit class="fragment"/>}
+        File.open('spec/project-name/pages/index.html', "w") {|out| out.puts index }
+        
+        $stdout.should_receive(:puts).with(/Incomplete <genit class="fragment"/i)
+        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+      end
+    end
+    
+    context "with unknown file in fragment tag into template" do
+      it "should exit" do
+        # replace main.html
+        main = %q{
+          <html>
+            <body>
+              <genit class="fragment" file="unknown.html"/>
+            </body>
+          </html>
+        }
+        File.open('spec/project-name/templates/main.html', "w") {|out| out.puts main }
+        
+        $stdout.should_receive(:puts).with(/No such file <genit class="fragment" file=/i)
+        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+      end
+    end
+    
+    context "with unknown file in fragment tag into page" do
+      it "should exit" do
+        # replace index.html
+        index = %q{<genit class="fragment" file="unknown.html"/>}
+        File.open('spec/project-name/pages/index.html', "w") {|out| out.puts index }
+        
+        $stdout.should_receive(:puts).with(/No such file <genit class="fragment" file=/i)
+        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+      end
     end
     
   end
   
-  describe "Sitemap XML" do
-  
-    it "should build the 'sitemap.xml'" do
-      File.exist?('spec/project-name/www/sitemap.xml').should be_true
+  context "with bad '.config' syntax" do
+    it "should exit" do
+      # replace .config
+      main = 
+%q{--- 
+:address: http://www.example.com
+:rss: true
+ :rss_title: RSS TITLE
+:rss_description: RSS DESCRIPTION
+}
+      File.open('spec/project-name/.config', "w") {|out| out.puts main }
+      
+      $stdout.should_receive(:puts).with(/in .config file/i)
+      lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
     end
-    
   end
   
   describe "BUGS" do

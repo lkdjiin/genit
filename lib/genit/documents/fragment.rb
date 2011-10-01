@@ -10,12 +10,15 @@ module Genit
     # file        - Full String filename of the page.
     # working_dir - The String working directory, where live the project.
     def initialize file, working_dir
+      
       @page = HtmlDocument.open_fragment file
       @working_dir = working_dir
       HtmlDocument.genit_tags_from(@page).each do |tag|
         case tag['class']
           when 'fragment'
             @file = tag['file']
+            error "Incomplete #{tag}" if @file.nil?
+            error "No such file #{tag}" unless File.exists?(File.join(@working_dir, 'fragments', @file))
             replace_fragment 
         end
       end

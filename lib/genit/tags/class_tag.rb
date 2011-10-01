@@ -3,12 +3,8 @@
 module Genit
 
   # A Genit general tag.
-  # Currently we have three tags:
-  #   * <genit class="pages"/>
-  #   * <genit class="menu"/>
-  #   * <genit class="fragment" file="foo.html"/>
   class ClassTag < Tag
-  
+    
     # Public: Constructor.
     #
     # working_dir - The String working directory, where live the project.
@@ -29,7 +25,7 @@ module Genit
         when 'fragment' then ClassFragmentTag.new(@working_dir, @template, @filename, @tag).process
         when 'news' then ClassNewsTag.new(@working_dir, @template, @filename, @tag).process
         else
-          raise RuntimeError
+          error "Unknown tag #{@tag}"
       end
     end
     

@@ -17,3 +17,7 @@ def clean_test_repository
     FileUtils.remove_file(filename) if File.file?(filename)
   end
 end
+
+def test_project_path
+  File.expand_path('spec/project-name')
+end

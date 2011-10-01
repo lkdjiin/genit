@@ -20,6 +20,8 @@ module Genit
     # Returns the template as a Nokogiri::XML::Document
     def process
       file = @tag['file']
+      error "Incomplete #{@tag}" if file.nil?
+      error "No such file #{@tag}" unless File.exists?(File.join(@working_dir, 'fragments', file))
       fragment = HtmlDocument.build_page_content(File.join(@working_dir, 'fragments', file), @working_dir)
       css_rule = "genit.fragment[file='#{file}']"
       replace_tag_into_template! css_rule, fragment.to_s

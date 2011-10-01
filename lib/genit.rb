@@ -6,5 +6,14 @@ require 'genit/utils'
 require 'genit/builders'
 require 'genit/tags'
 
+module Errors
+  def error message
+    puts "Error: #{message}"
+    exit 1
+  end
+end
+  
 module Genit
+  include Errors
+  
 end
