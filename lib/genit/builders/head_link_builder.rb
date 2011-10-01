@@ -3,7 +3,7 @@
 module Genit
 
   # Modify head link tags.
-  class HeadLinkBuilder < BuilderBase
+  class HeadLinkBuilder < Relativizer
     
     # Public: Build the document head link tags of a particular page.
     #
@@ -11,25 +11,13 @@ module Genit
     #
     # Returns the modified Nokogiri::XML::Document
     def build_for_page page_name
-      build page_name, head_links
+      build page_name, @document.css("head link")
     end
     
     private
     
-    def head_links
-      @document.css("head link")
-    end
-    
     def update link
-      @path = link['href']
-      return if not_an_internal_link?
-      nb = BuilderBase::get_number_of_base_dirs @page_name
-      make_relative nb
-      link['href'] = @path
-    end
-    
-    def not_an_internal_link?
-      @path.nil? or @path =~ URI::regexp
+      super link, "href"
     end
     
   end

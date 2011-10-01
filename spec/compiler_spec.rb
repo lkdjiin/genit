@@ -67,6 +67,8 @@ describe Compiler do
   
   describe "Sitemap XML" do
     it "should build the 'sitemap.xml'" do
+      a_news = %q{<h1>title</h1>}
+      File.open('spec/project-name/news/2011-10-01.html', "w") {|out| out.puts a_news }
       @compiler.compile
       File.exist?('spec/project-name/www/sitemap.xml').should be_true
     end
