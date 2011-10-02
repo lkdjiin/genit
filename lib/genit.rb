@@ -7,10 +7,16 @@ require 'genit/builders'
 require 'genit/tags'
 
 module Errors
+
   def error message
     puts "Error: #{message}"
     exit 1
   end
+  
+  def warning message
+    puts "Warning: #{message}"
+  end
+  
 end
   
 module Genit

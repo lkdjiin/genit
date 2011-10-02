@@ -159,6 +159,29 @@ describe Compiler do
       end
     end
     
+    context "with here tag without what tag" do
+      it "should warn" do
+        # replace main.html
+        main = %q{
+          <html>
+            <body>
+              
+              <genit class="pages"/>
+              <genit here="foo"/>
+            </body>
+          </html>
+        }
+        File.open('spec/project-name/templates/main.html', "w") {|out| out.puts main }
+        $stdout.should_receive(:puts).with(/here without what/i)
+        #~ lambda{Compiler.new(test_project_path).compile}.should_not raise_error
+        Compiler.new(test_project_path).compile
+      end
+    end
+    
+    context "with what tag without here tag" do
+      it "should warn"
+    end
+    
   end
   
   context "with bad '.config' syntax" do
