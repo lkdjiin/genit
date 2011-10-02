@@ -252,8 +252,21 @@ font-weight:normal;
 color:#000064;
 }
 
-#book span.new_chapter {
+/********* @TODO refactor*********/
+span.new_in {
 background-color: #a00;
+color: white;
+padding: 0 4px;
+font-size: 12px;
+font-weight:bold;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+-o-border-radius:10px;
+border-radius:10px;
+}
+
+span.updated_in {
+background-color: #a60;
 color: white;
 padding: 0 4px;
 font-size: 12px;

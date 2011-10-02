@@ -78,9 +78,11 @@
   <li><a href="../documentation/book-of-genit-en.html#Javascript">8. Javascript</a></li>
   
   <li>
-<a href="../documentation/book-of-genit-en.html#RSS">9. RSS Feed</a> <span class="new_chapter">new in 0.99</span>
+<a href="../documentation/book-of-genit-en.html#RSS">9. RSS Feed and sitemap</a> <span class="updated_in">updated in 1.0</span>
 </li>
-</ul><!-------------------------------------------------------------------------------------><h2><a name="Install" id="Install">1. Setup</a></h2>
+  <ul><li><a href="../documentation/book-of-genit-en.html#RSS_feed">9.1 The RSS feed</a></li>
+    <li><a href="../documentation/book-of-genit-en.html#Sitemap_xml">9.2 The sitemap.xml file</a></li>
+  </ul></ul><!-------------------------------------------------------------------------------------><h2><a name="Install" id="Install">1. Setup</a></h2>
 
 <p>
   In this chapter we will install all the programs needed to run
@@ -1354,10 +1356,17 @@ If you click on the link, a nice dialog box will open
 </p>
 
 <a name="Figure_8.3" class="figure" id="Figure_8.3">Figure 8.3 - </a>
-<img src="../public/images/27.jpg" class="screenshot" /><!-------------------------------------------------------------------------------------><h2><a name="RSS" id="RSS">9. RSS Feed</a></h2>
+<img src="../public/images/27.jpg" class="screenshot" /><!-------------------------------------------------------------------------------------><h2><a name="RSS" id="RSS">9. RSS Feed and sitemap</a></h2>
 
 <p>
-From version 0.99, Genit can create RSS feed for the news articles of your site. 
+Genit can create RSS feed for the news articles of your site. 
+It too create automatically the <code>sitemap.xml</code> file of your web site.
+</p>
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="RSS_feed" id="RSS_feed">9.1 The RSS feed</a></h3>
+
+<p>
 Open the configuration file of your Genit project, this is a hidden file in the root of the project, 
 named <code>.config</code> 
 (<a href="../documentation/book-of-genit-en.html#Listing_9.1">listing 9.1</a>) :
@@ -1393,6 +1402,7 @@ Edit the <code>.config</code> file as needed, for example
 :rss_description: Description of my feed<br /></p>
 
 <p>
+The <code>rss.xml</code> file will be created in the <code>www</code> folder.
 On your site you link the RSS feed with a line like the following
 (<a href="../documentation/book-of-genit-en.html#Listing_9.3">listing 9.3</a>) :
 </p>
@@ -1402,7 +1412,15 @@ On your site you link the RSS feed with a line like the following
 <span class="style_1">&lt;a </span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"rss.xml"</span><span class="style_1">&gt;</span><span class="style_0">RSS Feed</span><span class="style_1">&lt;/a&gt;</span><br /></p>
 
 
+<!------------------------------------------------------------------------------------->
+<h3><a name="Sitemap_xml" id="Sitemap_xml">9.2 The sitemap.xml file</a></h3>
 
+<p>
+Just give the address of the root of your web site in the <code>.config</code> hidden file,
+as you did in the previous step
+(see <a href="../documentation/book-of-genit-fr.html#Listing_9.2">listing 9.2</a>). The
+<code>sitemap.xml</code> file will be automatically generated in the <code>www</code> folder.
+</p>
 
 
 
