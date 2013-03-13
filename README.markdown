@@ -66,13 +66,7 @@ Dependencies
 ### Contributors dependencies
 
   * rspec for tests
-  * [coco](https://github.com/lkdjiin/coco) (code coverage must be 90% minimum)
   * [tomdoc](http://tomdoc.org/) to document your code
-
-_recommended_
-
-  * reek, to check for code smells
-  * flay, to check for duplicated code
 
 
 License
