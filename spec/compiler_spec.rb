@@ -68,7 +68,9 @@ describe Compiler do
   describe "Sitemap XML" do
     it "should build the 'sitemap.xml'" do
       a_news = %q{<h1>title</h1>}
-      File.open('spec/project-name/news/2011-10-01.html', "w") {|out| out.puts a_news }
+      File.open('spec/project-name/news/2011-10-01.html', "w") do |out|
+        out.puts a_news
+      end
       @compiler.compile
       File.exist?('spec/project-name/www/sitemap.xml').should be_true
     end
@@ -85,10 +87,14 @@ describe Compiler do
             </body>
           </html>
         }
-        File.open('spec/project-name/templates/main.html', "w") {|out| out.puts main }
+        File.open('spec/project-name/templates/main.html', "w") do |out|
+          out.puts main
+        end
         
         $stdout.should_receive(:puts).with(/Unknown tag <genit class="foo"/i)
-        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+        lambda do
+          Compiler.new(test_project_path).compile
+        end.should raise_error(SystemExit)
       end
     end
     
@@ -96,10 +102,14 @@ describe Compiler do
       it "should exit" do
         # replace index.html
         index = %q{<genit class="foo"/>}
-        File.open('spec/project-name/pages/index.html', "w") {|out| out.puts index }
+        File.open('spec/project-name/pages/index.html', "w") do |out|
+          out.puts index
+        end
         
         $stdout.should_receive(:puts).with(/Unknown tag <genit class="foo"/i)
-        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+        lambda do
+          Compiler.new(test_project_path).compile
+        end.should raise_error(SystemExit)
       end
     end
     
@@ -113,10 +123,14 @@ describe Compiler do
             </body>
           </html>
         }
-        File.open('spec/project-name/templates/main.html', "w") {|out| out.puts main }
+        File.open('spec/project-name/templates/main.html', "w") do |out|
+          out.puts main
+        end
         
         $stdout.should_receive(:puts).with(/Incomplete <genit class="fragment"/i)
-        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+        lambda do
+          Compiler.new(test_project_path).compile
+        end.should raise_error(SystemExit)
       end
     end
     
@@ -124,10 +138,14 @@ describe Compiler do
       it "should exit" do
         # replace index.html
         index = %q{<genit class="fragment"/>}
-        File.open('spec/project-name/pages/index.html', "w") {|out| out.puts index }
+        File.open('spec/project-name/pages/index.html', "w") do |out|
+          out.puts index
+        end
         
         $stdout.should_receive(:puts).with(/Incomplete <genit class="fragment"/i)
-        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+        lambda do
+          Compiler.new(test_project_path).compile
+        end.should raise_error(SystemExit)
       end
     end
     
@@ -141,10 +159,15 @@ describe Compiler do
             </body>
           </html>
         }
-        File.open('spec/project-name/templates/main.html', "w") {|out| out.puts main }
+        File.open('spec/project-name/templates/main.html', "w") do |out|
+          out.puts main
+        end
         
-        $stdout.should_receive(:puts).with(/No such file <genit class="fragment" file=/i)
-        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+        rx = /No such file <genit class="fragment" file=/i
+        $stdout.should_receive(:puts).with(rx)
+        lambda do
+          Compiler.new(test_project_path).compile
+        end.should raise_error(SystemExit)
       end
     end
     
@@ -152,10 +175,15 @@ describe Compiler do
       it "should exit" do
         # replace index.html
         index = %q{<genit class="fragment" file="unknown.html"/>}
-        File.open('spec/project-name/pages/index.html', "w") {|out| out.puts index }
+        File.open('spec/project-name/pages/index.html', "w") do |out|
+          out.puts index
+        end
         
-        $stdout.should_receive(:puts).with(/No such file <genit class="fragment" file=/i)
-        lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+        rx = /No such file <genit class="fragment" file=/i
+        $stdout.should_receive(:puts).with(rx)
+        lambda do
+          Compiler.new(test_project_path).compile
+        end.should raise_error(SystemExit)
       end
     end
     
@@ -171,15 +199,12 @@ describe Compiler do
             </body>
           </html>
         }
-        File.open('spec/project-name/templates/main.html', "w") {|out| out.puts main }
+        File.open('spec/project-name/templates/main.html', "w") do |out|
+          out.puts main
+        end
         $stdout.should_receive(:puts).with(/here without what/i)
-        #~ lambda{Compiler.new(test_project_path).compile}.should_not raise_error
         Compiler.new(test_project_path).compile
       end
-    end
-    
-    context "with what tag without here tag" do
-      it "should warn"
     end
     
   end
@@ -197,26 +222,42 @@ describe Compiler do
       File.open('spec/project-name/.config', "w") {|out| out.puts main }
       
       $stdout.should_receive(:puts).with(/in .config file/i)
-      lambda{Compiler.new(test_project_path).compile}.should raise_error(SystemExit)
+      lambda do
+        Compiler.new(test_project_path).compile
+      end.should raise_error(SystemExit)
     end
   end
   
   describe "BUGS" do
+
+    it "should compile to valid HTML5" do
+      @compiler.compile
+      file = File.open("spec/project-name/www/index.html", "r")
+      contents = file.read
+      expected = '<!DOCTYPE html>\n<html lang="en">\n<head>\n'
+      contents.start_with?(expected).should be_true
+    end
   
     it "should allow template to include a fragment (Bug#37)" do
       # add a fragment
-      File.open('spec/project-name/fragments/footer.html', "w") {|out| out.puts '<p>footer</p>' }
+      File.open('spec/project-name/fragments/footer.html', "w") do |out|
+        out.puts '<p>footer</p>'
+      end
       # replace main.html
       main = %q{
       <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
       <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
         <head>
           <title>Genit - Static web site framework</title>
           <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-          <link rel="stylesheet" type="text/css" media="all" href="styles/alsa/all.css" /> 
-          <link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css" /> 
-          <link rel="stylesheet" type="text/css" media="print" href="styles/print.css" /> 
+          <link rel="stylesheet" type="text/css" media="all"
+                href="styles/alsa/all.css" /> 
+          <link rel="stylesheet" type="text/css" media="screen"
+                href="styles/screen.css" /> 
+          <link rel="stylesheet" type="text/css" media="print"
+                href="styles/print.css" /> 
         </head>
         <body>
           <genit class="menu" />
@@ -224,7 +265,9 @@ describe Compiler do
           <genit class="fragment" file="footer.html"/>
         </body>
       </html>}
-      File.open('spec/project-name/templates/main.html', "w") {|out| out.puts main }
+      File.open('spec/project-name/templates/main.html', "w") do |out|
+        out.puts main
+      end
       lambda {@compiler.compile}.should_not raise_error
     end
   

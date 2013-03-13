@@ -73,7 +73,8 @@ module Genit
     end
     
     def create_rss_feed
-      all_news_files = Dir.glob(File.join(@working_dir, 'news', '*')).sort.reverse
+      all_news_files =
+        Dir.glob(File.join(@working_dir, 'news', '*')).sort.reverse
       begin
         config_file = YAML.load_file(File.join(@working_dir, '.config'))
       rescue ArgumentError => msg

@@ -9,7 +9,7 @@ module Genit
   
     # Public: Constructor.
     #
-    # working_dir - The String working directory, where live the project.
+    # working_dir - the string working directory, where live the project.
     def initialize working_dir
       @working_dir = working_dir
     end

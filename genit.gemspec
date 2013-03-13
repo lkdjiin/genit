@@ -24,7 +24,6 @@ Genit is design to be simple, readable and minimalist.}
   s.license = 'Expat (also known as MIT)'
   s.required_ruby_version = '>= 1.9.2'
   s.executables = ['genit']
-  s.add_dependency 'coco', '>= 0.4.2'
   s.add_dependency 'nokogiri', '>= 1.4.6'
   s.add_dependency 'bluecloth', '>= 2.1.0'
   s.add_dependency 'clamp', '>= 0.2.2'
