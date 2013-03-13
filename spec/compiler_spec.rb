@@ -234,7 +234,9 @@ describe Compiler do
       @compiler.compile
       file = File.open("spec/project-name/www/index.html", "r")
       contents = file.read
-      expected = '<!DOCTYPE html>\n<html lang="en">\n<head>\n'
+      puts "*************"
+      puts contents
+      expected = '<!DOCTYPE html>'
       contents.start_with?(expected).should be_true
     end
   

@@ -21,7 +21,7 @@ module Genit
     def save_as_xhtml document, filename
       @document = document
       remove_remaining_tags
-      FileWriter.write document.to_xhtml, get_full_path(filename.force_html_extension)
+      FileWriter.write document.to_html, get_full_path(filename.force_html_extension)
     end
     
     private

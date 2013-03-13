@@ -13,6 +13,7 @@ module Genit
       @working_dir = working_dir
       @filename = filename
       @template = XmlDocument.open(File.join(@working_dir, 'templates/main.html'))
+      # @template = XmlDocument.open(File.join(@working_dir, 'templates/main.html'))
     end
     
     # Public: Compile the page.
