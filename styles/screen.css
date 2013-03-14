@@ -104,7 +104,7 @@ color:#7D7139;
 
 #left-side h2 {
 text-transform:uppercase;
-border-left:20px solid #7D7139;
+border-left:10px solid #7D7139;
 padding-left:18px;
 }
 
@@ -129,7 +129,7 @@ width:80%;
 
 .right-side-section {
 background-color:#efefef;
-border-top:20px solid #A3844B;
+border-top:30px solid #A3844B;
 padding:0 10px 10px 10px;
 margin-top:20px;
 margin-bottom:30px;
@@ -157,7 +157,7 @@ text-align: center;
 
 pre{
 background-color:#eee;
-border-left:10px solid #999;
+border-left:5px solid #999;
 }
 
 .note, .green_note, .blue_note {
