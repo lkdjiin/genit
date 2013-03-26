@@ -5,6 +5,7 @@ require 'genit/documents'
 require 'genit/utils'
 require 'genit/builders'
 require 'genit/tags'
+require 'genit/server'
 
 module Errors
 

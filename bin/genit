@@ -60,20 +60,23 @@ module Genit
   end
   
   class CompileCommand < AbstractCommand
-
     def execute
       compiler = Compiler.new Dir.getwd
       compiler.compile
     end
-    
+  end
+  
+  class ServerCommand < AbstractCommand
+    def execute
+      Server.new(Dir.getwd).run
+    end
   end
   
   class MainCommand < AbstractCommand
-    
     subcommand "create", "Create a project.", CreateCommand
     subcommand "compile", "Compile the web site.", CompileCommand
     subcommand "cc", "Compile the web site.", CompileCommand
-
+    subcommand "server", "Run WEBrick.", ServerCommand
   end
 
 end
