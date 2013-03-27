@@ -32,14 +32,13 @@ include Genit
 module Genit
 
   class AbstractCommand < Clamp::Command
-    
     option ['-v', '--version'], :flag, "print version" do
       puts "genit #{File.read(File.join($GENIT_PATH, 'VERSION')).strip}"
       exit 0
     end
-    
   end
   
+  # Command to create a project.
   class CreateCommand < AbstractCommand
   
     parameter "NAME", "the name of the project",
@@ -58,22 +57,23 @@ module Genit
       project = ProjectCreator.new project_name, doctype, empty?
       project.create
     end
-    
   end
-  
+
+  # Command to compile a project.
   class CompileCommand < AbstractCommand
     def execute
       compiler = Compiler.new Dir.getwd
       compiler.compile
     end
   end
-  
+
+  # Command to start the web server.
   class ServerCommand < AbstractCommand
     def execute
       Server.new(Dir.getwd).start
     end
   end
-  
+
   class MainCommand < AbstractCommand
     subcommand "create", "Create a project.", CreateCommand
     subcommand "compile", "Compile the web site.", CompileCommand
