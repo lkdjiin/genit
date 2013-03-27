@@ -95,14 +95,6 @@ describe ProjectCreator do
       File.exist?('spec/project-name/www').should == false
     end
 
-    it "should create a alsa folder inside the styles" do
-      File.exist?('spec/project-name/styles/alsa').should == true
-    end
-
-    it "should create a yui folder inside the styles" do
-      File.exist?('spec/project-name/styles/yui').should == true
-    end
-
     it "should create a images folder inside the styles" do
       File.exist?('spec/project-name/styles/images').should == true
     end
@@ -166,46 +158,6 @@ describe ProjectCreator do
 
     it "should copy styles/screen.css" do
       File.exist?('spec/project-name/styles/screen.css').should be_true
-    end
-
-    it "should have got styles/alsa/all.css" do
-      File.exist?('data/styles/alsa/all.css').should be_true
-    end
-
-    it "should copy styles/alsa/all.css" do
-      File.exist?('spec/project-name/styles/alsa/all.css').should be_true
-    end
-
-    it "should have got styles/yui/all.css" do
-      File.exist?('data/styles/yui/all.css').should be_true
-    end
-
-    it "should copy styles/yui/all.css" do
-      File.exist?('spec/project-name/styles/yui/all.css').should be_true
-    end
-
-    it "should have got styles/yui/base.css" do
-      File.exist?('data/styles/yui/base.css').should be_true
-    end
-
-    it "should copy styles/yui/base.css" do
-      File.exist?('spec/project-name/styles/yui/base.css').should be_true
-    end
-
-    it "should have got styles/yui/fonts.css" do
-      File.exist?('data/styles/yui/fonts.css').should be_true
-    end
-
-    it "should copy styles/yui/fonts.css" do
-      File.exist?('spec/project-name/styles/yui/fonts.css').should be_true
-    end
-
-    it "should have got styles/yui/reset.css" do
-      File.exist?('data/styles/yui/reset.css').should be_true
-    end
-
-    it "should copy styles/yui/reset.css" do
-      File.exist?('spec/project-name/styles/yui/reset.css').should be_true
     end
 
   end #  "The styles folder"

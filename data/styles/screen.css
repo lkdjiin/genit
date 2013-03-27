@@ -14,22 +14,18 @@ margin-top:50px;
 #menu { display:none;}
 
 p {
-font-size:1.2em;
-color:#555;
+font-size:16px;
+color:#bbb;
 }
 
-p:hover {color:#003;}
+p:hover {color:#fff;}
 
-p:hover a {
+a {
 background-color:#003 !important;
 color:white !important;
 text-decoration:none !important;
 }
 
-a {
-color:#334 !important;
-}
-
-h1{color:#003;}
+h1{color:#fff;}
 
 html{background-color:#336;}

@@ -40,8 +40,8 @@ module Genit
       def create_the_project_folders
         FileUtils.makedirs @project_name
         create_subfolders ['src', 'src/fragments', 'src/news', 'src/pages',
-                           'scripts', 'styles', 'src/templates', 'styles/alsa',
-                           'styles/yui', 'styles/images', 'public']
+                           'scripts', 'styles', 'src/templates', 
+                           'styles/images', 'public']
       end
 
       # Create some subfolders inside the project folder.
@@ -63,10 +63,7 @@ module Genit
       def copy_the_project_files
         copy_main_template
         copy_menu_template
-        copy_files ['styles/handheld.css',
-                    'styles/print.css', 'styles/alsa/all.css',
-                    'styles/yui/all.css', 'styles/yui/base.css',
-                    'styles/yui/fonts.css', 'styles/yui/reset.css']
+        copy_files ['styles/handheld.css', 'styles/print.css']
         copy_index
         copy_screen_css
       end
