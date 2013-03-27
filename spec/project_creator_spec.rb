@@ -5,66 +5,66 @@ require './spec/helper'
 describe ProjectCreator do
 
   before :all do
-    @project = ProjectCreator.new('spec/project-name', 'html_5', false)
+    @project = ProjectCreator.new('spec/project-name', false)
     @project.create
   end
-  
+
   after :all do
     clean_test_repository
   end
-  
+
   describe "Project folder" do
-    
+
     it "should create a project folder" do
       File.exist?('spec/project-name').should == true
     end
-    
+
     it "should create a project folder with version number" do
       a = File.read('VERSION').strip
       b = File.read('spec/project-name/.genit').strip
       b.should eql a
     end
-    
+
     it "should say it if it cannot create a project" do
-      project = ProjectCreator.new('/root/project', 'html_5', false)
+      project = ProjectCreator.new('/root/project', false)
       $stdout.should_receive(:puts).with("Cannot create project...")
       project.create
     end
-    
+
     it "should create a project file" do
       File.exist?('spec/project-name/.genit').should == true
     end
-    
+
     it "should create a config file" do
       File.exist?('spec/project-name/config').should == true
     end
-    
+
   end
-  
+
   describe "Config file" do
-    
+
     before :each do
       @config_file = YAML.load_file('spec/project-name/config')
     end
-  
+
     it "should have an address value of 'http://www.example.com'" do
       @config_file[:address].should == 'http://www.example.com'
     end
-    
+
     it "should have an rss value at true" do
       @config_file[:rss].should be_true
     end
-    
+
     it "should have an rss_title value of 'RSS TITLE'" do
       @config_file[:rss_title].should == 'RSS TITLE'
     end
-    
+
     it "should have an rss_description value of 'RSS DESCRIPTION'" do
       @config_file[:rss_description].should == 'RSS DESCRIPTION'
     end
-    
+
   end
-  
+
   describe "Folder structure" do
 
     it "should create a news folder" do
@@ -151,65 +151,65 @@ describe ProjectCreator do
     it "should copy styles/handheld.css" do
       File.exist?('spec/project-name/styles/handheld.css').should be_true
     end
-    
+
     it "should have got styles/print.css" do
       File.exist?('data/styles/print.css').should be_true
     end
-    
+
     it "should copy styles/print.css" do
       File.exist?('spec/project-name/styles/print.css').should be_true
     end
-    
+
     it "should have got styles/screen.css" do
       File.exist?('data/styles/screen.css').should be_true
     end
-    
+
     it "should copy styles/screen.css" do
       File.exist?('spec/project-name/styles/screen.css').should be_true
     end
-    
+
     it "should have got styles/alsa/all.css" do
       File.exist?('data/styles/alsa/all.css').should be_true
     end
-    
+
     it "should copy styles/alsa/all.css" do
       File.exist?('spec/project-name/styles/alsa/all.css').should be_true
     end
-    
+
     it "should have got styles/yui/all.css" do
       File.exist?('data/styles/yui/all.css').should be_true
     end
-    
+
     it "should copy styles/yui/all.css" do
       File.exist?('spec/project-name/styles/yui/all.css').should be_true
     end
-    
+
     it "should have got styles/yui/base.css" do
       File.exist?('data/styles/yui/base.css').should be_true
     end
-    
+
     it "should copy styles/yui/base.css" do
       File.exist?('spec/project-name/styles/yui/base.css').should be_true
     end
-    
+
     it "should have got styles/yui/fonts.css" do
       File.exist?('data/styles/yui/fonts.css').should be_true
     end
-    
+
     it "should copy styles/yui/fonts.css" do
       File.exist?('spec/project-name/styles/yui/fonts.css').should be_true
     end
-    
+
     it "should have got styles/yui/reset.css" do
       File.exist?('data/styles/yui/reset.css').should be_true
     end
-    
+
     it "should copy styles/yui/reset.css" do
       File.exist?('spec/project-name/styles/yui/reset.css').should be_true
     end
-    
-  end #  "The styles folder"
-    
 
-  
+  end #  "The styles folder"
+
+
+
 end

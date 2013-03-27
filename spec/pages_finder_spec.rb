@@ -5,7 +5,7 @@ require './spec/helper'
 describe PagesFinder do
 
   before :each do
-    @project = ProjectCreator.new('spec/project-name', 'html_5', false)
+    @project = ProjectCreator.new('spec/project-name', false)
     @project.create
     @finder = PagesFinder.new 'spec/project-name'
   end
