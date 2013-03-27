@@ -7,11 +7,11 @@ describe ClassNewsTag do
   after :all do
     clean_test_repository
   end
-  
+
   def create_sample_project
-    FileUtils.makedirs('spec/project-name/news')
-    File.open('spec/project-name/news/2011-01-01.html', "w") {|out| out.puts '<h1>2011-01-01</h1>' }
-    File.open('spec/project-name/news/2011-02-02.html', "w") {|out| out.puts '<h1>2011-02-02</h1>' }
+    FileUtils.makedirs('spec/project-name/src/news')
+    File.open('spec/project-name/src/news/2011-01-01.html', "w") {|out| out.puts '<h1>2011-01-01</h1>' }
+    File.open('spec/project-name/src/news/2011-02-02.html', "w") {|out| out.puts '<h1>2011-02-02</h1>' }
   end
 
   it "should replace all news" do
@@ -22,7 +22,7 @@ describe ClassNewsTag do
     doc = cnt.process
     doc.css('h1').size.should == 2
   end
-  
+
   it "should replace X news" do
     create_sample_project
     template = Nokogiri::XML.fragment '<genit class="news" number="1"/>'

@@ -9,37 +9,32 @@ describe Compiler do
     @project.create
     @compiler = Compiler.new test_project_path
   end
-  
+
   after :each do
     clean_test_repository
   end
-  
+
   def write_file name, content
     File.open(File.join('spec/project-name', name), "w") do |file| 
       file.puts content
     end
   end
-  
-  it "should build an index.html page in www" do
+
+  it "should build an index.html page" do
     @compiler.compile
-    File.exist?('spec/project-name/www/index.html').should be_true
+    File.exist?('spec/project-name/index.html').should be_true
   end
-  
+
   it "should build two pages" do
-    write_file 'pages/doc.html', '<h1>documentation</h1>'
+    write_file 'src/pages/doc.html', '<h1>documentation</h1>'
     @compiler.compile
-    File.exist?('spec/project-name/www/index.html').should be_true
-    File.exist?('spec/project-name/www/doc.html').should be_true
+    File.exist?('spec/project-name/index.html').should be_true
+    File.exist?('spec/project-name/doc.html').should be_true
   end
-    
-  it "should copy the styles/ into www/" do
-    @compiler.compile
-    File.exist?('spec/project-name/www/styles/screen.css').should be_true
-  end
-  
+
   it "should set the menu in index page" do
     @compiler.compile
-    doc = Nokogiri::HTML(File.open("spec/project-name/www/index.html"))
+    doc = Nokogiri::HTML(File.open("spec/project-name/index.html"))
     doc.at_css("ul#menu a#selected")['href'].should == 'index.html'
   end
   
@@ -61,21 +56,21 @@ describe Compiler do
   describe "RSS feed" do
     it "should build the rss.xml file" do
       @compiler.compile
-      File.exist?('spec/project-name/www/rss.xml').should be_true
+      File.exist?('spec/project-name/rss.xml').should be_true
     end
   end
   
   describe "Sitemap XML" do
     it "should build the 'sitemap.xml'" do
       a_news = %q{<h1>title</h1>}
-      File.open('spec/project-name/news/2011-10-01.html', "w") do |out|
+      File.open('spec/project-name/src/news/2011-10-01.html', "w") do |out|
         out.puts a_news
       end
       @compiler.compile
-      File.exist?('spec/project-name/www/sitemap.xml').should be_true
+      File.exist?('spec/project-name/sitemap.xml').should be_true
     end
   end
-  
+
   context "with bad tag syntax" do
     context "with unknown class into template" do
       it "should exit" do
@@ -87,7 +82,7 @@ describe Compiler do
             </body>
           </html>
         }
-        File.open('spec/project-name/templates/main.html', "w") do |out|
+        File.open('spec/project-name/src/templates/main.html', "w") do |out|
           out.puts main
         end
         
@@ -97,22 +92,22 @@ describe Compiler do
         end.should raise_error(SystemExit)
       end
     end
-    
+
     context "with unknown class into page" do
       it "should exit" do
         # replace index.html
         index = %q{<genit class="foo"/>}
-        File.open('spec/project-name/pages/index.html', "w") do |out|
+        File.open('spec/project-name/src/pages/index.html', "w") do |out|
           out.puts index
         end
-        
+
         $stdout.should_receive(:puts).with(/Unknown tag <genit class="foo"/i)
         lambda do
           Compiler.new(test_project_path).compile
         end.should raise_error(SystemExit)
       end
     end
-    
+
     context "with incomplete fragment tag into template" do
       it "should exit" do
         # replace main.html
@@ -123,22 +118,22 @@ describe Compiler do
             </body>
           </html>
         }
-        File.open('spec/project-name/templates/main.html', "w") do |out|
+        File.open('spec/project-name/src/templates/main.html', "w") do |out|
           out.puts main
         end
-        
+
         $stdout.should_receive(:puts).with(/Incomplete <genit class="fragment"/i)
         lambda do
           Compiler.new(test_project_path).compile
         end.should raise_error(SystemExit)
       end
     end
-    
+
     context "with incomplete fragment tag into page" do
       it "should exit" do
         # replace index.html
         index = %q{<genit class="fragment"/>}
-        File.open('spec/project-name/pages/index.html', "w") do |out|
+        File.open('spec/project-name/src/pages/index.html', "w") do |out|
           out.puts index
         end
         
@@ -148,7 +143,7 @@ describe Compiler do
         end.should raise_error(SystemExit)
       end
     end
-    
+
     context "with unknown file in fragment tag into template" do
       it "should exit" do
         # replace main.html
@@ -159,10 +154,10 @@ describe Compiler do
             </body>
           </html>
         }
-        File.open('spec/project-name/templates/main.html', "w") do |out|
+        File.open('spec/project-name/src/templates/main.html', "w") do |out|
           out.puts main
         end
-        
+
         rx = /No such file <genit class="fragment" file=/i
         $stdout.should_receive(:puts).with(rx)
         lambda do
@@ -170,15 +165,15 @@ describe Compiler do
         end.should raise_error(SystemExit)
       end
     end
-    
+
     context "with unknown file in fragment tag into page" do
       it "should exit" do
         # replace index.html
         index = %q{<genit class="fragment" file="unknown.html"/>}
-        File.open('spec/project-name/pages/index.html', "w") do |out|
+        File.open('spec/project-name/src/pages/index.html', "w") do |out|
           out.puts index
         end
-        
+
         rx = /No such file <genit class="fragment" file=/i
         $stdout.should_receive(:puts).with(rx)
         lambda do
@@ -186,7 +181,7 @@ describe Compiler do
         end.should raise_error(SystemExit)
       end
     end
-    
+
     context "with here tag without what tag" do
       it "should warn" do
         # replace main.html
@@ -199,16 +194,16 @@ describe Compiler do
             </body>
           </html>
         }
-        File.open('spec/project-name/templates/main.html', "w") do |out|
+        File.open('spec/project-name/src/templates/main.html', "w") do |out|
           out.puts main
         end
         $stdout.should_receive(:puts).with(/here without what/i)
         Compiler.new(test_project_path).compile
       end
     end
-    
+
   end
-  
+
   context "with bad 'config' syntax" do
     it "should exit" do
       # replace config
@@ -220,27 +215,27 @@ describe Compiler do
 :rss_description: RSS DESCRIPTION
 }
       File.open('spec/project-name/config', "w") {|out| out.puts main }
-      
+
       $stdout.should_receive(:puts).with(/in config file/i)
       lambda do
         Compiler.new(test_project_path).compile
       end.should raise_error(SystemExit)
     end
   end
-  
+
   describe "BUGS" do
 
     it "should compile to valid HTML5" do
       @compiler.compile
-      file = File.open("spec/project-name/www/index.html", "r")
+      file = File.open("spec/project-name/index.html", "r")
       contents = file.read
       expected = '<!DOCTYPE html>'
       contents.start_with?(expected).should be_true
     end
-  
+
     it "should allow template to include a fragment (Bug#37)" do
       # add a fragment
-      File.open('spec/project-name/fragments/footer.html', "w") do |out|
+      File.open('spec/project-name/src/fragments/footer.html', "w") do |out|
         out.puts '<p>footer</p>'
       end
       # replace main.html
@@ -265,12 +260,12 @@ describe Compiler do
           <genit class="fragment" file="footer.html"/>
         </body>
       </html>}
-      File.open('spec/project-name/templates/main.html', "w") do |out|
+      File.open('spec/project-name/src/templates/main.html', "w") do |out|
         out.puts main
       end
       lambda {@compiler.compile}.should_not raise_error
     end
-  
+
   end
-  
+
 end

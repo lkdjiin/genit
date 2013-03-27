@@ -25,7 +25,7 @@ module Genit
     private
     
     def page_content
-      filename = File.join(@working_dir, 'pages', @filename)
+      filename = File.join(@working_dir, PAGES_DIR, @filename)
       HtmlDocument.build_page_content filename, @working_dir
     end
     

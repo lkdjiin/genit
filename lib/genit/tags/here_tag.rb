@@ -16,7 +16,7 @@ module Genit
     def initialize working_dir, template, filename, tag
       super working_dir, template, filename, tag
     end
-    
+
     # Public: Replace a variable in the template. The variable content is found
     # in the tag in the page.
     #
@@ -25,25 +25,26 @@ module Genit
       replace_tag_into_template! get_css_rule, get_variable_value
       @template
     end
-    
+
     private
-    
-    def get_css_rule
-      var_name = @tag['here']
-      "genit[here='#{var_name}']"
-    end
-    
-    def get_variable_value
-      doc = HtmlDocument.open_fragment File.join(@working_dir, 'pages', @filename)
-      elem = doc.at_css "genit[what='#{@tag['here']}']"
-      if elem.nil?
-        warning "here without what #{@tag}"
-        ""
-      else
-        elem.inner_html
+
+      def get_css_rule
+        var_name = @tag['here']
+        "genit[here='#{var_name}']"
       end
-    end
-    
+
+      def get_variable_value
+        file = File.join(@working_dir, PAGES_DIR, @filename)
+        doc = HtmlDocument.open_fragment file
+        elem = doc.at_css "genit[what='#{@tag['here']}']"
+        if elem.nil?
+          warning "here without what #{@tag}"
+          ""
+        else
+          elem.inner_html
+        end
+      end
+
   end
 
 end

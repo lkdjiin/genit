@@ -68,87 +68,86 @@ describe ProjectCreator do
   describe "Folder structure" do
 
     it "should create a news folder" do
-      File.exist?('spec/project-name/news').should == true
+      File.exist?('spec/project-name/src/news').should == true
     end
-    
+
     it "should create a fragments folder" do
-      File.exist?('spec/project-name/fragments').should == true
+      File.exist?('spec/project-name/src/fragments').should == true
     end
-    
+
     it "should create a pages folder" do
-      File.exist?('spec/project-name/pages').should == true
+      File.exist?('spec/project-name/src/pages').should == true
     end
-    
+
     it "should create a scripts folder" do
       File.exist?('spec/project-name/scripts').should == true
     end
-    
+
     it "should create a styles folder" do
       File.exist?('spec/project-name/styles').should == true
     end
-    
+
     it "should create a templates folder" do
-      File.exist?('spec/project-name/templates').should == true
+      File.exist?('spec/project-name/src/templates').should == true
     end
-    
-    it "should create a www folder" do
-      File.exist?('spec/project-name/www').should == true
+
+    it "should not create a www folder" do
+      File.exist?('spec/project-name/www').should == false
     end
-    
+
     it "should create a alsa folder inside the styles" do
       File.exist?('spec/project-name/styles/alsa').should == true
     end
-    
+
     it "should create a yui folder inside the styles" do
       File.exist?('spec/project-name/styles/yui').should == true
     end
-    
+
     it "should create a images folder inside the styles" do
       File.exist?('spec/project-name/styles/images').should == true
     end
-    
+
     it "should create a public folder" do
       File.exist?('spec/project-name/public').should == true
     end
-  
-  end # "Folder structure"
-  
 
-    
+  end # "Folder structure"
+
+
   describe "The templates folder" do
     it "should have got templates/main.html" do
       File.exist?('data/templates/main.html').should be_true
     end
-  
+
     it "should copy templates/main.html" do
-      File.exist?('spec/project-name/templates/main.html').should be_true
+      File.exist?('spec/project-name/src/templates/main.html').should be_true
     end
-    
+
     it "should have got templates/menu.html" do
       File.exist?('data/templates/menu.html').should be_true
     end
-  
+
     it "should copy templates/menu.html" do
-      File.exist?('spec/project-name/templates/menu.html').should be_true
+      File.exist?('spec/project-name/src/templates/menu.html').should be_true
     end
-    
+
   end # "The templates folder"
 
   describe "The pages folder" do
     it "should have got pages/index.html" do
       File.exist?('data/pages/index.html').should be_true
     end
-    
+
     it "should copy pages/index.html" do
-      File.exist?('spec/project-name/pages/index.html').should be_true
+      File.exist?('spec/project-name/src/pages/index.html').should be_true
     end
   end # "The pages folder"
-  
+
   describe "The styles folder" do
     it "should have got styles/handheld.css" do
       File.exist?('data/styles/handheld.css').should be_true
     end
-    
+
     it "should copy styles/handheld.css" do
       File.exist?('spec/project-name/styles/handheld.css').should be_true
     end

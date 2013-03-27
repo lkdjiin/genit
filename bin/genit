@@ -42,10 +42,12 @@ module Genit
   
   class CreateCommand < AbstractCommand
   
-    parameter "NAME", "the name of the project", :attribute_name => :project_name
-    option ["-d", "--doctype"], "DOCTYPE", "The Document Type Definition", :default => "html_5"
-    option ["-e", "--empty"], :flag, "Do not produce smoke test", :default => false
-
+    parameter "NAME", "the name of the project",
+              :attribute_name => :project_name
+    option ["-d", "--doctype"], "DOCTYPE", "The Document Type Definition",
+           :default => "html_5"
+    option ["-e", "--empty"], :flag, "Do not produce smoke test",
+           :default => false
 
     def execute
       valid_doctypes = ['xhtml_1.0_strict', 'xhtml_1.0_transitional', 'html_5']

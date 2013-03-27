@@ -5,15 +5,15 @@ module Genit
   # I can find the list of all page names, named from
   # the site root.
   class PagesFinder
-  
+
     # Public: Constructor.
     #
     # working_dir - The String working directory, where live the project.
     def initialize working_dir
       @working_dir = working_dir
-      @pages_folder = File.join(@working_dir, 'pages')
+      @pages_folder = File.join(@working_dir, PAGES_DIR)
     end
-  
+
     # Public: Retrieve the list of all page names.
     #
     # Returns an Array of String.
@@ -22,11 +22,11 @@ module Genit
       list.map! { |name| name.gsub(@pages_folder + '/', '')}
       list.map { |name| name.force_html_extension }
     end
-    
+
     def self.pagenames2urls array, url_string
       array.map { |name| File.join(url_string, name) }
     end
-    
+
   end
-  
+
 end

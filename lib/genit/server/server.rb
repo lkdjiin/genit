@@ -7,8 +7,7 @@ module Genit
   class Server
 
     def initialize wd
-      www = File.join(wd, "www")
-      @server = WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => www)
+      @server = WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => wd)
       ['INT', 'TERM'].each do |signal|
          trap(signal){ @server.shutdown} 
       end

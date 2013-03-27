@@ -15,7 +15,7 @@ module Genit
       super working_dir, template, filename, tag
       @file = @tag['file']
       error "Incomplete #{@tag}" if @file.nil?
-      @full_path = File.join(@working_dir, 'fragments', @file)
+      @full_path = File.join(@working_dir, FRAGMENTS_DIR, @file)
       error "No such file #{@tag}" unless File.exists?(@full_path)
     end
     

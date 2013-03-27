@@ -26,7 +26,8 @@ module Genit
     private
     
     def build_menu
-      menu = XmlDocument.open(File.join(@working_dir, "templates/menu.html"))
+      file = File.join(@working_dir, TEMPLATES_DIR, "menu.html")
+      menu = XmlDocument.open(file)
       builder = MenuBuilder.new(menu)
       @menu = builder.build_for_page(@filename)
     end

@@ -7,7 +7,7 @@ module Genit
 
   # Create a skeleton project.
   class ProjectCreator
-  
+
     # Sole constructor.
     #
     # name    - The String name of the future project folder.
@@ -18,7 +18,7 @@ module Genit
       @doctype = doctype
       @empty = empty
     end
-    
+
     # Public: Create the structure of the project, that is many
     # files and folders.
     #
@@ -30,25 +30,47 @@ module Genit
         puts "Cannot create project..."
       end
     end
-    
+
     private
-    
+
     def create_the_project
       create_the_project_folders
       copy_the_project_files
       create_the_project_config
     end
-    
+
     def create_the_project_folders
       FileUtils.makedirs @project_name
-      create_subfolders ['fragments', 'news', 'pages', 'scripts', 'styles', 'templates', 'www',
-                   'styles/alsa', 'styles/yui', 'styles/images', 'public']
+      # create_subfolders ['fragments', 'news', 'pages', 'scripts', 'styles', 
+      #                    'templates', 'www', 'styles/alsa', 'styles/yui', 
+      #                    'styles/images', 'public']
+      create_subfolders ['src', 'src/fragments', 'src/news', 'src/pages',
+                         'scripts', 'styles', 'src/templates', 'styles/alsa',
+                         'styles/yui', 'styles/images', 'public']
     end
-    
+
+    # Create some subfolders inside the project folder.
+    #
+    # a_array - An Array of String subfolder names
+    #
+    # Examples
+    #
+    #   create_subfolders ['styles', 'scripts']
+    #
+    #   create_subfolders ['styles/css/alsa', 'styles/css/yui',
+    #                      'styles/css/images']
+    #
+    # Returns nothing.
+    def create_subfolders a_array
+      a_array.each {|dir| FileUtils.makedirs File.join(@project_name, dir) }
+    end
+
     def copy_the_project_files
       copy_main_template
-      copy_files ['templates/menu.html', 'styles/handheld.css', 'styles/print.css',
-                  'styles/alsa/all.css', 'styles/yui/all.css', 'styles/yui/base.css',
+      copy_menu_template
+      copy_files ['styles/handheld.css',
+                  'styles/print.css', 'styles/alsa/all.css',
+                  'styles/yui/all.css', 'styles/yui/base.css',
                   'styles/yui/fonts.css', 'styles/yui/reset.css']
       copy_index
       copy_screen_css
@@ -64,27 +86,12 @@ module Genit
                       :rss_description => 'RSS DESCRIPTION'}.to_yaml
       write_config config_file, 'config'
     end
-    
+
     def write_config content, filename
       dest =  File.join @project_name, filename
       File.open(dest, "w") {|out| out.puts content }
     end
-    
-    # Create some subfolders inside the project folder.
-    #
-    # a_array - An Array of String subfolder names
-    #
-    # Examples
-    #
-    #   create_subfolders ['styles', 'scripts']
-    #
-    #   create_subfolders ['styles/css/alsa', 'styles/css/yui', 'styles/css/images']
-    #
-    # Returns nothing.
-    def create_subfolders a_array
-      a_array.each {|dir| FileUtils.makedirs File.join(@project_name, dir) }
-    end
-    
+
     # Copy files to project.
     #
     # a_array - An Array of String "subfolder/file" names
@@ -101,10 +108,10 @@ module Genit
         FileUtils.cp src, dest
       end
     end
-    
-    # @TODO document
+
+    # TODO document
     def copy_index
-      dest =  File.join @project_name, 'pages/index.html'
+      dest =  File.join @project_name, 'src/pages/index.html'
       if @empty
         src = File.join $GENIT_PATH, 'data/pages/index2.html'
       else
@@ -112,8 +119,8 @@ module Genit
       end
       FileUtils.cp src, dest
     end
-    
-    # @TODO document
+
+    # TODO document
     def copy_screen_css
       dest =  File.join @project_name, 'styles/screen.css'
       if @empty
@@ -123,27 +130,33 @@ module Genit
         FileUtils.cp src, dest
       end
     end
-    
-    # @TODO document
+
+    # TODO document
     def copy_main_template
-      dest =  File.join @project_name, 'templates', 'main.html'
+      dest =  File.join @project_name, 'src/templates', 'main.html'
       copy_first_part dest
       ProjectCreator.append_last_part dest
     end
-    
-    # @TODO document
+
+    def copy_menu_template
+      dest =  File.join @project_name, 'src/templates', 'menu.html'
+      src = File.join $GENIT_PATH, 'data', 'templates', 'menu.html'
+      FileUtils.cp src, dest
+    end
+
+    # TODO document
     def copy_first_part dest
       src = File.join $GENIT_PATH, 'data', 'templates', @doctype
       FileUtils.cp src, dest
     end
-    
-    # @TODO document
+
+    # TODO document
     def self.append_last_part dest
       src = File.join $GENIT_PATH, 'data', 'templates', 'main.html'
       content = File.open(src, "r").read
       File.open(dest, "a") {|out| out.puts content }
     end
-    
+
   end
 
 end
