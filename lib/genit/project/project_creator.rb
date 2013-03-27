@@ -62,7 +62,7 @@ module Genit
                       :rss => true, 
                       :rss_title => 'RSS TITLE',
                       :rss_description => 'RSS DESCRIPTION'}.to_yaml
-      write_config config_file, '.config'
+      write_config config_file, 'config'
     end
     
     def write_config content, filename

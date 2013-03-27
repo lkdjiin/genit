@@ -36,7 +36,7 @@ describe ProjectCreator do
     end
     
     it "should create a config file" do
-      File.exist?('spec/project-name/.config').should == true
+      File.exist?('spec/project-name/config').should == true
     end
     
   end
@@ -44,7 +44,7 @@ describe ProjectCreator do
   describe "Config file" do
     
     before :each do
-      @config_file = YAML.load_file('spec/project-name/.config')
+      @config_file = YAML.load_file('spec/project-name/config')
     end
   
     it "should have an address value of 'http://www.example.com'" do

@@ -13,7 +13,7 @@ module Genit
     def initialize working_dir
       @working_dir = working_dir
       check_missing_file '.genit', 'Not a genit project folder'
-      check_missing_file '.config', 'Missing config file'
+      check_missing_file 'config', 'Missing config file'
     end
   
     # Public: Compile the web site.
@@ -76,9 +76,11 @@ module Genit
       all_news_files =
         Dir.glob(File.join(@working_dir, 'news', '*')).sort.reverse
       begin
-        config_file = YAML.load_file(File.join(@working_dir, '.config'))
+        config_file = YAML.load_file(File.join(@working_dir, 'config'))
       rescue ArgumentError => msg
-        error "In .config file: #{msg}"
+        error "In config file: #{msg}"
+      rescue Exception => msg
+        error "In config file: #{msg}"
       end
       return unless config_file[:rss]
       RssFeed.new(@working_dir, all_news_files, config_file).generate_rss
@@ -86,7 +88,7 @@ module Genit
     
     def create_sitemap_xml
       pages = PagesFinder.new(@working_dir).find
-      config_file = YAML.load_file(File.join(@working_dir, '.config'))
+      config_file = YAML.load_file(File.join(@working_dir, 'config'))
       urls = PagesFinder.pagenames2urls(pages, config_file[:address])
       sitemap = Sitemap.new(urls).get
       FileWriter.write sitemap, File.join(@working_dir, 'www', 'sitemap.xml')

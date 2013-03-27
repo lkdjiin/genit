@@ -50,10 +50,10 @@ describe Compiler do
     end
   end
   
-  context "with no '.config' file" do
+  context "with no 'config' file" do
     it "should exit" do
       $stdout.should_receive(:puts).with(/Missing config file/i)
-      FileUtils.rm 'spec/project-name/.config'
+      FileUtils.rm 'spec/project-name/config'
       lambda{Compiler.new test_project_path}.should raise_error(SystemExit)
     end
   end
@@ -209,9 +209,9 @@ describe Compiler do
     
   end
   
-  context "with bad '.config' syntax" do
+  context "with bad 'config' syntax" do
     it "should exit" do
-      # replace .config
+      # replace config
       main = 
 %q{--- 
 :address: http://www.example.com
@@ -219,9 +219,9 @@ describe Compiler do
  :rss_title: RSS TITLE
 :rss_description: RSS DESCRIPTION
 }
-      File.open('spec/project-name/.config', "w") {|out| out.puts main }
+      File.open('spec/project-name/config', "w") {|out| out.puts main }
       
-      $stdout.should_receive(:puts).with(/in .config file/i)
+      $stdout.should_receive(:puts).with(/in config file/i)
       lambda do
         Compiler.new(test_project_path).compile
       end.should raise_error(SystemExit)
@@ -234,8 +234,6 @@ describe Compiler do
       @compiler.compile
       file = File.open("spec/project-name/www/index.html", "r")
       contents = file.read
-      puts "*************"
-      puts contents
       expected = '<!DOCTYPE html>'
       contents.start_with?(expected).should be_true
     end
