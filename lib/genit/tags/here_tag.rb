@@ -36,12 +36,15 @@ module Genit
       def get_variable_value
         file = File.join(@working_dir, PAGES_DIR, @filename)
         doc = HtmlDocument.open_fragment file
-        elem = doc.at_css "genit[what='#{@tag['here']}']"
-        if elem.nil?
+        html_or_nothing_from(doc.at_css("genit[what='#{@tag['here']}']"))
+      end
+
+      def html_or_nothing_from element
+        if element.nil?
           warning "here without what #{@tag}"
           ""
         else
-          elem.inner_html
+          element.inner_html
         end
       end
 

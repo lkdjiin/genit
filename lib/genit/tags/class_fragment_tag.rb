@@ -14,7 +14,7 @@ module Genit
     def initialize working_dir, template, filename, tag
       super working_dir, template, filename, tag
       @file = @tag['file']
-      error "Incomplete #{@tag}" if @file.nil?
+      error "Incomplete #{@tag}" unless @tag.key?('file')
       @full_path = File.join(@working_dir, FRAGMENTS_DIR, @file)
       error "No such file #{@tag}" unless File.exists?(@full_path)
     end

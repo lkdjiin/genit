@@ -1,7 +1,5 @@
 # -*- encoding: utf-8 -*-
 
-require 'fileutils'
-
 module Genit
 
   # Web site "compiler".
@@ -60,8 +58,6 @@ module Genit
           Dir.glob(File.join(@working_dir, NEWS_DIR, '*')).sort.reverse
         begin
           config_file = YAML.load_file(File.join(@working_dir, 'config'))
-        rescue ArgumentError => msg
-          error "In config file: #{msg}"
         rescue Exception => msg
           error "In config file: #{msg}"
         end

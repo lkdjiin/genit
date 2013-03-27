@@ -70,7 +70,7 @@ module Genit
   
   class ServerCommand < AbstractCommand
     def execute
-      Server.new(Dir.getwd).run
+      Server.new(Dir.getwd).start
     end
   end
   
