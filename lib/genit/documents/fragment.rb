@@ -17,7 +17,7 @@ module Genit
           when 'fragment'
             @file = tag['file']
             error "Incomplete #{tag}" unless tag.key?('file')
-            unless File.exists?(File.join(@working_dir, 'fragments', @file))
+            unless File.exists?(File.join(@working_dir, FRAGMENTS_DIR, @file))
               error "No such file #{tag}"
             end
             replace_fragment 
@@ -44,7 +44,7 @@ module Genit
       end
 
       def content
-        full_path = File.join(@working_dir, 'fragments', @file)
+        full_path = File.join(@working_dir, FRAGMENTS_DIR, @file)
         HtmlDocument.open_as_string(full_path)
       end
 
