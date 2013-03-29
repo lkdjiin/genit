@@ -1,48 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-<meta name="description" content="Genit is a kind of xhtml static web framework."></meta>
-<meta name="keywords" content="install download learn genit"></meta>
-<meta name="author" content="Xavier Nayrac"></meta>
-<title>Genit - Open Source Static Web Framework - Get started tutorial</title>
-<link rel="stylesheet" type="text/css" media="all" href="../styles/alsa/all.css"></link>
-<link rel="stylesheet" type="text/css" media="screen" href="../styles/grid.css"></link>
-<link rel="stylesheet" type="text/css" media="screen" href="../styles/screen.css"></link>
-<link rel="stylesheet" type="text/css" media="print" href="../styles/print.css"></link>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Genit is a kind of xhtml static web framework.">
+    <meta name="keywords" content="install download documentation            static web framework xhtml html genit">
+    <meta name="author" content="Xavier Nayrac">
+    <title>Genit - Open Source Static Web Framework -
+      Get started tutorial</title>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
-
-</head>
-<body>
-
-  <div id="header">
-      <div class="row">
-        <div class="column grid_4"><h1>GENIT</h1></div>
-        <div class="column grid_12"><ul id="menu">
+    <link rel="stylesheet" type="text/css" media="all" href="../styles/bootstrap/css/bootstrap.css"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/screen.css"> 
+    <link rel="stylesheet" type="text/css" media="print" href="../styles/print.css"> 
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <header>
+          <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="../index.html">Genit</a>
+            <div class="nav-collapse collapse pull-right">
+              <ul id="menu" class="nav">
   <li><a href="../index.html">Home</a></li>
   <li><a href="../overview.html">Overview</a></li>
   <li><a href="../download.html">Download</a></li>
   <li><a href="../documentation/index.html">Documentation</a></li>
   <li><a href="../about.html">About</a></li>
 </ul>
-</div>
+
+            </div>
+<!--/.nav-collapse -->
+          </div>
+        </header>
       </div>
-  </div>
-  
-  <div id="page_title">
-    <div class="row">
-        <div class="column grid_16">
+    </div>
+
+    <div class="container-fluid">
+      
+      <div class="row-fluid">
+        <div class="span12">
           <h1>Genit documentation - Get started tutorial</h1>
         </div>
       </div>
-  </div>
-  
-  <div id="main"> 
-    <div class="row">
-      <div class="column grid_12" id="left-side">
-        <div class="article">
+
+      <div class="row-fluid">
+        <div class="span10">
+          <div class="article">
   <h2>Install</h2>
 
 <p>First install ruby and rubygem (if there are not installed on your system) then:</p>
@@ -62,10 +73,11 @@
 
 <h3>Edit The Home Page</h3>
 
-<p>All pages go to the <code>my-site/pages/</code> folder. Open the <code>my-site/pages/index.html</code> in your favorite editor
+<p>All pages go to the <code>my-site/src/pages/</code> folder.
+Open the <code>my-site/src/pages/index.html</code> in your favorite editor
 and modify its content as follow:</p>
 
-<pre><code>    &lt;h1&gt;Welcome to Genit !&lt;/h1&gt;
+<pre><code>    &lt;h1&gt;Welcome to Genit!&lt;/h1&gt;
     &lt;p&gt;This is my first Genit site.&lt;/p&gt;
     &lt;div id="footer"&gt;
         &lt;p&gt;copyrighted by me&lt;/p&gt;
@@ -74,7 +86,7 @@ and modify its content as follow:</p>
 
 <h3>Add A New Page</h3>
 
-<p>Create a new file in the <code>my-site/pages/</code> folder and name it <code>about.html</code>.
+<p>Create a new file in the <code>my-site/src/pages/</code> folder and name it <code>about.html</code>.
 Copy/paste the following code in that file:</p>
 
 <pre><code>    &lt;h1&gt;The About Page&lt;/h1&gt;
@@ -86,7 +98,7 @@ Copy/paste the following code in that file:</p>
 
 <h3>Edit The Menu Template</h3>
 
-<p>In the <code>my-site/templates/</code> folder there is a <code>menu.html</code> file. Open it in your editor.
+<p>In the <code>my-site/src/templates/</code> folder there is a <code>menu.html</code> file. Open it in your editor.
 Edit this file as follow:</p>
 
 <pre><code>    &lt;ul id="menu"&gt;
@@ -102,34 +114,41 @@ Edit this file as follow:</p>
 <pre><code>    genit compile
 </code></pre>
 
-<p>There is a shortcut for this command:</p>
+<p>There is also a shortcut for this command:</p>
 
 <pre><code>    genit cc
 </code></pre>
 
-<p>Then go to the <code>my-site/www/</code> folder and open the <code>index.html</code> with your browser.
-Congratulations ! You have made your first project using genit.</p>
+<p>Then start the web server:</p>
+
+<pre><code>    genit server
+</code></pre>
+
+<p>and point your browser to <a href="localhost:3000">localhost:3000</a>.</p>
+
+<p>Congratulations! You have made your first project using genit.</p>
 
 <h2>Refactor your project</h2>
 
-<p>The two pages (index.html and about.html) have the same structure. Especially the footer
-section are identical. Let's refactor that.</p>
+<p>The two pages (index.html and about.html) have the same structure.
+Especially the footer section are identical. Let's refactor that.</p>
 
-<p>Create a file named <code>footer.html</code> in the <code>my-site/fragments/</code> folder and copy paste this code into it:</p>
+<p>Create a file named <code>footer.html</code> in the <code>my-site/src/fragments/</code> folder and
+copy paste this code into it:</p>
 
 <pre><code>    &lt;div id="footer"&gt;
       &lt;p&gt;copyrighted by me&lt;/p&gt;
     &lt;/div&gt;
 </code></pre>
 
-<p>Now edit the <code>my-site/pages/index.html</code> as follow:</p>
+<p>Now edit the <code>my-site/src/pages/index.html</code> as follow:</p>
 
 <pre><code>    &lt;h1&gt;Welcome to Genit !&lt;/h1&gt;
     &lt;p&gt;This is my first Genit site.&lt;/p&gt;
     &lt;genit class="fragment" file="footer.html"/&gt;
 </code></pre>
 
-<p>Do the same thing with the page <code>my-site/pages/about.html</code>:</p>
+<p>Do the same thing with the page <code>my-site/src/pages/about.html</code>:</p>
 
 <pre><code>    &lt;h1&gt;The About Page&lt;/h1&gt;
     &lt;p&gt;This is a page about me.&lt;/p&gt;
@@ -141,36 +160,34 @@ section are identical. Let's refactor that.</p>
 <pre><code>    genit cc
 </code></pre>
 
-<p>then open the <code>my-site/www/index.html</code> with your browser.</p>
+<p>then refresh <a href="localhost:3000">localhost:3000</a> in your browser.</p>
 
-<p>Ok, as the footer will appear in all our pages, we should put it in the template.
-To do so, remove the footer from the pages:</p>
+<p>Ok, as the footer will appear in all our pages, we should put it in the
+main template. To do so, remove the footer from the pages:</p>
 
-<p>In <code>my-site/pages/index.html</code>:</p>
+<p>In <code>my-site/src/pages/index.html</code>:</p>
 
 <pre><code>    &lt;h1&gt;Welcome to Genit !&lt;/h1&gt;
     &lt;p&gt;This is my first Genit site.&lt;/p&gt;
 </code></pre>
 
-<p>In <code>my-site/pages/about.html</code>:</p>
+<p>In <code>my-site/src/pages/about.html</code>:</p>
 
 <pre><code>    &lt;h1&gt;The About Page&lt;/h1&gt;
     &lt;p&gt;This is a page about me.&lt;/p&gt;
 </code></pre>
 
-<p>And now add it to the template. The template is in the <code>my-site/templates/</code> folder, under the
+<p>And now add it to the main template. The template is in
+the <code>my-site/src/templates/</code> folder, under the
 name <code>main.html</code>.</p>
 
-<p>In <code>my-site/templates/main.html</code>:</p>
+<p>In <code>my-site/src/templates/main.html</code>:</p>
 
-<pre><code>    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-    &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
-    &lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;
+<pre><code>    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
         &lt;head&gt;
             &lt;title&gt;Genit - Static web site framework&lt;/title&gt;
             &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/&gt;
-            &lt;link rel="stylesheet" type="text/css" media="all" href="styles/alsa/all.css" /&gt; 
             &lt;link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css" /&gt; 
             &lt;link rel="stylesheet" type="text/css" media="print" href="styles/print.css" /&gt; 
         &lt;/head&gt;
@@ -187,27 +204,27 @@ name <code>main.html</code>.</p>
 <p>If a part of a page doesn't need to use html tag attributes (id an class), markdown syntax is
 much cleaner than html syntax. Why not using markdown ?</p>
 
-<p>Edit the <code>my-site/pages/index.html</code> page as follow:</p>
+<p>Edit the <code>my-site/src/pages/index.html</code> page as follow:</p>
 
 <pre><code>    &lt;genit class="fragment" file="index_content.markdown"/&gt;
     &lt;genit class="fragment" file="footer.html"/&gt;
 </code></pre>
 
-<p>Then add this <code>index_content.markdown</code> file in the <code>my-site/fragments/</code> folder:</p>
+<p>Then add this <code>index_content.markdown</code> file in the <code>my-site/src/fragments/</code> folder:</p>
 
-<pre><code>    Welcome to Genit !  
+<pre><code>    Welcome to Genit!  
     ==================
 
     This is my first Genit site.
 
-    I'm using HTML and markdown !
+    I'm using HTML and markdown!
 </code></pre>
 
 <p>Now recompile your project with <code>genit cc</code> before being able to view the change.</p>
 
 <h2>Styling your site</h2>
 
-<p>Edit the <code>my-site/styles/screen.css</code> file as follow:</p>
+<p>Edit the <code>my-site/src/styles/screen.css</code> file as follow:</p>
 
 <pre><code>    a#selected { color:red; }
 </code></pre>
@@ -222,11 +239,13 @@ much cleaner than html syntax. Why not using markdown ?</p>
 <pre><code>    genit cc
 </code></pre>
 
-<p>and reopen the index.html with your browser to see what's changed.</p>
+<p>and refresh your browser to see what's changed.</p>
 </div>
-      </div>
-      <div class="column grid_4">
-        <div class="right-side-section"><h2>Quick links</h2>
+        </div>
+        <div class="span2">
+
+          <div class="right-side-section">
+            <h2>Quick links</h2>
 
 <p><a href="../documentation/index.html">Get started</a></p>
 
@@ -238,22 +257,35 @@ much cleaner than html syntax. Why not using markdown ?</p>
 
 <p><a href="https://github.com/lkdjiin/genit">Sources on GitHub</a></p>
 
-<p><a href="../about.html">Who is behind that ?</a></p>
+<p><a href="../news.html">All news</a></p>
+          </div>
+          
+          <div style="text-align:center">
+            <a href="../rss.xml"><img src="../public/images/rss32.png" alt="" width="32" height="32"></a>
+          </div>
 
-<p><a href="../news.html">All news</a></p></div>
-        <div style="text-align:center"><a href="../rss.xml"><img src=".././styles/images/rss32.png" alt="" width="32" height="32"></img></a></div>
-        <div class="right-side-section"><h2>License</h2>
+          <div class="right-side-section">
+            <h2>License</h2>
 
 <p>Genit is a free, open source software licensed under
-the <a href="../licences.html">Expat license</a> (also known as the MIT license).</p></div>
+the MIT license.</p>
+          </div>
+          
+        </div>
       </div>
+
+      <hr>
+
+      <footer class="row-fluid">
+        <div class="span12">
+          <p>Copyright 2011-2013, Xavier Nayrac</p>
+        </div>
+      </footer>
+
     </div>
-  </div>
-  
-  <div class="row" id="footer">
-    <div class="column grid_16"><p>Copyright 2011-2013, Xavier Nayrac</p></div>
-  </div>
- <script type="text/javascript">
+<!--/container-fluid -->
+
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-39286891-1']);
@@ -265,6 +297,8 @@ the <a href="../licences.html">Expat license</a> (also known as the MIT license)
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script> 
-</body>
+</script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="../scripts/bootstrap.min.js"></script>
+  </body>
 </html>

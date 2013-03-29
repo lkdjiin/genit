@@ -1,45 +1,39 @@
 <?xml version="1.0"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://lkdjiin.github.com/genit/licences.html</loc>
+    <loc>http://www.example.com/news.html</loc>
   </url>
   <url>
-    <loc>http://lkdjiin.github.com/genit/news.html</loc>
+    <loc>http://www.example.com/index.html</loc>
   </url>
   <url>
-    <loc>http://lkdjiin.github.com/genit/index.html</loc>
+    <loc>http://www.example.com/about.html</loc>
   </url>
   <url>
-    <loc>http://lkdjiin.github.com/genit/about.html</loc>
+    <loc>http://www.example.com/overview.html</loc>
   </url>
   <url>
-    <loc>http://lkdjiin.github.com/genit/overview.html</loc>
+    <loc>http://www.example.com/download.html</loc>
   </url>
   <url>
-    <loc>http://lkdjiin.github.com/genit/download.html</loc>
+    <loc>http://www.example.com/documentation</loc>
   </url>
   <url>
-    <loc>http://lkdjiin.github.com/genit/documentation</loc>
+    <loc>http://www.example.com/documentation/command-create.html</loc>
   </url>
   <url>
-    <loc>http://lkdjiin.github.com/genit/documentation/command-create.html</loc>
+    <loc>http://www.example.com/documentation/command-genit.html</loc>
   </url>
   <url>
-    <loc>http://lkdjiin.github.com/genit/documentation/command-genit.html</loc>
+    <loc>http://www.example.com/documentation/book-of-genit-en.html</loc>
   </url>
   <url>
-    <loc>http://lkdjiin.github.com/genit/documentation/book-of-genit-en.html</loc>
+    <loc>http://www.example.com/documentation/command-compile.html</loc>
   </url>
   <url>
-    <loc>http://lkdjiin.github.com/genit/documentation/command-compile.html</loc>
+    <loc>http://www.example.com/documentation/index.html</loc>
   </url>
   <url>
-    <loc>http://lkdjiin.github.com/genit/documentation/index.html</loc>
-  </url>
-  <url>
-    <loc>http://lkdjiin.github.com/genit/documentation/tutorial.html</loc>
-  </url>
-  <url>
-    <loc>http://lkdjiin.github.com/genit/documentation/book-of-genit-fr.html</loc>
+    <loc>http://www.example.com/documentation/tutorial.html</loc>
   </url>
 </urlset>

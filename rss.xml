@@ -5,48 +5,54 @@
   xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
-    <title>Genit RSS feed</title>
-    <link>http://lkdjiin.github.com/genit</link>
-    <description>Genit is an open-source static web framework</description>
+    <title>RSS TITLE</title>
+    <link>http://www.example.com</link>
+    <description>RSS DESCRIPTION</description>
+    <item>
+      <title>Genit 2.0 released</title>
+      <link>http://www.example.com</link>
+      <pubDate>Fri, 29 Mar 2013 00:00:00 +0100</pubDate>
+      <dc:date>2013-03-29T00:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Genit 1.0.1 released</title>
-      <link>http://lkdjiin.github.com/genit</link>
+      <link>http://www.example.com</link>
       <pubDate>Thu, 14 Mar 2013 00:00:00 +0100</pubDate>
       <dc:date>2013-03-14T00:00:00+01:00</dc:date>
     </item>
     <item>
       <title>Genit 1.0 released</title>
-      <link>http://lkdjiin.github.com/genit</link>
+      <link>http://www.example.com</link>
       <pubDate>Sun, 02 Oct 2011 00:00:00 +0200</pubDate>
       <dc:date>2011-10-02T00:00:00+02:00</dc:date>
     </item>
     <item>
       <title>Genit 0.99 released</title>
-      <link>http://lkdjiin.github.com/genit</link>
+      <link>http://www.example.com</link>
       <pubDate>Sun, 25 Sep 2011 00:00:00 +0200</pubDate>
       <dc:date>2011-09-25T00:00:00+02:00</dc:date>
     </item>
     <item>
       <title>Genit 0.9 released</title>
-      <link>http://lkdjiin.github.com/genit</link>
+      <link>http://www.example.com</link>
       <pubDate>Sun, 04 Sep 2011 00:00:00 +0200</pubDate>
       <dc:date>2011-09-04T00:00:00+02:00</dc:date>
     </item>
     <item>
       <title>Genit 0.5 released</title>
-      <link>http://lkdjiin.github.com/genit</link>
+      <link>http://www.example.com</link>
       <pubDate>Sat, 06 Aug 2011 00:00:00 +0200</pubDate>
       <dc:date>2011-08-06T00:00:00+02:00</dc:date>
     </item>
     <item>
       <title>Genit 0.4.1 released</title>
-      <link>http://lkdjiin.github.com/genit</link>
+      <link>http://www.example.com</link>
       <pubDate>Sat, 30 Jul 2011 00:00:00 +0200</pubDate>
       <dc:date>2011-07-30T00:00:00+02:00</dc:date>
     </item>
     <item>
       <title>Genit 0.4 released</title>
-      <link>http://lkdjiin.github.com/genit</link>
+      <link>http://www.example.com</link>
       <pubDate>Tue, 05 Jul 2011 00:00:00 +0200</pubDate>
       <dc:date>2011-07-05T00:00:00+02:00</dc:date>
     </item>

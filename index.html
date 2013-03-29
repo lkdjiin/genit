@@ -1,48 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-<meta name="description" content="Genit is a kind of xhtml static web framework."></meta>
-<meta name="keywords" content="install download learn genit"></meta>
-<meta name="author" content="Xavier Nayrac"></meta>
-<title>Genit - Open Source Static Web Framework - Home</title>
-<link rel="stylesheet" type="text/css" media="all" href="styles/alsa/all.css"></link>
-<link rel="stylesheet" type="text/css" media="screen" href="styles/grid.css"></link>
-<link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css"></link>
-<link rel="stylesheet" type="text/css" media="print" href="styles/print.css"></link>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Genit is a kind of xhtml static web framework.">
+    <meta name="keywords" content="install download documentation            static web framework xhtml html genit">
+    <meta name="author" content="Xavier Nayrac">
+    <title>Genit - Open Source Static Web Framework -
+      Home</title>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
-
-</head>
-<body>
-
-  <div id="header">
-      <div class="row">
-        <div class="column grid_4"><h1>GENIT</h1></div>
-        <div class="column grid_12"><ul id="menu">
+    <link rel="stylesheet" type="text/css" media="all" href="styles/bootstrap/css/bootstrap.css"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css"> 
+    <link rel="stylesheet" type="text/css" media="print" href="styles/print.css"> 
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <header>
+          <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="index.html">Genit</a>
+            <div class="nav-collapse collapse pull-right">
+              <ul id="menu" class="nav">
   <li><a href="index.html" id="selected">Home</a></li>
   <li><a href="overview.html">Overview</a></li>
   <li><a href="download.html">Download</a></li>
   <li><a href="documentation/index.html">Documentation</a></li>
   <li><a href="about.html">About</a></li>
 </ul>
-</div>
+
+            </div>
+<!--/.nav-collapse -->
+          </div>
+        </header>
       </div>
-  </div>
-  
-  <div id="page_title">
-    <div class="row">
-        <div class="column grid_16">
+    </div>
+
+    <div class="container-fluid">
+      
+      <div class="row-fluid">
+        <div class="span12">
           <h1>Open source static web framework</h1>
         </div>
       </div>
-  </div>
-  
-  <div id="main"> 
-    <div class="row">
-      <div class="column grid_12" id="left-side">
-        <div class="article">
+
+      <div class="row-fluid">
+        <div class="span10">
+          <div class="article">
   <h2>Quick overview</h2>
 
 <p>Genit is a command line framework, essentially based on conventions, to build static web site.
@@ -52,37 +63,38 @@ A simple example, to inject the pages in a template:</p>
 <pre><code>    &lt;genit class="pages" /&gt;
 </code></pre>
 
-<p>May be one can say Genit is a XHTML framework...</p>
+<p>May be one can say Genit is a xhtml framework...</p>
 </div>
-<div class="row">
-  <div class="column grid_6">
-    <div class="article"><h2>Genit 1.0.1 released</h2>
+
+<div class="row-fluid">
+
+  <div class="span6">
+    <div class="article">
+<h2>Genit 2.0 released</h2>
+<p class="date">2013-03-29</p>
+<p>Finally, the version 2.0 of Genit is over.</p>
+<p>New in this release:</p>  
+<ul>
+  <li>Improvement of the layout folder structure, which drives to faster compilation</li>
+  <li>Genit is now html5 only</li>
+  <li>Genit provide a web server for development</li>
+  <li>Config file is no longer an hidden file</li>
+  <li>I remove all css templates</li>
+  <li>Genit put an error message when the main template is malformed</li>
+</ul>
+</div>
+<div class="article">
+<h2>Genit 1.0.1 released</h2>
 <p class="date">2013-03-14</p>
 <p>This is a bugfix release.</p>
 <ul>
   <li>Fix a bug that generates a bad html5 doctype</li>
 </ul>
 
-</div><div class="article"><h2>Genit 1.0 released</h2>
-<p class="date">2011-10-02</p>
-<p>I am proud to announce the version 1.0 of Genit!</p>
-<p>New in this release:</p>  
-<ul>
-  <li>Genit creates a sitemap.xml</li>
-  <li>Genit puts nicer error messages</li>
-  <li>Genit puts a warning message when a <code>here</code> tag is used without its counterpart</li>
-  <li>Version is added to the <code>.genit</code> file</li>
-</ul>
-</div><div class="article">
-  <h2>Genit in the real world</h2>
-  <p>
-  The Genit framework is a very young one, but hey, it works!<br></br><strong>Want a proof?</strong> You are just reading a web site made with Genit.
-  If you are curious, you can browse the sources of this site at
-  <a href="https://github.com/lkdjiin/genit-site">https://github.com/lkdjiin/genit-site</a>.
-  </p>
 </div>
 </div>
-  <div class="column grid_6">
+
+  <div class="span6">
     <div class="article">
   <h2>Quick Install</h2>
   
@@ -98,25 +110,60 @@ A simple example, to inject the pages in a template:</p>
 <div class="article">
   <h2>Usage</h2>
   <pre><code>
-        genit create my-test-site
-        cd my-test-site
+    genit create my-test-site
+    cd my-test-site
+    genit compile
+    genit server
   </code></pre>
   <p>
-  <em>(at this point edit the home page or create some more pages)</em> 
-  </p>
-  <pre><code>
-        genit compile
-  </code></pre>
-  <p>
-  Now go to the <code>my-test-site/www/</code> folder and double-click the index.html to view
+  Now point your navigator to localhost:3000 to view
   your new site.
   </p>
 </div>
 </div>
+
 </div>
+
+<div class="row-fluid">
+  <div class="article">
+  <h2>Genit in the real world</h2>
+
+  <ul class="thumbnails">
+<li class="span4">
+      <div class="thumbnail">
+        <img data-src="holder.js/300x200" src="public/images/screenshot-genit.jpg" alt="Genit screenshot"><h3>Genit</h3>
+        <p>Genit website is the first using version 2.0 of the genit framework.
+          If you are curious, you can 
+          <a href="https://github.com/lkdjiin/genit/tree/gh-pages" target="_blank">browse the sources</a>.
+          of this site.
+        </p>
       </div>
-      <div class="column grid_4">
-        <div class="right-side-section"><h2>Quick links</h2>
+    </li>
+
+    <li class="span4">
+      <a href="http://lkdjiin.github.com/tiling/" class="thumbnail" target="_blank">
+        <img data-src="holder.js/300x200" src="public/images/screenshot-tiling.jpg" alt="Tiling screenshot"><h3>Tiling</h3>
+        <p>Tiling website, made with Genit 1.0.
+        </p>
+      </a>
+    </li>
+
+    <li class="span4">
+      <a href="http://lkdjiin.github.com/senet/" class="thumbnail" target="_blank">
+        <img data-src="holder.js/300x200" src="public/images/screenshot-senet.jpg" alt="Senet screenshot"><h3>Senet</h3>
+        <p>Senet website, made with Genit 1.0.
+        </p>
+      </a>
+    </li>
+
+  </ul>
+</div>
+</div>
+        </div>
+        <div class="span2">
+
+          <div class="right-side-section">
+            <h2>Quick links</h2>
 
 <p><a href="documentation/index.html">Get started</a></p>
 
@@ -128,22 +175,35 @@ A simple example, to inject the pages in a template:</p>
 
 <p><a href="https://github.com/lkdjiin/genit">Sources on GitHub</a></p>
 
-<p><a href="about.html">Who is behind that ?</a></p>
+<p><a href="news.html">All news</a></p>
+          </div>
+          
+          <div style="text-align:center">
+            <a href="rss.xml"><img src="public/images/rss32.png" alt="" width="32" height="32"></a>
+          </div>
 
-<p><a href="news.html">All news</a></p></div>
-        <div style="text-align:center"><a href="rss.xml"><img src="./styles/images/rss32.png" alt="" width="32" height="32"></img></a></div>
-        <div class="right-side-section"><h2>License</h2>
+          <div class="right-side-section">
+            <h2>License</h2>
 
 <p>Genit is a free, open source software licensed under
-the <a href="licences.html">Expat license</a> (also known as the MIT license).</p></div>
+the MIT license.</p>
+          </div>
+          
+        </div>
       </div>
+
+      <hr>
+
+      <footer class="row-fluid">
+        <div class="span12">
+          <p>Copyright 2011-2013, Xavier Nayrac</p>
+        </div>
+      </footer>
+
     </div>
-  </div>
-  
-  <div class="row" id="footer">
-    <div class="column grid_16"><p>Copyright 2011-2013, Xavier Nayrac</p></div>
-  </div>
- <script type="text/javascript">
+<!--/container-fluid -->
+
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-39286891-1']);
@@ -155,6 +215,8 @@ the <a href="licences.html">Expat license</a> (also known as the MIT license).</
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script> 
-</body>
+</script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+  </body>
 </html>

@@ -1,0 +1,1676 @@
+<genit what="page_title">The Book Of Genit</genit>
+<genit what="window_title">The Book Of Genit</genit>
+
+<div id="book">
+
+<h2>Summary</h2>
+
+<ul>
+  <li><a href="documentation/book-of-genit-en.html#Install">1. Setup</a></li>
+  <ul>
+    <li><a href="documentation/book-of-genit-en.html#Install_ruby">1.1 Install the Ruby interpreter</a></li>
+    <li><a href="documentation/book-of-genit-en.html#Install_rubygems">1.2 Install Rubygems</a></li>
+    <li><a href="documentation/book-of-genit-en.html#Install_genit">1.3 Install Genit</a></li>
+    <li><a href="documentation/book-of-genit-en.html#Smoke_test">1.4 Smoke test</a></li>
+  </ul>
+  
+  <li><a href="documentation/book-of-genit-en.html#Project">2. Create a project</a></li>
+  <ul>
+    <li><a href="documentation/book-of-genit-en.html#Structure">2.1 Structure of a Genit project</a></li>
+    <li><a href="documentation/book-of-genit-en.html#Compilation">2.2 Compiling a project</a></li>
+    <li><a href="documentation/book-of-genit-en.html#Add_pages">2.3 Add pages</a></li>
+    <li><a href="documentation/book-of-genit-en.html#Menu">2.4 Menu</a></li>
+    <li><a href="documentation/book-of-genit-en.html#Main_template">2.5 Main template</a></li>
+    <li><a href="documentation/book-of-genit-en.html#Project_exercises">2.6 Exercises</a></li>
+  </ul>
+  
+  <li><a href="documentation/book-of-genit-en.html#CSS">3. CSS</a></li>
+  <ul>
+    <li><a href="documentation/book-of-genit-en.html#CSS_styles">3.1 Styles folder</a></li>
+    <li><a href="documentation/book-of-genit-en.html#CSS_preparation">3.2 Preparing the site</a></li>
+    <li><a href="documentation/book-of-genit-en.html#CSS_do">3.3 Style !</a></li>
+  </ul>
+  
+  <li><a href="documentation/book-of-genit-en.html#Fragment">4. Fragments</a></li>
+  
+  <li><a href="documentation/book-of-genit-en.html#String">5. Passing strings</a></li>
+  <ul>
+    <li><a href="documentation/book-of-genit-en.html#String_here">5.1 The attribute here</a></li>
+    <li><a href="documentation/book-of-genit-en.html#String_what">5.2 The attribute what</a></li>
+    <li><a href="documentation/book-of-genit-en.html#String_exercises">5.3 Exercises</a></li>
+  </ul>
+  
+  <li><a href="documentation/book-of-genit-en.html#News">6. News</a></li>
+  <ul>
+    <li><a href="documentation/book-of-genit-en.html#News_folder">6.1 The news folder</a></li>
+    <li><a href="documentation/book-of-genit-en.html#News_all">6.2 View all news</a></li>
+    <li><a href="documentation/book-of-genit-en.html#News_number">6.3 View latest news</a></li>
+    <li><a href="documentation/book-of-genit-en.html#News_wrapper">6.4 Style for news</a></li>
+  </ul>
+  
+  <li><a href="documentation/book-of-genit-en.html#Public">7. Public folder</a></li>
+  
+  <li><a href="documentation/book-of-genit-en.html#Javascript">8. Javascript</a></li>
+  
+  <li><a href="documentation/book-of-genit-en.html#RSS">9. RSS Feed and sitemap</a></li>
+  <ul>
+    <li><a href="documentation/book-of-genit-en.html#RSS_feed">9.1 The RSS feed</a></li>
+    <li><a href="documentation/book-of-genit-en.html#Sitemap_xml">9.2 The sitemap.xml file</a></li>
+  </ul>
+
+  <li><a href="documentation/book-of-genit-en.html#Markdown">10. Markdown</a></li>
+
+</ul>
+
+<!------------------------------------------------------------------------------------->
+<h2><a name="Install">1. Setup</a></h2>
+
+<p>
+  In this chapter we will install all the programs needed to run
+  Genit. At the end of the chapter, we will verify the success of this installation through
+  the smoke test that comes with Genit.
+</p>
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Install_ruby">1.1 Install the Ruby interpreter</a></h3>
+
+<p>
+  Genit is written in Ruby, which means to run Genit,
+  you need a Ruby interpreter installed on your computer. Note that you do not 
+  need to know the Ruby language you use Genit.
+</p>
+
+<p class="note">
+  Genit requires the installation of Ruby version 1.9.2 or later.
+</p>
+
+<p>
+  Whatever your operating system, visit the official page of
+  <a href="http://www.ruby-lang.org/fr/downloads/">Ruby download</a> and read instructions.
+</p>
+
+<h4>1.1.1 Windows users</h4>
+<p>
+  Download the installer of the latest stable version
+  &gt;= 1.9.2. As I write this sentence, it is the file
+   <code>Ruby 1.9.2-p180 RubyInstaller</code>. Once downloaded, double-click
+   it to start the installation.
+</p>
+
+<h4>1.1.2 Linux users</h4>
+<p>
+  I urge you to go through a software called <acronym title="Ruby Version Manager">RVM</acronym>.
+  For more information on RVM, visit <a href="https://rvm.io//">Ruby Version Manager</a>. 
+  If you are new to Linux, the installation of RVM is not necessarily a
+  cakewalk, but hang in there, it's worth it!<br/>
+  Open a terminal window and type the following :
+</p>
+
+<div class="alert alert-info alert-block">
+<h4>Information</h4>
+  If you have still decided not to go through RVM to install Ruby, but to use
+  your package manager, it can be that your distribution offers
+  to install version 1.9.1 of Ruby rather than version 1.9.2.  You can do it,
+  for obscure reasons, it is the same release branch.
+</div>
+
+<h4>1.1.3 All users</h4>
+<p>
+  To verify that you have installed the correct version of Ruby, open a terminal window
+   and type <code> ruby-v</code> :
+</p>
+
+
+<pre><code>
+    $ ruby -v
+    <span class="bash_out">ruby 1.9.2p180 (2011-02-18 revision 30909) [i686-linux]</span>
+
+</code></pre>
+
+<p>
+  If the early numbers are 1.9.2 (or higher), your system is ready to
+   use Ruby.
+</p>
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Install_rubygems">1.2 Install Rubygems</a></h3>
+
+<p>
+  Programs written in Ruby are generally packaged in the form of gem
+   that manage their own dependencies. Rubygems is the program that allows to
+   manage the different gem. <strong>It is often installed along with Ruby</strong>.
+  To find out if Rubygems is already installed on your machine open a terminal window
+   and type <code>gem -v</code>. If the system complains that the command <code>gem</code>
+   can not be found you need to install RubyGems, otherwise jump to the installation
+   of Genit.
+</p>
+
+
+<h4>1.2.1 To install Rubygems on Windows</h4>
+<p>
+  Go to 
+  <a href="https://rubygems.org/pages/download">rubygems.org/pages/download</a>,
+  downlaod the zip file, unzip the archive and follow the instructions in the README.rdoc file.
+  You just have to open a terminal window, navigate in the rubygems folder and type: 
+  <code> ruby setup.rb </ code>. (Perhaps a double-click on the file
+   setup.rb also works)
+</p>
+
+<h4>1.2.2 To install Rubygems on Linux</h4>
+<p>
+  Use your package manager.
+</p>
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Install_genit">1.3 Install Genit</a></h3>
+
+<p>
+Now that Ruby and Rubygems are installed on your system, installation
+of Genit going to be very simple. Open a terminal window and type the following command:
+</p>
+
+<pre><code>
+    $ gem install genit
+    
+</code></pre>
+
+<p>
+The program Genit (and its dependencies if necessary) will be downloaded and
+installed.<br/>
+To ensure that the installation was successful, type the <code>genit -v</code>
+command in a terminal window :
+</p>
+
+<pre><code>
+    $ genit -v
+    <span class="bash_out">genit 2.0</span>
+    
+</code></pre>
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Smoke_test">1.4 Smoke test</a></h3>
+
+<p>
+This step is not strictly necessary and you can skip it if you want.
+However, it is useful to make sure that Genit works perfectly
+on your system.<br/>
+Open a terminal window and type :
+</p>
+
+<pre><code>
+    $ genit create test-project
+    $ cd test-project
+    $ genit compile
+    $ genit server
+    
+</code></pre>
+
+
+Now point your browser to <a href="localhost:3000">localhost:3000</a>,
+you must see something like that:
+
+<img src="public/images/3.jpg" width="690" class="screenshot"/>
+</p>
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h2><a name="Project">2. Create a project</a></h2>
+
+<p>
+In this book, we will develop a simple website for a hypothetical video game.
+The site will include a home page, a news page, and
+few pages of documentation.
+<br/><br/>
+The first step in any development of website with Genit is the creation of the project.
+This is done with the command  <code>create</code>. Open a terminal window,
+change to the folder you want then enter the following command :
+</p>
+
+<pre><code>
+    $ genit create -e sample_app
+    
+</code></pre>
+
+<p>
+By default, Genit creates a smoke test for each new project, which means that some files
+are already pre-filled.
+With option <code>-e</code>, or <code>--empty</code>, these files are not pre-filled.
+</p>
+
+<p>
+Genit only creates HTML5 project.
+If you have time, look at the <a href="documentation/command-create.html">documentation of the create command</a>.
+</p>
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Structure">2.1 Structure of a Genit project</a></h3>
+
+<p>
+We can now explore briefly the project structure created by Genit.
+If you do not understand it for now, do not worry, it's just
+an introduction. The content and use of each case will be treated
+in depth elsewhere in this book.
+</p>
+
+
+<h4>2.1.1 src/fragments</h4>
+<p>
+Here we have bits of a web page.
+Each fragment may be included in any page.
+Think in terms of fragment helps to modularize the xhtml code, like any
+other "real" programming language.
+</p>
+
+<h4>2.1.2 src/news</h4>
+<p>
+News are very common in a website. Genit can manage them easily.
+Each news will be placed in a separate file.
+</p>
+
+<h4>2.1.3 src/pages</h4>
+<p>
+All web site pages will be placed in this folder.
+</p>
+
+<h4>2.1.4 public</h4>
+<p>
+Here we find all files that do not require special treatment, as
+pdf or text files, images that are not part of site design, etc..
+</p>
+
+<h4>2.1.5 scripts</h4>
+<p>
+Here you can place javascript libraries and files.
+</p>
+
+<h4>2.1.6 styles</h4>
+<p>
+You place here that relates to site design, CSS files, images, etc.
+</p>
+
+<h4>2.1.7 src/templates</h4>
+<p>
+Here you will find site main template (the one that will wrap every page), as well
+as the main navigation menu.
+</p>
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Compilation">2.2 Compiling a project</a></h3>
+
+<p>
+If you performed the smoke test in the section of the installation, you already know
+how to compile a Genit project. However, I will resume the procedure here.
+<br/>
+From the terminal window, move to the folder of the project :
+</p>
+
+<pre><code>
+    $ cd sample_app
+    
+</code></pre>
+
+<p>
+Then use the following command to compile the project :
+</p>
+
+<pre><code>
+    $ genit compile
+    
+</code></pre>
+
+<p>
+When all goes well the <code>compile</code> command produces no output. Also note that
+<code>cc</code> is an alias for <code>compile</code>, ie the following two lines
+are equivalent :
+</p>
+
+<pre><code>
+    $ genit compile
+    $ genit cc
+    
+</code></pre>
+
+<p>
+For information, the <a href="documentation/book-of-genit-en.html#Figure_2.1">figure 2.1</a>
+shows the terminal session used since the beginning of this
+chapter: creating and compiling the project.
+</p>
+
+<a name="Figure_2.1" class="figure">Figure 2.1 - creating and compiling the project</a>
+  <img src="public/images/5.jpg" class="screenshot"/>
+
+
+<p>
+Genit put the result of compiling at the root of the project folder. 
+</p>
+
+
+<p>
+To see the result, point your browser to <a href="localhost:3000">localhost:3000</a>
+(<a href="documentation/book-of-genit-en.html#Figure_2.3">figure 2.3</a>)
+</p>
+
+<a name="Figure_2.3" class="figure">Figure 2.3 - The result</a>
+<img src="public/images/7.jpg" class="screenshot"/>
+
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Add_pages">2.3 Add pages</a></h3>
+
+<p>
+Page <code>index.html</code>, you just opened at the end of the previous section
+(<a href="documentation/book-of-genit-en.html#Compilation">2.2</a>) does not come from
+nowhere.<br/>
+You will find its contents in the <code>src/pages/index.html</code> file
+(<a href="documentation/book-of-genit-en.html#Listing_2.1">listing 2.1</a>). With Genit,
+you will put all the pages of your site in the <code>src/pages</code> folder.
+</p>
+
+<a name="Listing_2.1" class="listing">Listing 2.1 - <code>src/pages/index.html</code> file</a>
+<p class="listing_html">
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">home&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+
+</p>
+
+
+<p>
+We will now add the news page. 
+To do this, create the <code>src/pages/news.html</code>file 
+(<a href="documentation/book-of-genit-en.html#Figure_2.4">figure 2.4</a>)
+and fill it with the simple content of <a href="documentation/book-of-genit-en.html#Listing_2.2">listing 2.2</a>.
+</p>
+
+<a name="Figure_2.4" class="figure">Figure 2.4 - <code>news.html</code> file</a>
+<pre><code>
+    $ ls src/pages/
+    index.html  news.html
+    
+</code></pre>
+
+<a name="Listing_2.2" class="listing">Listing 2.2 - <code>src/pages/news.html</code> file</a>
+<p class="listing_html">
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">news&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+
+</p>
+
+<p>
+Use the compile command to reflect changes :
+</p>
+
+<pre><code>
+    $ genit cc
+    
+</code></pre>
+
+<p>
+You can now point your browser to
+<a href="localhost:3000/news.html">localhost:3000/news.html</a>
+(<a href="documentation/book-of-genit-en.html#Figure_2.5">Figure 2.5</a>), which
+just add to your site.
+</p>
+
+<a name="Figure_2.5" class="figure">Figure 2.5 - The news page</a>
+<img src="public/images/9.jpg" class="screenshot"/>
+
+
+<h4>The pages of documentation</h4>
+<p>
+We will now create three pages of documentation. 
+A page for the user documentation (<code>user.html</code>), 
+a second page for developer documentation (<code>developer.html</code>), 
+and finally a last page that will include links to the previous two pages
+(<code>documentation.html</code>).<br/>
+As for the news page, you create these pages in the <code>src/pages</code> folder.
+<a href="documentation/book-of-genit-en.html#Figure_2.6">Figure 2.6</a> 
+shows what your <code>src/pages</code> folder should now look like:
+</p>
+
+<a name="Figure_2.6" class="figure">Figure 2.6 - Contents of the pages folder after the addition of the 3 documentation pages</a>
+<pre><code>
+    $ ls src/pages/
+    developer.html  documentation.html  index.html  news.html  user.html
+    
+</code></pre>
+
+
+<p>
+You will fill these files with the contents of 
+<a href="documentation/book-of-genit-en.html#Listing_2.3">listing 2.3</a>,
+<a href="documentation/book-of-genit-en.html#Listing_2.4">listing 2.4</a> and
+<a href="documentation/book-of-genit-en.html#Listing_2.5">listing 2.5</a>.
+</p>
+
+<a name="Listing_2.3" class="listing">Listing 2.3 - <code>pages/developer.html</code> file</a>
+<p class="listing_html">
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">developer&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+
+</p>
+
+<a name="Listing_2.4" class="listing">Listing 2.4 - <code>pages/user.html</code> file</a>
+<p class="listing_html">
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">user&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+
+</p>
+
+<a name="Listing_2.5" class="listing">Listing 2.5 - <code>pages/documentation.html</code> file</a>
+<p class="listing_html">
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">documentation&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_1">&lt;ul&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"user.html"</span><span class="style_1">&gt;</span><span class="style_0">User&nbsp;documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"developer.html"</span><span class="style_1">&gt;</span><span class="style_0">Developer&nbsp;documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+<span class="style_1">&lt;/ul&gt;</span><br />
+
+</p>
+
+
+<p>
+A new compilation and you can see the result by opening 
+<a href="localhost:3000/documentation.html">localhost:3000/documentation.html</a>
+in your browser. 
+Try the links to make sure they work.
+</p>
+
+<p>
+In a real site, you might have dozens of pages of documentation. 
+In this case, I prefer to organize the <code>pages</code> folder in subfolders.
+Let's go!
+<br/>
+<br/>
+You create the subfolder <code>src/pages/doc</code> in which you move the 3 files
+previously created (<a href="documentation/book-of-genit-en.html#Figure_2.7">figure 2.7</a>) :
+</p>
+
+<a name="Figure_2.7" class="figure">Figure 2.7 - Content of <code>pages</code> folder</a>
+<pre><code>
+    $ ls src/pages/
+    doc/  index.html  news.html
+    
+</code></pre>
+
+
+<p>
+Then you rename the file 
+<code>src/pages/doc/documentation.html</code> 
+to 
+<code>src/pages/doc/index.html</code>
+(<a href="documentation/book-of-genit-en.html#Figure_2.8">figure 2.8</a>), 
+which is a common practice.
+Thus, if a user requires the <code>doc</code> folder in their browser, the server will provide the 
+<code>doc/index.html</code> file.
+</p>
+
+<a name="Figure_2.8" class="figure">Figure 2.8 - <code>documentation.html</code> renamed to <code>index.html</code></a>
+<pre><code>
+    $ ls src/pages/doc/
+    developer.html  index.html  user.html
+    
+</code></pre>
+
+
+<p>
+It remains to modify the links of the <code>pages/doc/index.html</code>  file
+(<a href="documentation/book-of-genit-en.html#Listing_2.6">listing 2.6</a>) :
+</p>
+
+<a name="Listing_2.6" class="listing">Listing 2.6 - Content of <code>pages/doc/index.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">documentation&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_1">&lt;ul&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"doc/user.html"</span><span class="style_1">&gt;</span><span class="style_0">User&nbsp;documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"doc/developer.html"</span><span class="style_1">&gt;</span><span class="style_0">Developer&nbsp;documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+<span class="style_1">&lt;/ul&gt;</span><br />
+
+
+</p>
+
+<p>
+Recompile your site and open <a href="localhost:3000/doc">localhost:3000/doc</a>
+in your browser to see that the links still work as before.
+</p>
+
+<div class="alert alert-info alert-block">
+<h4>Information</h4>
+With Genit, as with most other web frameworks, you write internal links to your site
+<strong><em>relative to the root of the site</em></strong>. 
+</div>
+
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Menu">2.4 Menu</a></h3>
+
+<p>
+You may have noticed the link <code>home</code> at the beginning of each web page you
+open in your browser. 
+This is the default menu of Genit and it is in the 
+<code>src/templates/menu.html</code> file. Here are the content
+(<a href="documentation/book-of-genit-en.html#Listing_2.7">listing 2.7</a>) :
+</p>
+
+<a name="Listing_2.7" class="listing">Listing 2.7 - Initial content of <code>src/templates/menu.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;ul&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"menu"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"index.html"</span><span class="style_1">&gt;</span><span class="style_0">home</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+<span class="style_1">&lt;/ul&gt;</span><br />
+<br />
+
+</p>
+
+<p>
+We are going to add links to the news page and to the documentation page. Edit
+it as follow (<a href="documentation/book-of-genit-en.html#Listing_2.8">listing 2.8</a>) :
+</p>
+
+<a name="Listing_2.8" class="listing">Listing 2.8 - New content of <code>src/templates/menu.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;ul&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"menu"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"index.html"</span><span class="style_1">&gt;</span><span class="style_0">home</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"doc/index.html"</span><span class="style_1">&gt;</span><span class="style_0">documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"news.html"</span><span class="style_1">&gt;</span><span class="style_0">news</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+<span class="style_1">&lt;/ul&gt;</span><br />
+<br />
+
+</p>
+
+<p>
+Recompile the project and then open a page to see changes 
+(<a href="documentation/book-of-genit-en.html#Figure_2.9">figure 2.9</a>). Feel free to try the menu links!
+</p>
+
+<a name="Figure_2.9" class="figure">Figure 2.9 - The new menu</a>
+<img src="public/images/13.jpg" class="screenshot"/>
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Main_template">2.5 Main template</a></h3>
+
+<p>
+Before concluding this chapter we have yet to see the main template. 
+This is the central file of your site.
+The one in which all pages are included. 
+You will find it in <code>src/templates/main.html</code>. See its content in
+(<a href="documentation/book-of-genit-en.html#Listing_2.9">listing 2.9</a>) :
+</p>
+
+<a name="Listing_2.9" class="listing">Listing 2.9 - Initial content of <code>src/templates/main.html</code></a>
+<p class="listing_html">
+<span class="style_21">&lt;!</span><span class="style_22">DOCTYPE&nbsp;</span><span class="style_23">html</span><span class="style_21">&gt;</span><br />
+<br />
+<span class="style_1">&lt;html&nbsp;</span><span class="style_3">lang</span><span class="style_8">=</span><span class="style_6">"en"</span><span class="style_1">&gt;</span><br />
+<span class="style_1">&lt;head&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;meta&nbsp;</span><span class="style_3">charset</span><span class="style_8">=</span><span class="style_6">"UTF-8"</span><span class="style_1">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;title&gt;</span><span class="style_0">Genit&nbsp;-&nbsp;Static&nbsp;web&nbsp;site&nbsp;framework</span><span class="style_1">&lt;/title&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;link&nbsp;</span><span class="style_3">rel</span><span class="style_8">=</span><span class="style_6">"stylesheet"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/css"&nbsp;</span><span class="style_3">media</span><span class="style_8">=</span><span class="style_6">"all"&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"styles/alsa/all.css"&nbsp;</span><span class="style_11">/&gt;&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;link&nbsp;</span><span class="style_3">rel</span><span class="style_8">=</span><span class="style_6">"stylesheet"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/css"&nbsp;</span><span class="style_3">media</span><span class="style_8">=</span><span class="style_6">"screen"&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"styles/screen.css"&nbsp;</span><span class="style_11">/&gt;&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;link&nbsp;</span><span class="style_3">rel</span><span class="style_8">=</span><span class="style_6">"stylesheet"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/css"&nbsp;</span><span class="style_3">media</span><span class="style_8">=</span><span class="style_6">"print"&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"styles/print.css"&nbsp;</span><span class="style_11">/&gt;&nbsp;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;/head&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;body&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_2">&lt;genit&nbsp;class="menu"&nbsp;/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_2">&lt;genit&nbsp;class="pages"&nbsp;/&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;/body&gt;</span><br />
+<span class="style_1">&lt;/html&gt;</span><br />
+
+</p>
+
+
+<div class="alert alert-info alert-block">
+<h4>Information</h4>
+Note the <code>genit</code> tags.<br/>
+The <code>&lt;genit&nbsp;class="menu"&nbsp;/&gt;</code> tag includes the menu and the
+<code>&lt;genit&nbsp;class="pages"&nbsp;/&gt;</code> tag includes web pages.
+</div>
+
+<div class="alert alert-block">
+  <h4>Warning!</h4>
+  All tags MUST be closed.<br/>
+  Particularly, don't forget to close
+  <code>meta</code> and <code>link</code> tags.
+</div>
+
+<p>
+We will add a header and a footer on all pages on the site. As these change all the pages of the site, 
+we do it in the main template. 
+Edit the <code>src/templates/main.html</code> file as follow
+(<a href="documentation/book-of-genit-en.html#Listing_2.10">listing 2.10</a>) :
+</p>
+
+<a name="Listing_2.10" class="listing">Listing 2.10 - New content of <code>src/templates/main.html</code></a>
+<p class="listing_html">
+<span class="style_21">&lt;!</span><span class="style_22">DOCTYPE&nbsp;</span><span class="style_23">html</span><span class="style_21">&gt;</span><br />
+<br />
+<span class="style_1">&lt;html&nbsp;</span><span class="style_3">lang</span><span class="style_8">=</span><span class="style_6">"en"</span><span class="style_1">&gt;</span><br />
+<span class="style_1">&lt;head&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;meta&nbsp;</span><span class="style_3">charset</span><span class="style_8">=</span><span class="style_6">"UTF-8"</span><span class="style_1">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;title&gt;</span><span class="style_0"><strong>Amazing&nbsp;game</strong></span><span class="style_1">&lt;/title&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;link&nbsp;</span><span class="style_3">rel</span><span class="style_8">=</span><span class="style_6">"stylesheet"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/css"&nbsp;</span><span class="style_3">media</span><span class="style_8">=</span><span class="style_6">"all"&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"styles/alsa/all.css"&nbsp;</span><span class="style_11">/&gt;&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;link&nbsp;</span><span class="style_3">rel</span><span class="style_8">=</span><span class="style_6">"stylesheet"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/css"&nbsp;</span><span class="style_3">media</span><span class="style_8">=</span><span class="style_6">"screen"&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"styles/screen.css"&nbsp;</span><span class="style_11">/&gt;&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;link&nbsp;</span><span class="style_3">rel</span><span class="style_8">=</span><span class="style_6">"stylesheet"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/css"&nbsp;</span><span class="style_3">media</span><span class="style_8">=</span><span class="style_6">"print"&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"styles/print.css"&nbsp;</span><span class="style_11">/&gt;&nbsp;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;/head&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;body&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<strong><span class="style_1">&lt;div&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"header"</span><span class="style_1">&gt;&lt;h1&gt;</span><span class="style_0">Amazing&nbsp;game</span><span class="style_1">&lt;/h1&gt;&lt;/div&gt;</span></strong><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_2">&lt;genit&nbsp;class="menu"&nbsp;/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_2">&lt;genit&nbsp;class="pages"&nbsp;/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<strong><span class="style_1">&lt;div&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"footer"</span><span class="style_1">&gt;</span><span class="style_0">Powered&nbsp;by&nbsp;Genit</span><span class="style_1">&lt;/div&gt;</span></strong><br />
+&nbsp;&nbsp;<span class="style_1">&lt;/body&gt;</span><br />
+<span class="style_1">&lt;/html&gt;</span><br />
+
+</p>
+
+<p>
+You just have to recompile the project to see the result 
+(<a href="documentation/book-of-genit-en.html#Figure_2.10">figure 2.10</a>) :
+</p>
+
+<a name="Figure_2.10" class="figure">Figure 2.10 - A page with a header and a footer</a>
+<img src="public/images/14.jpg" class="screenshot"/>
+
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Project_exercises">2.6 Exercises</a></h3>
+
+<h4>2.6.1 Statement</h4>
+
+<ol>
+  <li>
+    Add a download page on the site. Name it <code>download.html</code> and fill it, for the moment, as 
+    the other pages, with a headline of level 1.
+  </li>
+  <li>
+    Add a menu entry for the <code>download.html</code> page.
+  </li>
+</ol>
+
+<h4>2.6.2 Solution</h4>
+
+<div id="solution_2">
+  <p>
+  To add a download page, create a <code>src/pages/download.html</code> file
+  and fill it with the
+  content of <a href="documentation/book-of-genit-en.html#Listing_2.11">listing 2.11</a>
+  </p>
+  
+  
+  <a name="Listing_2.11" class="listing">Listing 2.11 - Content of <code>src/pages/download.html</code></a>
+  <p class="listing_html">
+  <span class="style_1">&lt;h1&gt;</span><span class="style_0">download&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+
+  </p>
+  
+  <p>
+  To add the <code>download.html</code> page to the menu, Edit the
+  <code>src/templates/menu.html</code> filme as in
+  <a href="documentation/book-of-genit-en.html#Listing_2.12">listing 2.12</a>
+  </p>
+  
+  <a name="Listing_2.12" class="listing">Listing 2.12 - Content of <code>src/templates/menu.html</code></a>
+  <p class="listing_html">
+  <span class="style_1">&lt;ul&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"menu"</span><span class="style_1">&gt;</span><br />
+  &nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"index.html"</span><span class="style_1">&gt;</span><span class="style_0">home</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+  &nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"download.html"</span><span class="style_1">&gt;</span><span class="style_0">download</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+  &nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"doc/index.html"</span><span class="style_1">&gt;</span><span class="style_0">documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+  &nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"news.html"</span><span class="style_1">&gt;</span><span class="style_0">news</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+  <span class="style_1">&lt;/ul&gt;</span><br />
+  <br />
+
+  </p>
+  
+  
+</div>
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h2><a name="CSS">3. CSS</a></h2>
+
+<p>
+In this chapter we will see how to add style to your site.
+</p>
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="CSS_styles">3.1 Styles folder</a></h3>
+
+<p>
+Open the <code>src/templates/main.html</code> file in your editor and
+locate the following line (<a href="documentation/book-of-genit-en.html#Listing_3.1">listing 3.1</a>) :
+</p>
+
+<a name="Listing_3.1" class="listing">Listing 3.1</a>
+<p class="listing_html">
+.<br/>
+.<br/>
+.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;link&nbsp;</span><span class="style_3">rel</span><span class="style_8">=</span><span class="style_6">"stylesheet"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/css"&nbsp;</span><span class="style_3">media</span><span class="style_8">=</span><span class="style_6">"screen"&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"styles/screen.css"&nbsp;</span><span class="style_11">/&gt;&nbsp;</span><br />
+.<br/>
+.<br/>
+.<br/>
+
+</p>
+
+<p>
+This line uses the <code>styles/screen.css</code> CSS file, that will contain your 
+CSS rules for the media screen (the screen).
+</p>
+
+<p>
+If you open the <code>styles</code> folder, you will see this
+(<a href="documentation/book-of-genit-en.html#Figure_3.1">figure 3.1</a>) :
+</p>
+
+<a name="Figure_3.1" class="figure">Figure 3.1 - Content of <code>styles</code></a>
+<pre><code>
+    ls styles/
+    handheld.css  images/  print.css  screen.css
+    
+</code></pre>
+
+<p>
+The <code>images</code> folder will contain of course the graphics files of your design.<br/>
+</p>
+
+<div class="alert alert-info alert-block">
+<h4>Information</h4>
+You do not have to use the basic style sheets provided by Genit.
+You use what you want. 
+Simply put the content of your CSS framework in the
+ <code>styles</code> folder and call it from the main template (<code>src/templates/main.html</code>).
+</div>
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="CSS_preparation">3.2 Preparing the site</a></h3>
+
+<p>
+We will now prepare the site to receive some style.<br/>
+The first thing we do is to add some content to the home page. 
+We will add a download button and a paragraph of text whatsoever.
+Later in the book, the text will be replaced by the news.
+Open the <code>src/pages/index.html</code> file
+in your editor and modify it to look like <a href="documentation/book-of-genit-en.html#Listing_3.3">listing 3.3</a> :
+</p>
+
+
+<a name="Listing_3.3" class="listing">Listing 3.3 - The new Home page</a>
+<p class="listing_html">
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">home&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_1">&lt;p&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"download.html"&nbsp;</span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"download_button"</span><span class="style_1">&gt;</span><span class="style_0">DOWNLOAD</span><span class="style_1">&lt;/a&gt;&lt;/p&gt;</span><br />
+<br />
+<span class="style_1">&lt;p&gt;</span><br />
+<span class="style_0">"Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipisicing&nbsp;elit,&nbsp;sed&nbsp;do&nbsp;eiusmod&nbsp;</span><br />
+<span class="style_0">tempor&nbsp;incididunt&nbsp;ut&nbsp;labore&nbsp;et&nbsp;dolore&nbsp;magna&nbsp;aliqua.&nbsp;Ut&nbsp;enim&nbsp;ad&nbsp;minim&nbsp;</span><br />
+<span class="style_0">veniam,&nbsp;quis&nbsp;nostrud&nbsp;exercitation&nbsp;ullamco&nbsp;laboris&nbsp;nisi&nbsp;ut&nbsp;aliquip&nbsp;ex&nbsp;ea&nbsp;</span><br />
+<span class="style_0">commodo&nbsp;consequat.&nbsp;Duis&nbsp;aute&nbsp;irure&nbsp;dolor&nbsp;in&nbsp;reprehenderit&nbsp;in&nbsp;voluptate&nbsp;</span><br />
+<span class="style_0">velit&nbsp;esse&nbsp;cillum&nbsp;dolore&nbsp;eu&nbsp;fugiat&nbsp;nulla&nbsp;pariatur.&nbsp;Excepteur&nbsp;sint&nbsp;occaecat&nbsp;</span><br />
+<span class="style_0">cupidatat&nbsp;non&nbsp;proident,&nbsp;sunt&nbsp;in&nbsp;culpa&nbsp;qui&nbsp;officia&nbsp;deserunt&nbsp;mollit&nbsp;anim&nbsp;</span><br />
+<span class="style_0">id&nbsp;est&nbsp;laborum."</span><br />
+<span class="style_1">&lt;/p&gt;</span><br />
+
+</p>
+
+<p>
+We still have to tweak the template (<code>src/templates/main.html</code>) as in
+le <a href="documentation/book-of-genit-en.html#Listing_3.4">listing 3.4</a> :
+</p>
+
+<a name="Listing_3.4" class="listing">Listing 3.4 - The new template</a>
+<p class="listing_html">
+<span class="style_21">&lt;!</span><span class="style_22">DOCTYPE&nbsp;</span><span class="style_23">html</span><span class="style_21">&gt;</span><br />
+<br />
+<span class="style_1">&lt;html&nbsp;</span><span class="style_3">lang</span><span class="style_8">=</span><span class="style_6">"en"</span><span class="style_1">&gt;</span><br />
+<span class="style_1">&lt;head&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;meta&nbsp;</span><span class="style_3">charset</span><span class="style_8">=</span><span class="style_6">"UTF-8"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;title&gt;</span><span class="style_0">Amazing&nbsp;game</span><span class="style_1">&lt;/title&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;link&nbsp;</span><span class="style_3">rel</span><span class="style_8">=</span><span class="style_6">"stylesheet"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/css"&nbsp;</span><span class="style_3">media</span><span class="style_8">=</span><span class="style_6">"screen"&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"styles/screen.css"&nbsp;</span><span class="style_11">/&gt;&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;link&nbsp;</span><span class="style_3">rel</span><span class="style_8">=</span><span class="style_6">"stylesheet"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/css"&nbsp;</span><span class="style_3">media</span><span class="style_8">=</span><span class="style_6">"print"&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"styles/print.css"&nbsp;</span><span class="style_11">/&gt;&nbsp;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;/head&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;body&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;div&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"header"</span><span class="style_1">&gt;&lt;h1&gt;</span><span class="style_0">Amazing&nbsp;game</span><span class="style_1">&lt;/h1&gt;&lt;/div&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;div&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"content"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_2">&lt;genit&nbsp;class="menu"&nbsp;/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_2">&lt;genit&nbsp;class="pages"&nbsp;/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/div&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;div&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"footer"</span><span class="style_1">&gt;</span><span class="style_0">Powered&nbsp;by&nbsp;Genit</span><span class="style_1">&lt;/div&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;/body&gt;</span><br />
+<span class="style_1">&lt;/html&gt;</span><br />
+
+</p>
+
+<p>
+So, your project is ready to be stylish ...
+</p>
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="CSS_do">3.3 Style !</a></h3>
+
+<p>
+We are now ready to edit <code>styles/screen.css</code> in order to
+add our rules. Open it in your editor and copy/paste the contents of
+<a href="documentation/book-of-genit-en.html#Listing_3.5">listing 3.5</a> :
+</p>
+
+<a name="Listing_3.5" class="listing">Listing 3.5 - Project CSS (<code>styles/screen.css</code>)</a>
+<p class="listing_html">
+<span class="style_1">html&nbsp;</span><span class="style_5">{&nbsp;</span><br />
+<span class="style_6">background-color</span><span class="style_5">:</span><span class="style_8">#F7BF65</span><span class="style_5">;&nbsp;</span><br />
+<span class="style_6">color</span><span class="style_5">:</span><span class="style_8">#457CAA</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+<br />
+<span class="style_5">#</span><span class="style_10">header</span><span class="style_5">,&nbsp;#</span><span class="style_10">footer&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">width</span><span class="style_5">:</span><span class="style_8">100%</span><span class="style_5">;</span><br />
+<span class="style_6">text-align</span><span class="style_5">:</span><span class="style_8">center</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+<br />
+<span class="style_5">#</span><span class="style_10">header&nbsp;</span><span class="style_1">h1&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">font-size</span><span class="style_5">:</span><span class="style_8">30px</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+<br />
+<span class="style_5">#</span><span class="style_10">content&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">width</span><span class="style_5">:</span><span class="style_8">500px</span><span class="style_5">;</span><br />
+<span class="style_6">margin</span><span class="style_5">:</span><span class="style_8">0&nbsp;auto</span><span class="style_5">;</span><br />
+<span class="style_6">background-color</span><span class="style_5">:</span><span class="style_8">#AB9546</span><span class="style_5">;</span><br />
+<span class="style_6">padding</span><span class="style_5">:</span><span class="style_8">10px&nbsp;30px</span><span class="style_5">;</span><br />
+<span class="style_17">border-radius</span><span class="style_5">:</span><span class="style_8">10px</span><span class="style_5">;</span><br />
+<span class="style_6">color</span><span class="style_5">:</span><span class="style_8">#333</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+<br />
+<span class="style_5">#</span><span class="style_10">menu&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">text-align</span><span class="style_5">:</span><span class="style_8">center</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+<br />
+<span class="style_5">#</span><span class="style_10">menu&nbsp;</span><span class="style_1">li&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">display</span><span class="style_5">:</span><span class="style_8">inline</span><span class="style_5">;</span><br />
+<span class="style_6">list-style-type</span><span class="style_5">:&nbsp;</span><span class="style_8">none</span><span class="style_5">;</span><br />
+<span class="style_6">margin-left</span><span class="style_5">:&nbsp;</span><span class="style_8">5px</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+<br />
+<span class="style_5">#</span><span class="style_10">menu&nbsp;</span><span class="style_1">a&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">font-size</span><span class="style_5">:</span><span class="style_8">14px</span><span class="style_5">;</span><br />
+<span class="style_6">font-weight</span><span class="style_5">:</span><span class="style_8">bold</span><span class="style_5">;</span><br />
+<span class="style_6">padding</span><span class="style_5">:&nbsp;</span><span class="style_8">5px</span><span class="style_5">;</span><br />
+<span class="style_6">text-decoration</span><span class="style_5">:</span><span class="style_8">none</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+<br />
+<span class="style_5">#</span><span class="style_10">menu&nbsp;</span><span class="style_1">a</span><span class="style_5">#</span><span class="style_10">selected</span><span class="style_5">,</span><br />
+<span class="style_5">#</span><span class="style_10">menu&nbsp;</span><span class="style_1">a</span><span class="style_5">:</span><span class="style_3">hover&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">border-bottom</span><span class="style_5">:</span><span class="style_8">5px&nbsp;solid&nbsp;#020</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+<br />
+<span class="style_5">#</span><span class="style_10">content&nbsp;</span><span class="style_1">a&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">color</span><span class="style_5">:</span><span class="style_8">#020</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+<br />
+<span class="style_1">a</span><span class="style_5">.</span><span class="style_2">download_button&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">background-color</span><span class="style_5">:</span><span class="style_8">#640000</span><span class="style_5">;</span><br />
+<span class="style_6">text-decoration</span><span class="style_5">:</span><span class="style_8">none</span><span class="style_5">;</span><br />
+<span class="style_6">font-weight</span><span class="style_5">:</span><span class="style_8">bold</span><span class="style_5">;</span><br />
+<span class="style_6">color</span><span class="style_5">:</span><span class="style_8">white&nbsp;</span><span class="style_5">!</span><span class="style_11">important</span><span class="style_5">;</span><br />
+<span class="style_6">padding</span><span class="style_5">:</span><span class="style_8">15px&nbsp;0</span><span class="style_5">;</span><br />
+<span class="style_6">display</span><span class="style_5">:</span><span class="style_8">block</span><span class="style_5">;</span><br />
+<span class="style_6">width</span><span class="style_5">:</span><span class="style_8">40%</span><span class="style_5">;</span><br />
+<span class="style_6">text-align</span><span class="style_5">:</span><span class="style_8">center</span><span class="style_5">;</span><br />
+<span class="style_17">border-radius</span><span class="style_5">:</span><span class="style_8">10px</span><span class="style_5">;</span><br />
+<span class="style_6">margin</span><span class="style_5">:</span><span class="style_8">0&nbsp;auto</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+<br />
+<span class="style_1">a</span><span class="style_5">.</span><span class="style_2">download_button</span><span class="style_5">:</span><span class="style_3">hover&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">background-color</span><span class="style_5">:</span><span class="style_8">#900000</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+
+
+</p>
+
+
+<p>
+As usual, you must compile the project before you see the changes.Once this is done,
+open <a href="localhost:3000">localhost:3000</a> in your browser. It should look like 
+<a href="documentation/book-of-genit-en.html#Figure_3.3">figure 3.3</a> :
+</p>
+
+<a name="Figure_3.3" class="figure">Figure 3.3 - The site with some style</a>
+<img src="public/images/18.jpg" class="screenshot"/>
+
+
+<div class="alert alert-info alert-block">
+<h4>Information</h4>
+If you put your navigation menu in a list <code>ul</code>,
+if you give this list an id <code>#menu</code>,
+genit will produce an id <code>#selected</code>
+on the menu element corresponding to the displayed web page.
+<br/>
+For this to work, we need the link <code>href</code> 
+of the list element (<code>li</code>)
+be the same as the html file.
+<br/>
+It's the reason why, at
+<a href="documentation/book-of-genit-fr.html#Figure_3.3">figure 3.3</a>,
+the menu "Home" is styled.
+</div>
+
+
+
+<!------------------------------------------------------------------------------------->
+<h2><a name="Fragment">4. Fragments</a></h2>
+
+<p>
+Suppose we want to add the download button to the news page.
+The easiest and fastest way, <em>a priori</em>, is to copy/paste the button code from the index page 
+to the news page. 
+This is what I did in
+<a href="documentation/book-of-genit-en.html#Listing_4.1">listing 4.1</a>.
+</p>
+
+<a name="Listing_4.1" class="listing">Listing 4.1 Button added to <code>pages/news.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">news&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_1">&lt;p&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"download.html"&nbsp;</span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"download_button"</span><span class="style_1">&gt;</span><span class="style_0">DOWNLOAD</span><span class="style_1">&lt;/a&gt;&lt;/p&gt;</span><br />
+
+</p>
+
+<p>
+Once the project is compiled, you can see the result by opening 
+<a href="localhost:3000">localhost:3000</a>
+in your browser
+(<a href="documentation/book-of-genit-en.html#Figure_4.1">figure 4.1</a>)
+</p>
+
+<a name="Figure_4.1" class="figure">Figure 4.1 - The updated news page</a>
+<img src="public/images/19.jpg" class="screenshot"/>
+
+<p>
+<strong>This is a bad solution!</strong> If we want to change the button code later, it will make changes twice. 
+When multiple pages share the same code, we need a way to share it. 
+Genit has the notion of  <strong>fragment</strong>
+sometimes called <strong>partial</strong> in other frameworks. 
+Fragments allow you to share code and/or modularize large files.
+</p>
+
+<p>
+First step, we put the button code in the <code>src/fragments/button.html</code> file
+(<a href="documentation/book-of-genit-en.html#Listing_4.2">listing 4.2</a>).
+Of course, as this file does not exist, you must first create it.
+</p>
+
+<a name="Listing_4.2" class="listing">Listing 4.2 Content of <code>src/fragments/button.html</code> file</a>
+<p class="listing_html">
+<span class="style_1">&lt;p&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"download.html"&nbsp;</span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"download_button"</span><span class="style_1">&gt;</span><span class="style_0">DOWNLOAD</span><span class="style_1">&lt;/a&gt;&lt;/p&gt;</span><br />
+
+</p>
+
+<p>
+Last step, we need to replace the button code in both files 
+<code>src/pages/index.html</code> and 
+<code>src/pages/news.html</code> 
+by the code in <a href="documentation/book-of-genit-en.html#Listing_4.3">listing 4.3</a> :
+</p>
+
+<a name="Listing_4.3" class="listing">Listing 4.3 Replacement code of the button in <code>index.html</code> and <code>news.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit&nbsp;class="fragment"&nbsp;file="button.html"/&gt;</span><br />
+
+</p>
+
+<p>
+Recompile the project and update your browser to see that it works<br/>
+If you missed something, I put the entire contents of the
+<code>src/pages/index.html</code> file (<a href="documentation/book-of-genit-en.html#Listing_4.4">listing 4.4</a>)
+and <code>src/pages/news.html</code> file (<a href="documentation/book-of-genit-en.html#Listing_4.5">listing 4.5</a>) :
+</p>
+
+<a name="Listing_4.4" class="listing">Listing 4.4 <code>src/pages/index.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">home&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_2">&lt;genit&nbsp;class="fragment"&nbsp;file="button.html"/&gt;</span><br />
+<br />
+<span class="style_1">&lt;p&gt;</span><br />
+<span class="style_0">"Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipisicing&nbsp;elit,&nbsp;sed&nbsp;do&nbsp;eiusmod&nbsp;</span><br />
+<span class="style_0">tempor&nbsp;incididunt&nbsp;ut&nbsp;labore&nbsp;et&nbsp;dolore&nbsp;magna&nbsp;aliqua.&nbsp;Ut&nbsp;enim&nbsp;ad&nbsp;minim&nbsp;</span><br />
+<span class="style_0">veniam,&nbsp;quis&nbsp;nostrud&nbsp;exercitation&nbsp;ullamco&nbsp;laboris&nbsp;nisi&nbsp;ut&nbsp;aliquip&nbsp;ex&nbsp;ea&nbsp;</span><br />
+<span class="style_0">commodo&nbsp;consequat.&nbsp;Duis&nbsp;aute&nbsp;irure&nbsp;dolor&nbsp;in&nbsp;reprehenderit&nbsp;in&nbsp;voluptate&nbsp;</span><br />
+<span class="style_0">velit&nbsp;esse&nbsp;cillum&nbsp;dolore&nbsp;eu&nbsp;fugiat&nbsp;nulla&nbsp;pariatur.&nbsp;Excepteur&nbsp;sint&nbsp;occaecat&nbsp;</span><br />
+<span class="style_0">cupidatat&nbsp;non&nbsp;proident,&nbsp;sunt&nbsp;in&nbsp;culpa&nbsp;qui&nbsp;officia&nbsp;deserunt&nbsp;mollit&nbsp;anim&nbsp;</span><br />
+<span class="style_0">id&nbsp;est&nbsp;laborum."</span><br />
+<span class="style_1">&lt;/p&gt;</span><br />
+
+</p>
+
+<a name="Listing_4.5" class="listing">Listing 4.5 <code>src/pages/news.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">news&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_2">&lt;genit&nbsp;class="fragment"&nbsp;file="button.html"/&gt;</span><br />
+
+</p>
+
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h2><a name="String">5. Passing strings</a></h2>
+
+<p>
+There will come a time when you want to pass a string from one file to another.<br/>
+I take a simple example : for now the title bar of the browser window displays
+"Amazing game." 
+I want it to show "Amazing game - Home" when you see the home page, 
+"Amazing game - Download" when you see the download page, etc.<br/>
+The problem is that the title bar of the browser is defined in <code>src/templates/main.html</code>,
+ie for <strong>all</strong> pages 
+(<a href="documentation/book-of-genit-en.html#Listing_5.1">listing 5.1</a>).
+</p>
+
+<a name="Listing_5.1" class="listing">Listing 5.1 - Excerpt of <code>src/templates/main.html</code></a>
+<p class="listing_html">
+<span class="style_21">&lt;!</span><span class="style_22">DOCTYPE&nbsp;</span><span class="style_23">html</span><span class="style_21">&gt;</span><br />
+<br />
+<span class="style_1">&lt;html&nbsp;</span><span class="style_3">lang</span><span class="style_8">=</span><span class="style_6">"en"</span><span class="style_1">&gt;</span><br />
+<span class="style_1">&lt;head&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;meta&nbsp;</span><span class="style_3">charset</span><span class="style_8">=</span><span class="style_6">"UTF-8"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;title&gt;</span><span class="style_0">Amazing&nbsp;game</span><span class="style_1">&lt;/title&gt;</span><br />
+.<br/>
+.<br/>
+.<br/>
+<span class="style_1">&lt;/html&gt;</span><br />
+
+</p>
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="String_here">5.1 The attribute here</a></h3>
+
+<p>
+Designing a website with Genit not used programming language. So we do not have access to variables. 
+Nevertheless, XML gives us a simple way to pass strings from files.<br/>
+Edit the <code>src/templates/main.html</code> file as follow 
+(<a href="documentation/book-of-genit-en.html#Listing_5.2">listing 5.2</a>) :
+</p>
+
+<a name="Listing_5.2" class="listing">Listing 5.2 - The attribute here</a>
+<p class="listing_html">
+<span class="style_21">&lt;!</span><span class="style_22">DOCTYPE&nbsp;</span><span class="style_23">html</span><span class="style_21">&gt;</span><br />
+<br />
+<span class="style_1">&lt;html&nbsp;</span><span class="style_3">lang</span><span class="style_8">=</span><span class="style_6">"en"</span><span class="style_1">&gt;</span><br />
+<span class="style_1">&lt;head&gt;</span><br />
+&nbsp;&nbsp;<span class="style_1">&lt;meta&nbsp;</span><span class="style_3">charset</span><span class="style_8">=</span><span class="style_6">"UTF-8"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;title&gt;</span><span class="style_0">Amazing&nbsp;game&nbsp;-&nbsp;</span><span class="style_2">&lt;genit&nbsp;here="window_title"/&gt;</span><span class="style_1">&lt;/title&gt;</span><br />
+.<br/>
+.<br/>
+.<br/>
+<span class="style_1">&lt;/html&gt;</span><br />
+
+</p>
+
+
+<p>
+In <a href="documentation/book-of-genit-en.html#Listing_5.2">listing 5.2</a>, attribute <code>here</code>
+from code <code>&lt;genit here="window_title"/&gt;</code> defines a place in the file that can be 
+referenced by the name <code>window_title</code>.
+</p>
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="String_what">5.2 Attribute what</a></h3>
+
+<p>
+We can now, in every page, say to Genit what we want to write to the place
+referenced by <code>window_title</code>. 
+Open the <code>src/pages/index.html</code> file in your editor
+and insert code from
+<a href="documentation/book-of-genit-en.html#Listing_5.3">listing 5.3</a> at the beginning of the file:
+</p>
+
+<div class="alert alert-info alert-block">
+<h4>Information</h4>
+You can write this line anywhere in the file. But at the beginning, your code is more readable and easier to maintain.
+</div>
+
+<a name="Listing_5.3" class="listing">Listing 5.3 - Attribute what at the beginning of <code>src/pages/index.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit&nbsp;what="window_title"&gt;</span><span class="style_0">Home</span><span class="style_2">&lt;/genit&gt;</span><br />
+.<br/>
+.<br/>
+.<br/>
+
+</p>
+
+<p>
+Recompile the project to see the result
+(<a href="documentation/book-of-genit-en.html#Figure_5.1">figure 5.1</a>)
+</p>
+
+<a name="Figure_5.1" class="figure">Figure 5.1 - A new title bar</a>
+<img src="public/images/20.jpg" class="screenshot"/>
+
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="String_exercises">5.3 Exercises</a></h3>
+
+<p>
+Do the same with every project page. 
+Page <code>download.html</code> should display in title bar: "Amazing game - Download", 
+page <code>news.html</code> should display in title bar: "Amazing game - News", etc.
+</p>
+
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h2><a name="News">6. News</a></h2>
+
+<p>
+Few site can do without a news section. 
+Genit allows you to easily manage your news as part of a static website..<br/>
+To begin, we will write three news. Then we'll display them all on the news page. 
+Then we will display just the most recent on the home page.
+And finally, we will give them different style rendering.
+</p>
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="News_folder">6.1 THe news folder</a></h3>
+<p>
+The news must be placed in <code>src/news</code> folder. 
+Their name must be a date in ISO format (year-month-day).
+So create the files <code>src/news/2011-09-07.html</code>,
+<code>src/news/2011-09-06.html</code> and <code>src/news/2011-09-05.html</code>. 
+Then fill with the contents of the following three listings(
+<a href="documentation/book-of-genit-en.html#Listing_6.1">listing 6.1</a>,
+<a href="documentation/book-of-genit-en.html#Listing_6.2">listing 6.2</a> and
+<a href="documentation/book-of-genit-en.html#Listing_6.3">listing 6.3</a>)
+</p>
+
+<a name="Listing_6.1" class="listing">Listing 6.1 - <code>src/news/2011-09-07.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;div&nbsp;</span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"article"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;h1&gt;</span><span class="style_0">Donec&nbsp;quis&nbsp;sapien&nbsp;scelerisque&nbsp;risus&nbsp;hendrerit</span><span class="style_1">&lt;/h1&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;p&nbsp;</span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"date"</span><span class="style_1">&gt;</span><span class="style_0">2011-09-07</span><span class="style_1">&lt;/p&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;p&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">Donec&nbsp;quis&nbsp;sapien&nbsp;scelerisque&nbsp;risus&nbsp;hendrerit&nbsp;aliquet&nbsp;id&nbsp;sit&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">amet&nbsp;risus.&nbsp;Integer&nbsp;sollicitudin,&nbsp;quam&nbsp;mollis&nbsp;rhoncus&nbsp;feugiat,&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">ligula&nbsp;enim&nbsp;pellentesque&nbsp;sem,&nbsp;vel&nbsp;commodo&nbsp;orci&nbsp;augue&nbsp;quis&nbsp;justo.</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/p&gt;</span><br />
+<span class="style_1">&lt;/div&gt;</span><br />
+
+</p>
+
+<a name="Listing_6.2" class="listing">Listing 6.2 - <code>src/news/2011-09-06.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;div&nbsp;</span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"article"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;h1&gt;</span><span class="style_0">Vestibulum&nbsp;ante&nbsp;ipsum</span><span class="style_1">&lt;/h1&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;p&nbsp;</span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"date"</span><span class="style_1">&gt;</span><span class="style_0">2011-09-06</span><span class="style_1">&lt;/p&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;p&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">Vestibulum&nbsp;ante&nbsp;ipsum&nbsp;primis&nbsp;in&nbsp;faucibus&nbsp;orci&nbsp;luctus&nbsp;et&nbsp;ultrices</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">posuere&nbsp;cubilia&nbsp;Curae;&nbsp;Nam&nbsp;at&nbsp;felis&nbsp;sed&nbsp;dui&nbsp;lobortis&nbsp;blandit.&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">Pellentesque&nbsp;habitant&nbsp;morbi&nbsp;tristique&nbsp;senectus&nbsp;et&nbsp;netus&nbsp;et&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">malesuada&nbsp;fames&nbsp;ac&nbsp;turpis&nbsp;egestas.</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/p&gt;</span><br />
+<span class="style_1">&lt;/div&gt;</span><br />
+
+</p>
+
+<a name="Listing_6.3" class="listing">Listing 6.3 - <code>src/news/2011-09-05.html</code></a>
+<p class="listing_html">
+<span class="style_1">&lt;div&nbsp;</span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"article"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;h1&gt;</span><span class="style_0">Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet</span><span class="style_1">&lt;/h1&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;p&nbsp;</span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"date"</span><span class="style_1">&gt;</span><span class="style_0">2011-09-05</span><span class="style_1">&lt;/p&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;p&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipiscing&nbsp;elit.&nbsp;Quisque</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">at&nbsp;diam&nbsp;arcu.&nbsp;Sed&nbsp;in&nbsp;magna&nbsp;id&nbsp;libero&nbsp;iaculis&nbsp;suscipit&nbsp;quis&nbsp;vel&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">nulla.&nbsp;Proin&nbsp;sit&nbsp;amet&nbsp;neque&nbsp;purus</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/p&gt;</span><br />
+<span class="style_1">&lt;/div&gt;</span><br />
+
+</p>
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="News_all">6.2 View all news</a></h3>
+
+<p>
+First, let's add a minimum of style to our news. Add the contents of
+<a href="documentation/book-of-genit-en.html#Listing_6.4">listing 6.4</a>
+to the <code>styles/screen.css</code> CSS file:
+</p>
+
+<a name="Listing_6.4" class="listing">Listing 6.4 - <code>styles/screen.css</code></a>
+<p class="listing_html">
+.<br/>
+.<br/>
+.<br/>
+<span class="style_9">/*&nbsp;NEWS&nbsp;*/</span><br />
+<br />
+<span class="style_5">.</span><span class="style_2">article&nbsp;</span><span class="style_1">h1&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">margin-bottom</span><span class="style_5">:</span><span class="style_8">0</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+<br />
+<span class="style_5">.</span><span class="style_2">article&nbsp;</span><span class="style_1">p</span><span class="style_5">.</span><span class="style_2">date&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">font-size</span><span class="style_5">:</span><span class="style_8">10px</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+
+</p>
+
+
+<p>
+Now we add all the news to the news page, with ease
+(<a href="documentation/book-of-genit-en.html#Listing_6.5">listing 6.5</a>)
+</p>
+
+<a name="Listing_6.4" class="listing">Listing 6.5 - <code>src/pages/news.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit&nbsp;what="window_title"&gt;</span><span class="style_0">News</span><span class="style_2">&lt;/genit&gt;</span><br />
+<br />
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">news&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_2">&lt;genit&nbsp;class="fragment"&nbsp;file="button.html"/&gt;</span><br />
+<br />
+<span class="style_2">&lt;genit&nbsp;class="news"/&gt;</span><br />
+
+</p>
+
+
+<p>
+This is the line <code>&lt;genit&nbsp;class="news"/&gt;</code> which takes care of adding news,
+from the most recent one to the oldest one.<br/>
+Once the project is recompiled, here is the displayed news page
+(<a href="documentation/book-of-genit-en.html#Figure_6.1">figure 6.1</a>) :
+</p>
+
+<a name="Figure_6.1" class="figure">Figure 6.1 - The news page</a>
+<img src="public/images/21.jpg" class="screenshot"/>
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="News_number">6.3 View latest news</a></h3>
+
+<p>
+On the home page, we want to display the most recent news.
+Nothing simpler, see the new code of the home page
+(<a href="documentation/book-of-genit-en.html#Listing_6.6">listing 6.6</a>) :
+</p>
+
+<a name="Listing_6.6" class="listing">Listing 6.6 - Inclusion of the two latest news (<code>src/pages/index.html</code>)</a>
+<p class="listing_html">
+<span class="style_2">&lt;genit&nbsp;what="window_title"&gt;</span><span class="style_0">Home</span><span class="style_2">&lt;/genit&gt;</span><br />
+<br />
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">home&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_2">&lt;genit&nbsp;class="fragment"&nbsp;file="button.html"/&gt;</span><br />
+<br />
+<span class="style_2">&lt;genit&nbsp;class="news"&nbsp;number="2"&nbsp;/&gt;</span><br />
+
+</p>
+
+<p>
+As usual, once the project is recompiled, you can see the results in your browser
+(<a href="documentation/book-of-genit-en.html#Figure_6.2">figure 6.2</a>) :
+</p>
+
+<a name="Figure_6.2" class="figure">Figure 6.2 - The home page with the most recent news</a>
+<img src="public/images/22.jpg" class="screenshot"/>
+
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="News_wrapper">6.4 Style for news</a></h3>
+
+<p>
+If we want to give a different style to news posted on the home page and news page, we can already do it easily.
+In the <code>src/pages/news.html</code> file,
+surround the <code>&lt;genit&gt;</code> tag by a simple<code>&lt;div&gt;</code> tag
+(<a href="documentation/book-of-genit-en.html#Listing_6.7">listing 6.7</a>) :
+</p>
+
+<a name="Listing_6.7" class="listing">Listing 6.7 - <code>pages/news.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit&nbsp;what="window_title"&gt;</span><span class="style_0">News</span><span class="style_2">&lt;/genit&gt;</span><br />
+<br />
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">news&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_2">&lt;genit&nbsp;class="fragment"&nbsp;file="button.html"/&gt;</span><br />
+<br />
+<span class="style_1">&lt;div&nbsp;</span><span class="style_3">class</span><span class="style_8">=</span><span class="style_6">"news_section"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_2">&lt;genit&nbsp;class="news"/&gt;</span><br />
+<span class="style_1">&lt;/div&gt;</span><br />
+
+</p>
+
+<p>
+Then add the CSS code that will add a line after each news
+(<a href="documentation/book-of-genit-en.html#Listing_6.8">listing 6.8</a>).
+Do not forget to recompile the project to see the result.
+</p>
+
+<a name="Listing_6.8" class="listing">Listing 6.8 - <code>styles/screen.css</code></a>
+<p class="listing_html">
+.<br />
+.<br />
+.<br />
+<span class="style_9">/*&nbsp;A&nbsp;NEWS&nbsp;ON&nbsp;NEWS&nbsp;PAGE&nbsp;*/</span><br />
+<span class="style_5">.</span><span class="style_2">news_section&nbsp;</span><span class="style_5">.</span><span class="style_2">article&nbsp;</span><span class="style_5">{</span><br />
+<span class="style_6">border-bottom</span><span class="style_5">:</span><span class="style_8">1px&nbsp;solid&nbsp;#020</span><span class="style_5">;</span><br />
+<span class="style_5">}</span><br />
+
+</p>
+
+
+<p>
+Genit proposes another solution to manage the style of the news depending on where they are displayed.
+You can use the <code>wrapper</code> attribute. 
+Edit the <code>src/pages/news.html</code> file and modify its contents as in
+<a href="documentation/book-of-genit-en.html#Listing_6.9">listing 6.9</a> :
+</p>
+
+<a name="Listing_6.9" class="listing">Listing 6.9 - <code>pages/news.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit&nbsp;what="window_title"&gt;</span><span class="style_0">News</span><span class="style_2">&lt;/genit&gt;</span><br />
+<br />
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">news&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_2">&lt;genit&nbsp;class="fragment"&nbsp;file="button.html"/&gt;</span><br />
+<br />
+<span class="style_2">&lt;genit&nbsp;class="news"&nbsp;wrapper="news_section"/&gt;</span><br />
+
+</p>
+
+<p>
+The visual will be the same, but the resulting XHTML code is slightly different from that obtained with the code
+in <a href="documentation/book-of-genit-en.html#Listing_6.7">listing 6.7</a>,
+because this time <strong>each</strong> news will be surrounded by the
+<code>&lt;div class="news_section"&gt;</code> tag. 
+So use this option if you want, or forget it if you do not like it ...
+</p>
+
+
+
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h2><a name="Public">7. Public folder</a></h2>
+
+<p>
+The <code>public</code> folder is intended to receive the site files that will be
+served without treatment, including:
+</p>
+
+<ul>
+  <li>media files (images, audio, video) that are not part of the design of the site.</li>
+  <li>PDF files</li>
+  <li>plain text files</li>
+  <li>etc...</li>
+</ul>
+
+<p>
+To illustrate this, our website will offer the license for the game in a <code>.txt</code> file.
+Create <code>public/license.txt</code> and fill it with the
+<a href="documentation/book-of-genit-en.html#Listing_7.1">listing 7.1</a> (or whatever you want):
+</p>
+
+<a name="Listing_7.1" class="listing">Listing 7.1 - <code>public/license.txt</code></a>
+<p class="listing_html">
+**************************************************<br />
+Amazing Game<br />
+**************************************************<br />
+<br />
+This is the license of Amazing Game.<br />
+
+</p>
+
+<p>
+Now add the link to this file, in <code>src/pages/doc/index.html</code>
+(<a href="documentation/book-of-genit-en.html#Listing_7.2">listing 7.2</a>)
+</p>
+
+<a name="Listing_7.2" class="listing">Listing 7.2 - <code>src/pages/doc/index.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit&nbsp;what="window_title"&gt;</span><span class="style_0">Documentation</span><span class="style_2">&lt;/genit&gt;</span><br />
+<br />
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">documentation&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_1">&lt;ul&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"doc/user.html"</span><span class="style_1">&gt;</span><span class="style_0">User&nbsp;documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"doc/developer.html"</span><span class="style_1">&gt;</span><span class="style_0">Developer&nbsp;documentation</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;li&gt;&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"public/license.txt"</span><span class="style_1">&gt;</span><span class="style_0">Read&nbsp;license</span><span class="style_1">&lt;/a&gt;&lt;/li&gt;</span><br />
+<span class="style_1">&lt;/ul&gt;</span><br />
+
+</p>
+
+<p>
+That's it. Recompile the project, display the <code>src/pages/doc/index.html</code> page
+(<a href="documentation/book-of-genit-en.html#Figure_7.1">figure 7.1</a>), and click the link
+to display the license (<a href="documentation/book-of-genit-en.html#Figure_7.2">figure 7.2</a>)
+</p>
+
+<a name="Figure_7.1" class="figure">Figure 7.1 - </a>
+<img src="public/images/23.jpg" class="screenshot"/>
+
+<a name="Figure_7.2" class="figure">Figure 7.2 - </a>
+<img src="public/images/24.jpg" class="screenshot"/>
+
+
+<div class="alert alert-info alert-block">
+<h4>Information</h4>
+Another example of using the <code>public</code> folder: all the screenshots you see on this page 
+(as in <a href="documentation/book-of-genit-en.html#Figure_7.1">figure 7.1</a>)
+
+are in the <code>public</code> folder of the Genit site.
+</div>
+
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h2><a name="Javascript">8. Javascript</a></h2>
+
+<p>
+Using javascript on your website is very easy. Simply follow the following convention :
+javascript files and libraries goes to the <code>script</code> folder. Nothing more.<br/>
+To illustrate this, we will add a link to the download page. This link will open a dialog box indicating that the feature is not ready yet.
+</p>
+
+<p>
+First, download the library <a href="http://ssssnakes.com/smoke/">smoke.js</a> 
+and place the two files we need 
+(<code>smoke.css</code> et <code>smoke.js</code>) in the <code>scripts</code> folder
+(<a href="documentation/book-of-genit-en.html#Figure_8.1">figure 8.1</a>) :
+</p>
+
+<a name="Figure_8.1" class="figure">Figure 8.1 - </a>
+<img src="public/images/25.jpg" class="screenshot"/>
+
+<p>
+Then call these two files in the &lt;head&gt; tag of the main template (<code>src/templates/main.html</code>),
+as shown in <a href="documentation/book-of-genit-en.html#Listing_8.1">listing 8.1</a> :
+</p>
+
+<a name="Listing_8.1" class="listing">Listing 8.1 - Loading smoke.js in <code>src/templates/main.html</code></a>
+<p class="listing_html">
+<span class="style_21">&lt;!</span><span class="style_22">DOCTYPE&nbsp;</span><span class="style_23">html</span><span class="style_21">&gt;</span><br />
+<br />
+<span class="style_1">&lt;html&nbsp;</span><span class="style_3">lang</span><span class="style_8">=</span><span class="style_6">"en"</span><span class="style_1">&gt;</span><br />
+<span class="style_1">&lt;head&gt;</span><br />
+.<br/>
+.<br/>
+.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;script&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/javascript"&nbsp;</span><span class="style_3">src</span><span class="style_8">=</span><span class="style_6">"scripts/smoke.js"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;link&nbsp;</span><span class="style_3">rel</span><span class="style_8">=</span><span class="style_6">"stylesheet"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"text/css"&nbsp;</span><span class="style_3">media</span><span class="style_8">=</span><span class="style_6">"screen"&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"scripts/smoke.css"&nbsp;</span><span class="style_11">/&gt;&nbsp;</span><br />
+<span class="style_1">&lt;/head&gt;</span><br />
+.<br/>
+.<br/>
+.<br/>
+
+</p>
+
+
+<p>
+We can now add the link to the download page
+(<a href="documentation/book-of-genit-en.html#Listing_8.2">listing 8.2</a>). This link
+call the <code>smoke.alert()</code> function from the <code>smoke.js</code> library.
+</p>
+
+<a name="Listing_8.2" class="listing">Listing 8.2 - <code>src/pages/download.html</code></a>
+<p class="listing_html">
+<span class="style_2">&lt;genit&nbsp;what="window_title"&gt;</span><span class="style_0">Download</span><span class="style_2">&lt;/genit&gt;</span><br />
+<br />
+<span class="style_1">&lt;h1&gt;</span><span class="style_0">download&nbsp;page</span><span class="style_1">&lt;/h1&gt;</span><br />
+<br />
+<span class="style_1">&lt;a&nbsp;</span><span class="style_3">onclick</span><span class="style_8">=</span><span class="style_6">"javascript:smoke.alert('Not&nbsp;implemented');"&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"#"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">Download&nbsp;the&nbsp;amazing&nbsp;game</span><br />
+<span class="style_1">&lt;/a&gt;</span><br />
+
+</p>
+
+<p>
+As usual, recompile the project and see the new download page
+(<a href="documentation/book-of-genit-en.html#Figure_8.2">figure 8.2</a>) :
+</p>
+
+<a name="Figure_8.2" class="figure">Figure 8.2 - The new download page</a>
+<img src="public/images/26.jpg" class="screenshot"/>
+
+<p>
+If you click on the link, a nice dialog box will open
+(<a href="documentation/book-of-genit-en.html#Figure_8.3">figure 8.3</a>) :
+</p>
+
+<a name="Figure_8.3" class="figure">Figure 8.3 - </a>
+<img src="public/images/27.jpg" class="screenshot"/>
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h2><a name="RSS">9. RSS Feed and sitemap</a></h2>
+
+<p>
+Genit can create RSS feed for the news articles of your site. 
+It too create automatically the <code>sitemap.xml</code> file of your web site.
+</p>
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="RSS_feed">9.1 The RSS feed</a></h3>
+
+<p>
+Open the configuration file of your Genit project, this is a file at the root of the project, 
+named <code>config</code> 
+(<a href="documentation/book-of-genit-en.html#Listing_9.1">listing 9.1</a>) :
+</p>
+
+
+<a name="Listing_9.1" class="listing">Listing 9.1 - <code>config</code> : configuration file of your project</a>
+<p class="listing_html">
+--- <br/>
+:address: http://www.example.com<br/>
+:rss: true<br/>
+:rss_title: RSS TITLE<br/>
+:rss_description: RSS DESCRIPTION<br/>
+
+</p>
+
+
+<p>
+In the line starting with <code>:address:</code>, change the address to the one of your site. 
+If you do not already know it, be sure to do it later.<br/>
+The line starting by <code>:rss:</code> indicates whether or not you want to generate an RSS feed. 
+If you do not want RSS feeds for your site, change this line to <code>:rss: false</code>.<br/>
+Lines beginning with <code>:rss_title:</code> and <code>:rss_description:</code> indicates
+respectively the title and description of the RSS feed.<br/>
+Edit the <code>config</code> file as needed, for example
+(<a href="documentation/book-of-genit-en.html#Listing_9.2">listing 9.2</a>) :
+</p>
+
+<a name="Listing_9.2" class="listing">Listing 9.2 - </a>
+<p class="listing_html">
+--- <br/>
+:address: http://www.my-site.com<br/>
+:rss: true<br/>
+:rss_title: Title of my feed<br/>
+:rss_description: Description of my feed<br/>
+
+</p>
+
+<p>
+The <code>rss.xml</code> file will be created at the root of the project.
+On your site you link the RSS feed with a line like the following
+(<a href="documentation/book-of-genit-en.html#Listing_9.3">listing 9.3</a>) :
+</p>
+
+<a name="Listing_9.3" class="listing">Listing 9.3 - </a>
+<p class="listing_html">
+<span class="style_1">&lt;a&nbsp;</span><span class="style_3">href</span><span class="style_8">=</span><span class="style_6">"rss.xml"</span><span class="style_1">&gt;</span><span class="style_0">RSS&nbsp;Feed</span><span class="style_1">&lt;/a&gt;</span><br />
+
+</p>
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Sitemap_xml">9.2 The sitemap.xml file</a></h3>
+
+<p>
+Just give the root url of your web site in the <code>config</code> file,
+as you did in the previous step
+(see <a href="documentation/book-of-genit-fr.html#Listing_9.2">listing 9.2</a>). The
+<code>sitemap.xml</code> file will be automatically generated in the project folder.
+</p>
+
+
+
+
+
+<!------------------------------------------------------------------------------------->
+<h2><a name="Markdown">10. Markdown</a></h2>
+
+<p>
+Markdown format could be use for your fragments, instead of the html format.
+<br/>
+To do this, give a <code>.markdown</code> extension to your files and use
+the following tag:
+</p>
+<pre><code>    &lt;genit class="fragment" file="myfile.markdown"/&gt;
+</code></pre>
+
+<div class="alert alert-block">
+<h4>Warning!</h4>
+Using markdown is limited to fragments and pages folders.
+</div>
+
+
+
+
+</div> <!-- book -->

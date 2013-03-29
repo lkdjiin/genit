@@ -1,48 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-<meta name="description" content="Genit is a kind of xhtml static web framework."></meta>
-<meta name="keywords" content="install download learn genit"></meta>
-<meta name="author" content="Xavier Nayrac"></meta>
-<title>Genit - Open Source Static Web Framework - Overview</title>
-<link rel="stylesheet" type="text/css" media="all" href="styles/alsa/all.css"></link>
-<link rel="stylesheet" type="text/css" media="screen" href="styles/grid.css"></link>
-<link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css"></link>
-<link rel="stylesheet" type="text/css" media="print" href="styles/print.css"></link>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Genit is a kind of xhtml static web framework.">
+    <meta name="keywords" content="install download documentation            static web framework xhtml html genit">
+    <meta name="author" content="Xavier Nayrac">
+    <title>Genit - Open Source Static Web Framework -
+      Overview</title>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
-
-</head>
-<body>
-
-  <div id="header">
-      <div class="row">
-        <div class="column grid_4"><h1>GENIT</h1></div>
-        <div class="column grid_12"><ul id="menu">
+    <link rel="stylesheet" type="text/css" media="all" href="styles/bootstrap/css/bootstrap.css"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css"> 
+    <link rel="stylesheet" type="text/css" media="print" href="styles/print.css"> 
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <header>
+          <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="index.html">Genit</a>
+            <div class="nav-collapse collapse pull-right">
+              <ul id="menu" class="nav">
   <li><a href="index.html">Home</a></li>
   <li><a href="overview.html" id="selected">Overview</a></li>
   <li><a href="download.html">Download</a></li>
   <li><a href="documentation/index.html">Documentation</a></li>
   <li><a href="about.html">About</a></li>
 </ul>
-</div>
+
+            </div>
+<!--/.nav-collapse -->
+          </div>
+        </header>
       </div>
-  </div>
-  
-  <div id="page_title">
-    <div class="row">
-        <div class="column grid_16">
+    </div>
+
+    <div class="container-fluid">
+      
+      <div class="row-fluid">
+        <div class="span12">
           <h1>Framework overview</h1>
         </div>
       </div>
-  </div>
-  
-  <div id="main"> 
-    <div class="row">
-      <div class="column grid_12" id="left-side">
-        <div class="article">
+
+      <div class="row-fluid">
+        <div class="span10">
+          <div class="article">
 <h2 id="what">What is Genit ?</h2>
 
 <p>
@@ -52,10 +63,8 @@ A site for Genit consists only of xhtml code (+ css and medias) and eventually o
 </p>
 
 <p>
-The Genit project is a very young one. I started it in June 2011, and I work on it only in my
+The Genit project started in June 2011, I work on it only in my
 spare time. So don't expect a major release every week ! 
-Take a look at this <a href="https://github.com/lkdjiin/genit/issues">Issues Tracker</a> GitHub 
-pages to know what is coming next.
 </p>
 </div>
 <div class="article">
@@ -64,10 +73,12 @@ pages to know what is coming next.
 <p>
 Genit is a command line framework, essentially based on conventions. It should be:
 </p>
-<ol><li><strong>Readable</strong></li>
+<ol>
+<li><strong>Readable</strong></li>
   <li><strong>Simple</strong></li>
   <li><strong>Minimalist</strong></li>
-</ol><p>
+</ol>
+<p>
 Genit is based on the idea that <em>we don't have</em> to learn any new languages to manage templates,
 layouts and pages because <strong>XML can do it very well</strong>.
 </p>
@@ -84,14 +95,12 @@ And more simply, to generate the footer:
 <div class="article">
 <h2 id="why">why such a framework ?</h2>
 <p>
-<strong>A static website nowadays, is it a joke?</strong><br></br>
-No, it isn't, I'm very serious! Some websites, like GitHub, provide free hosting space, but only for static web 
-pages, no DBMS, no PHP, nothing more than HTML.
+Some websites, like GitHub, provide free hosting space, but only for static web 
+pages, no DBMS, no PHP, no Ruby, nothing more than HTML.
 </p>
 <p>
-There are many good solutions around but none of them suits my needs perfectly.
-As I would professionally need such a framework in the coming months and
-develop this type of application with Ruby is a real pleasure, I started the Genit project...
+There are many good solutions around to build static web sites but none of them suits my needs perfectly.
+As developing this type of application with Ruby is a real pleasure, I started the Genit project...
 </p>
 </div>
 <div class="article">
@@ -102,13 +111,12 @@ on your system (if it's not already done). But <strong>you don't have to know th
 making web site with Genit, there is no Ruby programming.
 </p>
 
-<p>
-A web server, like Apache, is not required but could be of some help.
-</p>
 </div>
-      </div>
-      <div class="column grid_4">
-        <div class="right-side-section"><h2>Quick links</h2>
+        </div>
+        <div class="span2">
+
+          <div class="right-side-section">
+            <h2>Quick links</h2>
 
 <p><a href="documentation/index.html">Get started</a></p>
 
@@ -120,22 +128,35 @@ A web server, like Apache, is not required but could be of some help.
 
 <p><a href="https://github.com/lkdjiin/genit">Sources on GitHub</a></p>
 
-<p><a href="about.html">Who is behind that ?</a></p>
+<p><a href="news.html">All news</a></p>
+          </div>
+          
+          <div style="text-align:center">
+            <a href="rss.xml"><img src="public/images/rss32.png" alt="" width="32" height="32"></a>
+          </div>
 
-<p><a href="news.html">All news</a></p></div>
-        <div style="text-align:center"><a href="rss.xml"><img src="./styles/images/rss32.png" alt="" width="32" height="32"></img></a></div>
-        <div class="right-side-section"><h2>License</h2>
+          <div class="right-side-section">
+            <h2>License</h2>
 
 <p>Genit is a free, open source software licensed under
-the <a href="licences.html">Expat license</a> (also known as the MIT license).</p></div>
+the MIT license.</p>
+          </div>
+          
+        </div>
       </div>
+
+      <hr>
+
+      <footer class="row-fluid">
+        <div class="span12">
+          <p>Copyright 2011-2013, Xavier Nayrac</p>
+        </div>
+      </footer>
+
     </div>
-  </div>
-  
-  <div class="row" id="footer">
-    <div class="column grid_16"><p>Copyright 2011-2013, Xavier Nayrac</p></div>
-  </div>
- <script type="text/javascript">
+<!--/container-fluid -->
+
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-39286891-1']);
@@ -147,6 +168,8 @@ the <a href="licences.html">Expat license</a> (also known as the MIT license).</
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script> 
-</body>
+</script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+  </body>
 </html>

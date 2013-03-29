@@ -1,55 +1,83 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-<meta name="description" content="Genit is a kind of xhtml static web framework."></meta>
-<meta name="keywords" content="install download learn genit"></meta>
-<meta name="author" content="Xavier Nayrac"></meta>
-<title>Genit - Open Source Static Web Framework - News</title>
-<link rel="stylesheet" type="text/css" media="all" href="styles/alsa/all.css"></link>
-<link rel="stylesheet" type="text/css" media="screen" href="styles/grid.css"></link>
-<link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css"></link>
-<link rel="stylesheet" type="text/css" media="print" href="styles/print.css"></link>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Genit is a kind of xhtml static web framework.">
+    <meta name="keywords" content="install download documentation            static web framework xhtml html genit">
+    <meta name="author" content="Xavier Nayrac">
+    <title>Genit - Open Source Static Web Framework -
+      News</title>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
-
-</head>
-<body>
-
-  <div id="header">
-      <div class="row">
-        <div class="column grid_4"><h1>GENIT</h1></div>
-        <div class="column grid_12"><ul id="menu">
+    <link rel="stylesheet" type="text/css" media="all" href="styles/bootstrap/css/bootstrap.css"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/screen.css"> 
+    <link rel="stylesheet" type="text/css" media="print" href="styles/print.css"> 
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <header>
+          <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="index.html">Genit</a>
+            <div class="nav-collapse collapse pull-right">
+              <ul id="menu" class="nav">
   <li><a href="index.html">Home</a></li>
   <li><a href="overview.html">Overview</a></li>
   <li><a href="download.html">Download</a></li>
   <li><a href="documentation/index.html">Documentation</a></li>
   <li><a href="about.html">About</a></li>
 </ul>
-</div>
+
+            </div>
+<!--/.nav-collapse -->
+          </div>
+        </header>
       </div>
-  </div>
-  
-  <div id="page_title">
-    <div class="row">
-        <div class="column grid_16">
+    </div>
+
+    <div class="container-fluid">
+      
+      <div class="row-fluid">
+        <div class="span12">
           <h1>News from Genit</h1>
         </div>
       </div>
-  </div>
-  
-  <div id="main"> 
-    <div class="row">
-      <div class="column grid_12" id="left-side">
-        <div class="article"><h2>Genit 1.0.1 released</h2>
+
+      <div class="row-fluid">
+        <div class="span10">
+          <div class="article">
+<h2>Genit 2.0 released</h2>
+<p class="date">2013-03-29</p>
+<p>Finally, the version 2.0 of Genit is over.</p>
+<p>New in this release:</p>  
+<ul>
+  <li>Improvement of the layout folder structure, which drives to faster compilation</li>
+  <li>Genit is now html5 only</li>
+  <li>Genit provide a web server for development</li>
+  <li>Config file is no longer an hidden file</li>
+  <li>I remove all css templates</li>
+  <li>Genit put an error message when the main template is malformed</li>
+</ul>
+</div>
+<div class="article">
+<h2>Genit 1.0.1 released</h2>
 <p class="date">2013-03-14</p>
 <p>This is a bugfix release.</p>
 <ul>
   <li>Fix a bug that generates a bad html5 doctype</li>
 </ul>
 
-</div><div class="article"><h2>Genit 1.0 released</h2>
+</div>
+<div class="article">
+<h2>Genit 1.0 released</h2>
 <p class="date">2011-10-02</p>
 <p>I am proud to announce the version 1.0 of Genit!</p>
 <p>New in this release:</p>  
@@ -59,24 +87,31 @@
   <li>Genit puts a warning message when a <code>here</code> tag is used without its counterpart</li>
   <li>Version is added to the <code>.genit</code> file</li>
 </ul>
-</div><div class="article"><h2>Genit 0.99 released</h2>
+</div>
+<div class="article">
+<h2>Genit 0.99 released</h2>
 <p class="date">2011-09-25</p>
 <p>
-  Genit could generate an RSS feed of your news articles.<br></br>
+  Genit could generate an RSS feed of your news articles.<br>
   And version 1.0 is almost here!
 </p>
-</div><div class="article"><h2>Genit 0.9 released</h2>
+</div>
+<div class="article">
+<h2>Genit 0.9 released</h2>
 <p class="date">2011-09-04</p>
 <p>
   <ul>
     <li>You can add news to your site with ease</li>
-    <li>The tag <code>var</code> does not exist anymore. It is replaced by the two-part tag <code>here</code> and <code>what</code></li>
+    <li>The tag <code>var</code> does not exist anymore. It is replaced by the two-part tag <code>here</code> and <code>what</code>
+</li>
     <li>Put your public files (photo, text, pdf, etc.) in the <code>public</code> folder</li>
     <li>Put your javascript in the <code>scripts</code> folder</li>
     <li>New <code>--empty</code> switch and <code>--doctype</code> option for the <code>create</code> command</li>
   </ul>
 </p>
-</div><div class="article"><h2>Genit 0.5 released</h2>
+</div>
+<div class="article">
+<h2>Genit 0.5 released</h2>
 <p class="date">2011-08-06</p>
 <p>
   <ul>
@@ -86,13 +121,17 @@
   </ul>
 </p>
 
-</div><div class="article"><h2>Genit 0.4.1 released</h2>
+</div>
+<div class="article">
+<h2>Genit 0.4.1 released</h2>
 <p class="date">2011-07-30</p>
 <p>
 Fix a bug where the closing part of auto-closing tags were forgotten.
 </p>
 
-</div><div class="article"><h2>Genit 0.4 released</h2>
+</div>
+<div class="article">
+<h2>Genit 0.4 released</h2>
 <p class="date">2011-07-25</p>
 <p>
 This is mostly an internal maintenance realease, including a better smoke test,
@@ -100,9 +139,11 @@ basic user documentation and a better command-line usage.
 </p>
 
 </div>
-      </div>
-      <div class="column grid_4">
-        <div class="right-side-section"><h2>Quick links</h2>
+        </div>
+        <div class="span2">
+
+          <div class="right-side-section">
+            <h2>Quick links</h2>
 
 <p><a href="documentation/index.html">Get started</a></p>
 
@@ -114,22 +155,35 @@ basic user documentation and a better command-line usage.
 
 <p><a href="https://github.com/lkdjiin/genit">Sources on GitHub</a></p>
 
-<p><a href="about.html">Who is behind that ?</a></p>
+<p><a href="news.html">All news</a></p>
+          </div>
+          
+          <div style="text-align:center">
+            <a href="rss.xml"><img src="public/images/rss32.png" alt="" width="32" height="32"></a>
+          </div>
 
-<p><a href="news.html">All news</a></p></div>
-        <div style="text-align:center"><a href="rss.xml"><img src="./styles/images/rss32.png" alt="" width="32" height="32"></img></a></div>
-        <div class="right-side-section"><h2>License</h2>
+          <div class="right-side-section">
+            <h2>License</h2>
 
 <p>Genit is a free, open source software licensed under
-the <a href="licences.html">Expat license</a> (also known as the MIT license).</p></div>
+the MIT license.</p>
+          </div>
+          
+        </div>
       </div>
+
+      <hr>
+
+      <footer class="row-fluid">
+        <div class="span12">
+          <p>Copyright 2011-2013, Xavier Nayrac</p>
+        </div>
+      </footer>
+
     </div>
-  </div>
-  
-  <div class="row" id="footer">
-    <div class="column grid_16"><p>Copyright 2011-2013, Xavier Nayrac</p></div>
-  </div>
- <script type="text/javascript">
+<!--/container-fluid -->
+
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-39286891-1']);
@@ -141,6 +195,8 @@ the <a href="licences.html">Expat license</a> (also known as the MIT license).</
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script> 
-</body>
+</script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+  </body>
 </html>
