@@ -6,13 +6,6 @@ and database. A genit site consists only of xhtml code (+ css, medias and eventu
 
 Genit is written in Ruby but there is no needs to know the Ruby language.
 
-**------------------------------------------------------------------------**
-
-**This readme file and all the documentation refers to version 1.0 of genit.
-I'm currently writing the doc for genit version 2.0**
-
-**------------------------------------------------------------------------**
-
 Description
 -----------
 
@@ -50,9 +43,8 @@ Usage
 
     genit create my-site
     cd my-site
-(*edit some pages*)
-
     genit compile
+    genit server
 
 See the wiki for user documentation and a tutorial.
 
