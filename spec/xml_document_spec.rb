@@ -14,4 +14,9 @@ describe XmlDocument do
     doc.css("ul#menu li").size.should >= 1
   end
 
+  it "should exit on malformed document" do
+    lambda do
+      XmlDocument.open("spec/test-files/malformed.html") 
+    end.should raise_error(SystemExit)
+  end
 end

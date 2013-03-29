@@ -14,7 +14,11 @@ module Genit
     #
     # Returns a Nokogiri::XML document.
     def self.open file
-      Nokogiri::XML(File.open(file))
+      begin
+        Nokogiri::XML(File.open(file)){|config| config.strict}
+      rescue Nokogiri::XML::SyntaxError => e
+        error "Malformed xhtml in file #{file} : #{e}"
+      end
     end
     
     # Public: Open a fragment of xml document.
