@@ -2,6 +2,7 @@
 
 require 'nokogiri'
 require 'bluecloth'
+require 'haml'
 
 module Genit
 
@@ -16,9 +17,19 @@ module Genit
     def self.open file
       begin
         Nokogiri::XML(File.open(file)){|config| config.strict}
-      rescue Nokogiri::XML::SyntaxError => e
-        error "Malformed xhtml in file #{file} : #{e}"
+      rescue Nokogiri::XML::SyntaxError => ex
+        error "Malformed xhtml in file #{file} : #{ex}"
       end
+    end
+
+    # Public: Open a (xml) document from a haml file.
+    #
+    # file - Full path String filename of haml file.
+    #
+    # Returns a Nokogiri::XML document.
+    def self.open_via_haml file
+      tmp = Haml::Engine.new(File.open(file).read, :format => :xhtml).render
+      Nokogiri::XML(tmp) 
     end
     
     # Public: Open a fragment of xml document.

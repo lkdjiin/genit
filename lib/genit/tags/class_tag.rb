@@ -4,7 +4,7 @@ module Genit
 
   # A Genit general tag.
   class ClassTag < Tag
-    
+
     # Public: Constructor.
     #
     # working_dir - The String working directory, where live the project.
@@ -14,7 +14,7 @@ module Genit
     def initialize working_dir, template, filename, tag
       super working_dir, template, filename, tag
     end
-    
+
     # Public: Replace something in the template.
     #
     # Returns the template as a Nokogiri::XML::Document
@@ -28,7 +28,7 @@ module Genit
           error "Unknown tag #{@tag}"
       end
     end
-    
+
   end
 
 end

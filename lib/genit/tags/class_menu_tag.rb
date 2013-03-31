@@ -26,10 +26,19 @@ module Genit
     private
     
     def build_menu
-      file = File.join(@working_dir, TEMPLATES_DIR, "menu.html")
-      menu = XmlDocument.open(file)
-      builder = MenuBuilder.new(menu)
+      builder = MenuBuilder.new(menu_document)
       @menu = builder.build_for_page(@filename)
+    end
+
+    def menu_document
+      file = File.join(@working_dir, TEMPLATES_DIR, "menu.")
+      if File.exists?("#{file}html")
+        XmlDocument.open("#{file}html")
+      elsif File.exists?("#{file}haml")
+        XmlDocument.open_via_haml("#{file}haml")
+      else
+        error "No menu template"
+      end
     end
     
   end

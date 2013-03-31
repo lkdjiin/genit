@@ -12,9 +12,12 @@ module Genit
     #
     # name    - The String name of the future project folder.
     # empty   - A Boolean telling if we produce a smoke test or not.
-    def initialize name, empty
+    # haml    - A Boolean telling if we want project's files in haml or
+    #           not.
+    def initialize name, empty, haml
       @project_name = name
       @empty = empty
+      @haml = haml
     end
 
     # Public: Create the structure of the project, that is many
@@ -103,13 +106,30 @@ module Genit
 
       # TODO document
       def copy_index
-        dest =  File.join @project_name, 'src/pages/index.html'
-        if @empty
-          src = File.join $GENIT_PATH, 'data/pages/index2.html'
-        else
-          src = File.join $GENIT_PATH, 'data/pages/index.html'
-        end
+        dest = index_destination
+        src = index_source
         FileUtils.cp src, dest
+      end
+
+      def index_destination
+        if @haml
+          File.join @project_name, 'src/pages/index.haml'
+        else
+          File.join @project_name, 'src/pages/index.html'
+        end
+      end
+
+      def index_source
+        if @empty
+          src = File.join $GENIT_PATH, 'data/pages/index2.'
+        else
+          src = File.join $GENIT_PATH, 'data/pages/index.'
+        end
+        if @haml
+          "#{src}haml"
+        else
+          "#{src}html"
+        end
       end
 
       # TODO document
@@ -125,14 +145,33 @@ module Genit
 
       # TODO document
       def copy_main_template
+        if @haml
+          copy_main_template_haml
+        else
+          copy_main_template_html
+        end
+      end
+
+      def copy_main_template_haml
+        dest =  File.join @project_name, 'src/templates', 'main.haml'
+        src = File.join $GENIT_PATH, 'data', 'templates', "html_5.haml"
+        FileUtils.cp src, dest
+      end
+
+      def copy_main_template_html
         dest =  File.join @project_name, 'src/templates', 'main.html'
         copy_first_part dest
         ProjectCreator.append_last_part dest
       end
 
       def copy_menu_template
-        dest =  File.join @project_name, 'src/templates', 'menu.html'
-        src = File.join $GENIT_PATH, 'data', 'templates', 'menu.html'
+        if @haml
+          dest =  File.join @project_name, 'src/templates', 'menu.haml'
+          src = File.join $GENIT_PATH, 'data', 'templates', 'menu.haml'
+        else
+          dest =  File.join @project_name, 'src/templates', 'menu.html'
+          src = File.join $GENIT_PATH, 'data', 'templates', 'menu.html'
+        end
         FileUtils.cp src, dest
       end
 

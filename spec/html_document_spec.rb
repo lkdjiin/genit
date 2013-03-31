@@ -27,13 +27,22 @@ describe HtmlDocument do
   end
 
   it "should build a page content from markdown" do
-    content = HtmlDocument.build_page_content("spec/test-files/test.markdown", 'spec/test-files')
+    content = HtmlDocument.build_page_content("spec/test-files/test.markdown",
+                                              'spec/test-files')
     content.should == '<h1>title</h1>'
   end
 
-  # it "should build page content from html" do
-  #   content = HtmlDocument.build_page_content("spec/test-files/fragment.html", 'spec/test-files')
-  #   content.start_with?('<h1>title</h1>').should be_true
-  # end
+  it "should build a page content from haml" do
+    content = HtmlDocument.build_page_content("spec/test-files/test.haml", 
+                                              'spec/test-files')
+    content.should == "<h1>title</h1>\n"
+  end
+
+  it "should build page content from html" do
+    content = HtmlDocument.build_page_content(
+      "spec/test-files/fragment.html", 
+      'spec/test-files')
+    content.start_with?('<h1>title</h1>').should be_true
+  end
 
 end

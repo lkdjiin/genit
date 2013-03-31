@@ -45,9 +45,12 @@ module Genit
               :attribute_name => :project_name
     option ["-e", "--empty"], :flag, "Do not produce smoke test",
            :default => false
+    option ["-H", "--haml"], :flag, "Create project files with haml",
+           :default => false
 
+    # TODO faire un hash d'option pour empty?, etc.
     def execute
-      project = ProjectCreator.new project_name, empty?
+      project = ProjectCreator.new project_name, empty?, haml?
       project.create
     end
   end

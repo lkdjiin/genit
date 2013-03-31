@@ -5,7 +5,7 @@ require './spec/helper'
 describe Compiler do
 
   before :each do
-    @project = ProjectCreator.new('spec/project-name', false)
+    @project = ProjectCreator.new('spec/project-name', false, false)
     @project.create
     @compiler = Compiler.new test_project_path
   end

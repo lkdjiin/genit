@@ -12,8 +12,18 @@ module Genit
     def initialize working_dir, filename
       @working_dir = working_dir
       @filename = filename
-      file = File.join(@working_dir, 'src/templates/main.html')
-      @template = XmlDocument.open(file)
+      # file = File.join(@working_dir, 'src/templates/main.html')
+      # @template = XmlDocument.open(file)
+      file = File.join(@working_dir, 'src/templates/main')
+      if File.exists?("#{file}.html")
+        file = file + ".html"
+        @template = XmlDocument.open(file)
+      elsif File.exists?("#{file}.haml")
+        file = file + ".haml"
+        @template = XmlDocument.open_via_haml(file)
+      else
+        error "No template found"
+      end
     end
 
     # Public: Compile the page.
