@@ -20,9 +20,26 @@ describe Compiler do
     end
   end
 
-  it "should build an index.html page" do
-    @compiler.compile
-    File.exist?('spec/project-name/index.html').should be_true
+  context "after compilation" do
+    before :each do
+      @compiler.compile
+    end
+
+    it "should build an index.html page" do
+      File.exist?('spec/project-name/index.html').should be_true
+    end
+
+    it "should set the menu in index page" do
+      doc = Nokogiri::HTML(File.open("spec/project-name/index.html"))
+      doc.at_css("ul#menu a#selected")['href'].should == 'index.html'
+    end
+
+    describe "RSS feed" do
+      it "should build the rss.xml file" do
+        File.exist?('spec/project-name/rss.xml').should be_true
+      end
+    end
+
   end
 
   it "should build two pages" do
@@ -32,19 +49,13 @@ describe Compiler do
     File.exist?('spec/project-name/doc.html').should be_true
   end
 
-  it "should set the menu in index page" do
-    @compiler.compile
-    doc = Nokogiri::HTML(File.open("spec/project-name/index.html"))
-    doc.at_css("ul#menu a#selected")['href'].should == 'index.html'
-  end
-  
   context "with no '.genit' file" do
     it "should exit" do
       $stdout.should_receive(:puts).with(/Not a genit project folder/i)
       lambda{Compiler.new File.expand_path('.')}.should raise_error(SystemExit)
     end
   end
-  
+
   context "with no 'config' file" do
     it "should exit" do
       $stdout.should_receive(:puts).with(/Missing config file/i)
@@ -52,14 +63,7 @@ describe Compiler do
       lambda{Compiler.new test_project_path}.should raise_error(SystemExit)
     end
   end
-  
-  describe "RSS feed" do
-    it "should build the rss.xml file" do
-      @compiler.compile
-      File.exist?('spec/project-name/rss.xml').should be_true
-    end
-  end
-  
+
   describe "Sitemap XML" do
     it "should build the 'sitemap.xml'" do
       a_news = %q{<h1>title</h1>}
@@ -68,6 +72,54 @@ describe Compiler do
       end
       @compiler.compile
       File.exist?('spec/project-name/sitemap.xml').should be_true
+    end
+  end
+
+  context "with sass as stylesheet" do
+    before :each do
+      # remove screen.css
+      FileUtils.rm "spec/project-name/styles/screen.css"
+      # create screen.sass
+      file = %q{
+.content-navigation
+  border-color: blue
+      }
+      File.open('spec/project-name/styles/screen.sass', "w") do |out|
+        out.puts file
+      end
+      @compiler.compile
+    end
+
+    it "should produce css file" do
+      File.exists?("spec/project-name/styles/screen.css").should be_true
+    end
+
+    it "should not remove sass file" do
+      File.exists?("spec/project-name/styles/screen.sass").should be_true
+    end
+  end
+
+  context "with scss as stylesheet" do
+    before :each do
+      # remove screen.css
+      FileUtils.rm "spec/project-name/styles/screen.css"
+      # create screen.scss
+      file = "
+        .content-navigation {
+          border-color: blue;
+          color: darken(blue, 9%); }"
+      File.open('spec/project-name/styles/screen.scss', "w") do |out|
+        out.puts file
+      end
+      @compiler.compile
+    end
+
+    it "should produce css file" do
+      File.exists?("spec/project-name/styles/screen.css").should be_true
+    end
+
+    it "should not remove scss file" do
+      File.exists?("spec/project-name/styles/screen.scss").should be_true
     end
   end
 
@@ -188,7 +240,6 @@ describe Compiler do
         main = %q{
           <html>
             <body>
-              
               <genit class="pages"/>
               <genit here="foo"/>
             </body>

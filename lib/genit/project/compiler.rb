@@ -18,6 +18,7 @@ module Genit
     def compile
       RootCleaner.new(@working_dir).clean
       compile_site
+      Css.new(@working_dir).render
     end
 
     private

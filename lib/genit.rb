@@ -7,6 +7,8 @@ require 'genit/builders'
 require 'genit/tags'
 require 'genit/server'
 
+require 'sass'
+
 module Errors
 
   def error message
@@ -27,4 +29,5 @@ module Genit
   TEMPLATES_DIR = "src/templates"
   FRAGMENTS_DIR = "src/fragments"
   NEWS_DIR = "src/news"
+  STYLES_DIR = "styles"
 end

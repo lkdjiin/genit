@@ -28,5 +28,6 @@ Genit is design to be simple, readable and minimalist.}
   s.add_dependency 'bluecloth', '>= 2.1.0'
   s.add_dependency 'clamp', '>= 0.2.2'
   s.add_dependency 'haml', '>= 4.0.1'
+  s.add_dependency 'sass', '>= 3.2.7'
 
 end
