@@ -58,6 +58,11 @@ Dependencies
   * nokogiri (xml parser)
   * bluecloth (markdown parser)
   * clamp (command line utility)
+  * haml (clean markup language)
+  * sass (CSS extension)
+
+See [installing nokogiri](http://nokogiri.org/tutorials/installing_nokogiri.html)
+for possible dependencies depending of your operating system.
 
 ### Contributors dependencies
 
@@ -70,7 +75,7 @@ License
 
 Expat License (also known as MIT)
 
-    Copyright (c) 2011 Xavier Nayrac
+    Copyright (c) 2011-2013 Xavier Nayrac
 
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the

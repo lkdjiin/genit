@@ -1,3 +1,8 @@
+v2.1  2013-04-02
+  * Support Haml
+  * Support Sass
+
+
 v2.0  2013-03-29
   * Improve the layout folder structure, which add interesting side effects:
     - faster compilation
