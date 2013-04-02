@@ -106,6 +106,14 @@
   </ul>
 <li><a href="../documentation/book-of-genit-en.html#Markdown">10. Markdown</a></li>
 
+  <li>
+<a href="../documentation/book-of-genit-en.html#Haml_and_sass">11. Haml and Sass</a>
+    <span class="label label-important">new in 2.1</span>
+  </li>
+  <ul>
+<li><a href="../documentation/book-of-genit-en.html#Haml">11.1 Haml</a></li>
+    <li><a href="../documentation/book-of-genit-en.html#Sass">11.2 Sass</a></li>
+  </ul>
 </ul>
 <!-------------------------------------------------------------------------------------><h2><a name="Install">1. Setup</a></h2>
 
@@ -1378,6 +1386,58 @@ Using markdown is limited to fragments and pages folders.
 
 
 
+<!------------------------------------------------------------------------------------->
+<h2><a name="Haml_and_sass">11. Haml and Sass</a></h2>
+
+Starting with version 2.1, you could use Haml instead of HTML and Sass (either
+sass or scss syntax) instead of CSS.
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Haml">11.1 Haml</a></h3>
+
+<p>To create a project with a bunch of Haml files, use the <code>--haml</code>
+option.</p>
+<pre><code>    genit create --haml my_project
+</code></pre>
+<p>Even if you create your project without the <code>--haml</code> option,
+you could always use Haml later.</p>
+<p>You could use Haml everywhere in the <code>src/</code> sub folders. You
+just have to give a <code>.haml</code> extension to your files.</p>
+<p>When you use Haml for a fragment, don't forget to put the right filename
+in the genit tag:</p>
+<pre><code>    &lt;genit class="fragment" file="myfile.haml"/&gt;
+</code></pre>
+
+
+<!------------------------------------------------------------------------------------->
+<h3><a name="Sass">11.2 Sass</a></h3>
+
+<p>To use Sass instead of CSS is really easy. Just put your stylesheet files (with
+<code>.scss</code> or <code>.sass</code> extension) in the <code>styles</code>
+folder. In the template you have nothing to do, you reference the files
+(in the <code>link</code> tags) as before, as if they where CSS files.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div> <!-- book -->
         </div>
@@ -1417,7 +1477,7 @@ the MIT license.</p>
 
       <footer class="row-fluid">
         <div class="span12">
-          <p>Copyright 2011-2013, Xavier Nayrac</p>
+          <p>Copyright 2011-2013, <a href="https://twitter.com/lkdjiin">@lkdjiin</a></p>
         </div>
       </footer>
 

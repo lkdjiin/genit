@@ -9,6 +9,12 @@
     <link>http://www.example.com</link>
     <description>RSS DESCRIPTION</description>
     <item>
+      <title>2013-04-02</title>
+      <link>http://www.example.com</link>
+      <pubDate>Tue, 02 Apr 2013 00:00:00 +0200</pubDate>
+      <dc:date>2013-04-02T00:00:00+02:00</dc:date>
+    </item>
+    <item>
       <title>Genit 2.0 released</title>
       <link>http://www.example.com</link>
       <pubDate>Fri, 29 Mar 2013 00:00:00 +0100</pubDate>

@@ -165,13 +165,5 @@ Edit the `my-site/src/styles/screen.css` file as follow:
 
         a#selected { color:red; }
 
-Recompile your project with:
-
-        genit compile
-    
-or its shortcut:
-
-        genit cc
-
-and refresh your browser to see what's changed.
+and refresh your browser to see changes.
 
