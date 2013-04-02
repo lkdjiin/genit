@@ -4,7 +4,7 @@ require 'sass'
 
 module Genit
 
-  # Render css from sass in the styles directory.
+  # Deals with the styles directory.
   class Css
 
     # Public: Constructor.
@@ -14,6 +14,9 @@ module Genit
       @working_dir = working_dir
     end
 
+    # Public: Render css in the styles directory.
+    #
+    # Returns nothing.
     def render
       Dir.glob(File.join(@working_dir, STYLES_DIR, '**/*')) do |filename|
         @filename = filename
@@ -27,13 +30,20 @@ module Genit
 
     private
 
+      # Render css from sass in the styles directory.
+      # 
+      # type - A Symbol for the sass syntax, either :sass or :scss.
+      #
+      # Returns nothing.
       def render_sass type
         template = File.open(@filename).read
-        css = Sass::Engine.new(template, syntax: type).render
-        @filename.gsub!(/(sass|scss)$/, 'css')
-        File.open(@filename, "w") do |out|
-          out.puts css
+        begin
+          css = Sass::Engine.new(template, syntax: type).render
+        rescue Exception => ex
+          error "In #{@filename}\n  #{ex}"
         end
+        @filename.gsub!(/(sass|scss)$/, 'css')
+        File.open(@filename, "w") {|out| out.puts css }
       end
   end
 end
