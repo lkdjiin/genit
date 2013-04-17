@@ -1,4 +1,4 @@
-Genit
+Genit [![Build Status](https://travis-ci.org/[lkdjiin]/[genit].png)](https://travis-ci.org/[lkdjiin]/[genit]) 
 ================
 
 Genit builds a **static web site**, that is a web site without server side programing language
