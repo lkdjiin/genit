@@ -1,6 +1,4 @@
-Genit
-[![Build Status](https://travis-ci.org/lkdjiin/genit.png)](https://travis-ci.org/lkdjiin/genit)
-[![Gem Version](https://badge.fury.io/rb/genit.png)](http://badge.fury.io/rb/genit)
+Genit [![Build Status](https://travis-ci.org/lkdjiin/genit.png)](https://travis-ci.org/lkdjiin/genit) [![Gem Version](https://badge.fury.io/rb/genit.png)](http://badge.fury.io/rb/genit)
 ================
 
 Genit builds a **static web site**, that is a web site without server side programing language
